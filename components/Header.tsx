@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Github, Heart, Share2 } from "lucide-react";
+import { Sparkles, Github, Heart, Share2, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import LoginModal from "./LoginModal";
@@ -39,6 +39,13 @@ export default function Header() {
             >
               <Heart size={14} />
               我的收藏
+            </Link>
+            <Link
+              href="/feedback"
+              className="hover:text-indigo-600 transition-colors flex items-center gap-1"
+            >
+              <MessageSquare size={14} />
+              反馈
             </Link>
             <a
               href="https://github.com"
