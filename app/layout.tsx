@@ -71,8 +71,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // google: "your-google-verification-code", // 后续在 Google Search Console 获取
-    // baidu: "your-baidu-verification-code",   // 后续在百度站长工具获取
+    google: "OdIVUVkWoVxWz9JvGPYign8FQfQNwfH8uOCykDTBieY",
   },
 };
 
