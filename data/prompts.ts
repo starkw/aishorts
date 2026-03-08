@@ -30,9 +30,9 @@ export interface Prompt {
 
 export const TAGS: Tag[] = [
   "写作辅助",
+  "电商产品",
   "文章报告",
   "编程开发",
-  "电商产品",
   "AI工具",
   "生活助手",
   "趣味娱乐",
