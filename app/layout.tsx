@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Providers from "@/components/Providers";
 import { auth } from "@/auth";
+import { Analytics } from "@vercel/analytics/react";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -89,6 +90,7 @@ export default async function RootLayout({
           <Header />
           {children}
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
