@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Sparkles, Github, Heart, Share2, MessageSquare, Zap } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import LoginModal from "./LoginModal";
 import UserMenu from "./UserMenu";
@@ -10,6 +11,7 @@ import UserMenu from "./UserMenu";
 export default function Header() {
   const { data: session, status } = useSession();
   const [loginOpen, setLoginOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -29,7 +31,9 @@ export default function Header() {
           <nav className="hidden sm:flex items-center gap-6 text-sm text-gray-600">
             <Link
               href="/"
-              className="hover:text-indigo-600 transition-colors font-medium text-indigo-600"
+              className={`transition-colors flex items-center gap-1 ${
+                pathname === "/" ? "text-indigo-600 font-medium" : "hover:text-indigo-600"
+              }`}
             >
               全部提示词
             </Link>
@@ -42,14 +46,20 @@ export default function Header() {
             </Link>
             <Link
               href="/feedback"
-              className="hover:text-indigo-600 transition-colors flex items-center gap-1"
+              className={`transition-colors flex items-center gap-1 ${
+                pathname === "/feedback" ? "text-indigo-600 font-medium" : "hover:text-indigo-600"
+              }`}
             >
               <MessageSquare size={14} />
               反馈
             </Link>
             <Link
               href="/openclaw-skills"
-              className="hover:text-indigo-600 transition-colors flex items-center gap-1"
+              className={`transition-colors flex items-center gap-1 ${
+                pathname === "/openclaw-skills"
+                  ? "text-indigo-600 font-medium"
+                  : "hover:text-indigo-600"
+              }`}
             >
               🦞 OpenClaw Skills
             </Link>
