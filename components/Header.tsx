@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Github, Heart, Share2, MessageSquare } from "lucide-react";
+import { Sparkles, Github, Heart, Share2, MessageSquare, Zap } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import LoginModal from "./LoginModal";
@@ -46,6 +46,12 @@ export default function Header() {
             >
               <MessageSquare size={14} />
               反馈
+            </Link>
+            <Link
+              href="/openclaw-skills"
+              className="hover:text-orange-500 transition-colors flex items-center gap-1 font-medium text-orange-500"
+            >
+              🦞 OpenClaw Skills
             </Link>
             <a
               href="https://github.com"
