@@ -378,7 +378,7 @@ const skills = [
   },
 ];
 
-const categories = ["全部", "创作", "社媒", "研究", "办公", "开发", "生活"];
+const categories = ["创作", "社媒", "研究", "办公", "开发", "生活"];
 
 const tagConfig: Record<string, { label: string; className: string }> = {
   必装: { label: "⭐ 必装", className: "bg-yellow-100 text-yellow-700" },
@@ -479,27 +479,45 @@ export default function OpenClawSkillsPage() {
 
       {/* 筛选栏 */}
       <section className="max-w-5xl mx-auto px-4 mb-4">
-        <div className="flex gap-2 mb-3 flex-wrap items-center">
-          {/* 快速筛选 */}
-          {["全部", "必装", "热门", "社区"].map((f) => (
+        <div className="flex gap-2 flex-wrap items-center">
+          {/* 全部 — 重置所有筛选 */}
+          <button
+            onClick={() => { setActiveFilter("全部"); setActiveCategory("全部"); }}
+            className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
+              activeFilter === "全部" && activeCategory === "全部"
+                ? "bg-orange-500 text-white border-orange-500 shadow"
+                : "bg-white border-gray-200 text-gray-600 hover:border-orange-300"
+            }`}
+          >
+            全部
+          </button>
+
+          {/* 快速筛选：必装 / 热门 / 社区 */}
+          {[
+            { key: "必装", label: "⭐ 必装" },
+            { key: "热门", label: "🔥 热门" },
+            { key: "社区", label: "社区" },
+          ].map((f) => (
             <button
-              key={f}
-              onClick={() => setActiveFilter(f)}
+              key={f.key}
+              onClick={() => { setActiveFilter(f.key); setActiveCategory("全部"); }}
               className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
-                activeFilter === f
+                activeFilter === f.key
                   ? "bg-orange-500 text-white border-orange-500 shadow"
                   : "bg-white border-gray-200 text-gray-600 hover:border-orange-300"
               }`}
             >
-              {f === "必装" ? "⭐ 必装" : f === "热门" ? "🔥 热门" : f}
+              {f.label}
             </button>
           ))}
+
           <span className="w-px h-4 bg-gray-200 mx-1" />
+
           {/* 场景分类 */}
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => { setActiveCategory(cat); setActiveFilter("全部"); }}
               className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
                 activeCategory === cat
                   ? "bg-gray-800 text-white border-gray-800"
