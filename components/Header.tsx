@@ -49,7 +49,7 @@ export default function Header() {
             </Link>
             <Link
               href="/openclaw-skills"
-              className="hover:text-orange-500 transition-colors flex items-center gap-1 font-medium text-orange-500"
+              className="hover:text-indigo-600 transition-colors flex items-center gap-1"
             >
               🦞 OpenClaw Skills
             </Link>

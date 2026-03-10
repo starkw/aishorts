@@ -400,7 +400,7 @@ function CopyButton({ cmd }: { cmd: string }) {
       className={`flex items-center gap-1 text-xs px-2.5 py-1 rounded-lg font-medium transition-all ${
         copied
           ? "bg-green-100 text-green-600"
-          : "bg-orange-50 text-orange-500 hover:bg-orange-100"
+          : "bg-indigo-50 text-indigo-600 hover:bg-indigo-100"
       }`}
     >
       {copied ? <Check size={11} /> : <Copy size={11} />}
@@ -432,10 +432,10 @@ export default function OpenClawSkillsPage() {
   const hotCount = skills.filter((s) => s.tags.includes("热门")).length;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-orange-50/40 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-indigo-50/40 to-white">
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-4 pt-12 pb-8 text-center">
-        <div className="inline-flex items-center gap-2 bg-orange-100 border border-orange-200 rounded-full px-4 py-1.5 text-sm text-orange-600 font-medium mb-5">
+        <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 rounded-full px-4 py-1.5 text-sm text-indigo-600 font-medium mb-5">
           🦞 OpenClaw 技能市场
         </div>
         <h1 className="text-4xl font-bold text-gray-900 mb-3">
@@ -448,15 +448,15 @@ export default function OpenClawSkillsPage() {
         {/* 统计 */}
         <div className="flex justify-center gap-10 mb-8">
           <div>
-            <div className="text-2xl font-bold text-orange-500">{skills.length}+</div>
+            <div className="text-2xl font-bold text-indigo-600">{skills.length}+</div>
             <div className="text-sm text-gray-400">精选技能</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-orange-500">{mustCount}</div>
+            <div className="text-2xl font-bold text-indigo-600">{mustCount}</div>
             <div className="text-sm text-gray-400">⭐ 必装</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-orange-500">{hotCount}</div>
+            <div className="text-2xl font-bold text-indigo-600">{hotCount}</div>
             <div className="text-sm text-gray-400">🔥 热门</div>
           </div>
         </div>
@@ -472,7 +472,7 @@ export default function OpenClawSkillsPage() {
             placeholder="搜索技能..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-white shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-white shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
         </div>
       </section>
@@ -485,8 +485,8 @@ export default function OpenClawSkillsPage() {
             onClick={() => { setActiveFilter("全部"); setActiveCategory("全部"); }}
             className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
               activeFilter === "全部" && activeCategory === "全部"
-                ? "bg-orange-500 text-white border-orange-500 shadow"
-                : "bg-white border-gray-200 text-gray-600 hover:border-orange-300"
+                ? "bg-indigo-600 text-white border-indigo-600 shadow"
+                : "bg-white border-gray-200 text-gray-600 hover:border-indigo-300"
             }`}
           >
             全部
@@ -503,8 +503,8 @@ export default function OpenClawSkillsPage() {
               onClick={() => { setActiveFilter(f.key); setActiveCategory("全部"); }}
               className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
                 activeFilter === f.key
-                  ? "bg-orange-500 text-white border-orange-500 shadow"
-                  : "bg-white border-gray-200 text-gray-600 hover:border-orange-300"
+                  ? "bg-indigo-600 text-white border-indigo-600 shadow"
+                  : "bg-white border-gray-200 text-gray-600 hover:border-indigo-300"
               }`}
             >
               {f.label}
@@ -520,8 +520,8 @@ export default function OpenClawSkillsPage() {
               onClick={() => { setActiveCategory(cat); setActiveFilter("全部"); }}
               className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
                 activeCategory === cat
-                  ? "bg-gray-800 text-white border-gray-800"
-                  : "bg-white border-gray-200 text-gray-600 hover:border-gray-400"
+                  ? "bg-indigo-600 text-white border-indigo-600 shadow"
+                  : "bg-white border-gray-200 text-gray-600 hover:border-indigo-300"
               }`}
             >
               {cat}
@@ -537,7 +537,7 @@ export default function OpenClawSkillsPage() {
           {filtered.map((skill) => (
             <div
               key={skill.id}
-              className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-orange-200 transition-all flex flex-col"
+              className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all flex flex-col"
             >
               {/* 标题行 */}
               <div className="flex items-center gap-2 mb-2">
@@ -576,7 +576,7 @@ export default function OpenClawSkillsPage() {
         </div>
 
         {/* 底部说明 */}
-        <div className="mt-12 text-center bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100 rounded-2xl p-8">
+        <div className="mt-12 text-center bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-2xl p-8">
           <div className="text-3xl mb-3">🦞</div>
           <h3 className="text-lg font-bold text-gray-900 mb-2">
             如何安装技能？
