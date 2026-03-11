@@ -185,7 +185,7 @@ export default function TagPageClient({ initialTag }: TagPageClientProps) {
               <Sparkles size={10} className="text-white" />
             </div>
             <span className="font-medium text-gray-700">AI Shorts</span>
-            <span>© 2025</span>
+            <span>© 2026</span>
           </div>
         </div>
       </footer>

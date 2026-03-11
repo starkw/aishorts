@@ -194,7 +194,7 @@ export default function HomePage() {
               <Sparkles size={10} className="text-white" />
             </div>
             <span className="font-medium text-gray-700">AI Shorts</span>
-            <span>© 2025</span>
+            <span>© 2026</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
