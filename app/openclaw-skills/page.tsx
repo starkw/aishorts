@@ -632,7 +632,7 @@ export default function OpenClawSkillsPage() {
               {[
                 { date: "2025.11", icon: "🚀", text: "雏形诞生，奥地利程序员的周末开源项目。" },
                 { date: "2026.01", icon: "🔥", text: "经历更名风波定名 OpenClaw，演示视频火爆全网。" },
-                { date: "2026.03", icon: "⭐", text: "GitHub 超 18.6 万 Stars（超越 React 登顶），全国出现"排队代装龙虾"奇观。" },
+                { date: "2026.03", icon: "⭐", text: 'GitHub 超 18.6 万 Stars（超越 React 登顶），全国出现「排队代装龙虾」奇观。' },
               ].map((item) => (
                 <div key={item.date} className="flex gap-3">
                   <div className="flex-shrink-0 w-16 text-xs font-bold text-green-700 pt-0.5">{item.date}</div>
