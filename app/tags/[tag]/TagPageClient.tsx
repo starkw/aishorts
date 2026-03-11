@@ -50,11 +50,14 @@ export default function TagPageClient({ initialTag }: TagPageClientProps) {
   };
 
   const filteredPrompts = useMemo(() => {
+    const q = search.toLowerCase();
     return prompts.filter((p) => {
       const matchSearch =
-        search === "" ||
-        p.title.toLowerCase().includes(search.toLowerCase()) ||
-        p.description.toLowerCase().includes(search.toLowerCase());
+        q === "" ||
+        p.title.toLowerCase().includes(q) ||
+        p.description.toLowerCase().includes(q) ||
+        p.prompt.toLowerCase().includes(q) ||
+        p.tags.some((t) => t.toLowerCase().includes(q));
       const matchTag = selectedTag === null || p.tags.includes(selectedTag);
       return matchSearch && matchTag;
     });
