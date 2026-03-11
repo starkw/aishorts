@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { TAGS, type Tag } from "@/data/prompts";
 import { LayoutGrid } from "lucide-react";
+import Link from "next/link";
 
 interface TagFilterProps {
   selectedTag: Tag | null;
@@ -12,6 +13,7 @@ interface TagFilterProps {
 export default function TagFilter({ selectedTag, onTagSelect }: TagFilterProps) {
   return (
     <div className="flex flex-wrap gap-2">
+      {/* 全部按钮 - 使用 button（主页内筛选） */}
       <button
         onClick={() => onTagSelect(null)}
         className={cn(
@@ -25,9 +27,14 @@ export default function TagFilter({ selectedTag, onTagSelect }: TagFilterProps) 
         全部
       </button>
       {TAGS.map((tag) => (
-        <button
+        // 使用 <a> 标签让爬虫能发现 /tags/xxx 页面，同时保留点击筛选功能
+        <Link
           key={tag}
-          onClick={() => onTagSelect(selectedTag === tag ? null : tag)}
+          href={`/tags/${encodeURIComponent(tag)}`}
+          onClick={(e) => {
+            e.preventDefault();
+            onTagSelect(selectedTag === tag ? null : tag);
+          }}
           className={cn(
             "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
             selectedTag === tag
@@ -36,7 +43,7 @@ export default function TagFilter({ selectedTag, onTagSelect }: TagFilterProps) 
           )}
         >
           {tag}
-        </button>
+        </Link>
       ))}
     </div>
   );
