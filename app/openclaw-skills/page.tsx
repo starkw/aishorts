@@ -435,9 +435,6 @@ export default function OpenClawSkillsPage() {
     <main className="min-h-screen bg-gradient-to-b from-indigo-50/40 to-white">
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-4 pt-12 pb-8 text-center">
-        <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 rounded-full px-4 py-1.5 text-sm text-indigo-600 font-medium mb-5">
-          🦞 OpenClaw 技能市场
-        </div>
         <h1 className="text-4xl font-bold text-gray-900 mb-3">
           龙虾技能包商店
         </h1>
