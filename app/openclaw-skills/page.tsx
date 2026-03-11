@@ -593,6 +593,139 @@ export default function OpenClawSkillsPage() {
           </div>
         </div>
       </section>
+
+      {/* 什么是龙虾？科普模块 */}
+      <section className="max-w-5xl mx-auto px-4 pb-24">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">什么是 OpenClaw（龙虾AI）？</h2>
+          <p className="text-gray-500">从"动嘴"到"动手"，AI 智能体（Agent）的历史拐点</p>
+        </div>
+
+        {/* Section 1: 核心定义 */}
+        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 mb-6">
+          <div className="text-sm font-bold text-blue-600 mb-4 uppercase tracking-wide">Section 1 · 核心定义</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-xl p-4 border border-blue-100">
+              <div className="text-2xl mb-2">🧭</div>
+              <div className="font-semibold text-gray-800 mb-1">过去的 AI（军师）</div>
+              <p className="text-sm text-gray-500">你问怎么订机票，它给你列出步骤，你得自己去点。只会出主意，不会动手。</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 border border-blue-100">
+              <div className="text-2xl mb-2">🦞</div>
+              <div className="font-semibold text-gray-800 mb-1">现在的龙虾（OpenClaw）</div>
+              <p className="text-sm text-gray-500">你说"帮我订明天去北京的机票"，它直接接管你的系统，自动打开软件、比价、填信息，最后让你确认。</p>
+            </div>
+          </div>
+          <div className="mt-4 text-center">
+            <span className="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-4 py-1.5 rounded-full border border-yellow-200">
+              军师 vs 秘书 — 从建议到执行的跨越
+            </span>
+          </div>
+        </div>
+
+        {/* Section 2 & 3: 时间线 + 交互模式 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          {/* 狂飙时间线 */}
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
+            <div className="text-sm font-bold text-green-600 mb-4 uppercase tracking-wide">Section 2 · 狂飙时间线</div>
+            <div className="space-y-4">
+              {[
+                { date: "2025.11", icon: "🚀", text: "雏形诞生，奥地利程序员的周末开源项目。" },
+                { date: "2026.01", icon: "🔥", text: "经历更名风波定名 OpenClaw，演示视频火爆全网。" },
+                { date: "2026.03", icon: "⭐", text: "GitHub 超 18.6 万 Stars（超越 React 登顶），全国出现"排队代装龙虾"奇观。" },
+              ].map((item) => (
+                <div key={item.date} className="flex gap-3">
+                  <div className="flex-shrink-0 w-16 text-xs font-bold text-green-700 pt-0.5">{item.date}</div>
+                  <div className="text-lg">{item.icon}</div>
+                  <p className="text-sm text-gray-600">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 交互模式对比 */}
+          <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
+            <div className="text-sm font-bold text-red-500 mb-4 uppercase tracking-wide">Section 3 · 交互模式对比</div>
+            <div className="space-y-4">
+              <div className="bg-blue-100 rounded-xl p-3">
+                <div className="text-xs font-bold text-blue-700 mb-1">军师模式：人机交互，需要人工执行</div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <span>AI 建议</span>
+                  <span className="text-gray-400">→</span>
+                  <span className="text-red-500">人工操作</span>
+                </div>
+              </div>
+              <div className="bg-indigo-100 rounded-xl p-3">
+                <div className="text-xs font-bold text-indigo-700 mb-1">秘书模式：AI 自主执行，无需人工干预</div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <span>AI 决策</span>
+                  <span className="text-gray-400">→</span>
+                  <span className="text-green-600">自动操作</span>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 text-center pt-1">从"动嘴"到"动手"的范式跃迁</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 4: 核心能力 */}
+        <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6 mb-6">
+          <div className="text-sm font-bold text-purple-600 mb-4 uppercase tracking-wide">Section 4 · 核心能力</div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {[
+              { icon: "🧠", label: "多步推理能力" },
+              { icon: "🤖", label: "自动化执行能力" },
+              { icon: "☁️", label: "跨应用调用能力" },
+              { icon: "⏰", label: "7×24 小时在线" },
+              { icon: "💰", label: "低代码部署" },
+              { icon: "📋", label: "可审计操作日志" },
+            ].map((item) => (
+              <div key={item.label} className="bg-white rounded-xl p-3 flex items-center gap-3 border border-purple-100">
+                <span className="text-xl">{item.icon}</span>
+                <span className="text-sm font-medium text-gray-700">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Section 5: 底层原理 */}
+        <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 mb-6">
+          <div className="text-sm font-bold text-gray-600 mb-4 uppercase tracking-wide">Section 5 · 底层原理：手脑分离架构</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-white rounded-xl p-4 border border-gray-200">
+              <div className="text-lg mb-1">🦾 躯壳（执行层）</div>
+              <p className="text-sm text-gray-500">OpenClaw 软件本身，负责"看"屏幕并模拟鼠标键盘操作。</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 border border-gray-200">
+              <div className="text-lg mb-1">🧠 大脑（思考层）</div>
+              <p className="text-sm text-gray-500">灵活插拔的大模型（如 DeepSeek、MiniMax、Kimi），负责理解意图，指挥躯壳去点击。</p>
+            </div>
+          </div>
+          <div className="mt-4 bg-white rounded-xl p-4 border border-gray-200">
+            <div className="text-sm font-semibold text-gray-700 mb-2">执行流程</div>
+            <div className="flex items-center gap-2 flex-wrap text-sm text-gray-600">
+              <span className="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-lg">1. 用户下达意图</span>
+              <span className="text-gray-400">→</span>
+              <span className="bg-purple-50 text-purple-700 px-2 py-1 rounded-lg">2. AI 大脑理解任务</span>
+              <span className="text-gray-400">→</span>
+              <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-lg">3. 指挥执行系统</span>
+              <span className="text-gray-400">→</span>
+              <span className="bg-green-50 text-green-700 px-2 py-1 rounded-lg">4. 完成自动化操作</span>
+            </div>
+          </div>
+        </div>
+
+        {/* 黄金结论 */}
+        <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border border-yellow-200 rounded-2xl p-6 text-center">
+          <div className="text-2xl mb-3">💡</div>
+          <h3 className="text-lg font-bold text-gray-900 mb-2">黄金结论</h3>
+          <p className="text-gray-600 max-w-xl mx-auto">
+            它不再是极客的代码玩具，而是实打实的生产力工具。<br />
+            UI 界面不再是给人看的，而是给 AI "点"的。
+          </p>
+          <p className="text-sm text-gray-400 mt-3">黄仁勋称其为"这个时代最重要的软件发布"</p>
+        </div>
+      </section>
     </main>
   );
 }
