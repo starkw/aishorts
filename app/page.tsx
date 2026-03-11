@@ -89,7 +89,7 @@ export default function HomePage() {
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
               让 AI 对话更高效
-            </h1>
+          </h1>
             <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto">
               精选高质量提示词，一键复制，立刻提升你的 AI 使用效率
             </p>
@@ -177,7 +177,7 @@ export default function HomePage() {
                 setShowFavoritesOnly(false);
               }}
               className="px-4 py-2 bg-indigo-600 text-white text-sm rounded-lg hover:bg-indigo-700 transition-colors"
-            >
+          >
               清除所有筛选
             </button>
           </div>
@@ -206,6 +206,6 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-    </main>
+      </main>
   );
 }
