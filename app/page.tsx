@@ -9,7 +9,7 @@ import SearchBar from "@/components/SearchBar";
 import TagFilter from "@/components/TagFilter";
 import Link from "next/link";
 
-type SortType = "default" | "popular" | "newest";
+type SortType = "popular" | "newest";
 
 export default function HomePage() {
   const { data: session } = useSession();
@@ -17,7 +17,7 @@ export default function HomePage() {
   const [selectedTag, setSelectedTag] = useState<Tag | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
-  const [sortType, setSortType] = useState<SortType>("default");
+  const [sortType, setSortType] = useState<SortType>("popular");
 
   // 加载收藏：登录用云端，未登录用 localStorage
   useEffect(() => {
@@ -74,12 +74,11 @@ export default function HomePage() {
       return matchSearch && matchTag && matchFav;
     });
 
-    if (sortType === "popular") {
-      return [...filtered].sort((a, b) => b.usageCount - a.usageCount);
-    } else if (sortType === "newest") {
+    if (sortType === "newest") {
       return [...filtered].sort((a, b) => Number(b.id) - Number(a.id));
     }
-    return filtered;
+    // popular（默认）
+    return [...filtered].sort((a, b) => b.usageCount - a.usageCount);
   }, [search, selectedTag, showFavoritesOnly, favorites, sortType]);
 
   const handleTagClick = (tag: Tag) => {
@@ -175,16 +174,6 @@ export default function HomePage() {
           <div className="flex items-center gap-2">
             {/* 排序按钮组 */}
             <div className="flex items-center gap-1 bg-white border border-gray-200 rounded-full px-1 py-1">
-              <button
-                onClick={() => setSortType("default")}
-                className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
-                  sortType === "default"
-                    ? "bg-indigo-600 text-white"
-                    : "text-gray-500 hover:text-indigo-600"
-                }`}
-              >
-                默认
-              </button>
               <button
                 onClick={() => setSortType("popular")}
                 className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
