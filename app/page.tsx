@@ -2,11 +2,14 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { useSession } from "next-auth/react";
-import { Sparkles, TrendingUp, Users, Zap } from "lucide-react";
-import { prompts, type Tag } from "@/data/prompts";
+import { Sparkles, TrendingUp, Users, Zap, Flame, Clock, ArrowRight } from "lucide-react";
+import { prompts, TAGS, type Tag } from "@/data/prompts";
 import PromptCard from "@/components/PromptCard";
 import SearchBar from "@/components/SearchBar";
 import TagFilter from "@/components/TagFilter";
+import Link from "next/link";
+
+type SortType = "default" | "popular" | "newest";
 
 export default function HomePage() {
   const { data: session } = useSession();
@@ -14,6 +17,7 @@ export default function HomePage() {
   const [selectedTag, setSelectedTag] = useState<Tag | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+  const [sortType, setSortType] = useState<SortType>("default");
 
   // 加载收藏：登录用云端，未登录用 localStorage
   useEffect(() => {
@@ -55,10 +59,10 @@ export default function HomePage() {
     }
   };
 
-  // 筛选逻辑
+  // 筛选 + 排序逻辑
   const filteredPrompts = useMemo(() => {
     const q = search.toLowerCase();
-    return prompts.filter((p) => {
+    const filtered = prompts.filter((p) => {
       const matchSearch =
         q === "" ||
         p.title.toLowerCase().includes(q) ||
@@ -69,7 +73,14 @@ export default function HomePage() {
       const matchFav = !showFavoritesOnly || favorites.includes(p.id);
       return matchSearch && matchTag && matchFav;
     });
-  }, [search, selectedTag, showFavoritesOnly, favorites]);
+
+    if (sortType === "popular") {
+      return [...filtered].sort((a, b) => b.usageCount - a.usageCount);
+    } else if (sortType === "newest") {
+      return [...filtered].sort((a, b) => Number(b.id) - Number(a.id));
+    }
+    return filtered;
+  }, [search, selectedTag, showFavoritesOnly, favorites, sortType]);
 
   const handleTagClick = (tag: Tag) => {
     setSelectedTag((prev) => (prev === tag ? null : tag));
@@ -112,7 +123,7 @@ export default function HomePage() {
             </div>
             <div className="w-px bg-gray-200" />
             <div>
-              <div className="text-2xl font-bold text-indigo-600">16</div>
+              <div className="text-2xl font-bold text-indigo-600">{TAGS.length}</div>
               <div className="text-xs text-gray-500 mt-0.5">覆盖分类</div>
             </div>
           </div>
@@ -120,6 +131,35 @@ export default function HomePage() {
           {/* 搜索框 */}
           <SearchBar value={search} onChange={setSearch} />
         </div>
+      </section>
+
+      {/* 🦞 OpenClaw 专区 Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+        <Link
+          href="/tags/OpenClaw"
+          className="group flex items-center justify-between gap-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-2xl px-5 py-4 sm:px-7 sm:py-5 transition-all shadow-md hover:shadow-lg"
+        >
+          <div className="flex items-center gap-4">
+            <span className="text-4xl sm:text-5xl">🦞</span>
+            <div>
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="text-white font-bold text-base sm:text-lg leading-tight">
+                  OpenClaw 龙虾AI · 提示词专区
+                </span>
+                <span className="hidden sm:inline-flex items-center gap-1 bg-white/20 text-white text-xs font-medium px-2 py-0.5 rounded-full">
+                  🔥 全网最热
+                </span>
+              </div>
+              <p className="text-indigo-100 text-xs sm:text-sm">
+                20条实测提示词 · 自动抢票 / 自动发周报 / 自动监控竞品…
+              </p>
+            </div>
+          </div>
+          <div className="flex-shrink-0 flex items-center gap-1 text-white/80 group-hover:text-white text-sm font-medium transition-colors">
+            <span className="hidden sm:inline">查看全部</span>
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </div>
+        </Link>
       </section>
 
       {/* Main Content */}
@@ -133,6 +173,41 @@ export default function HomePage() {
             </span>
           </div>
           <div className="flex items-center gap-2">
+            {/* 排序按钮组 */}
+            <div className="flex items-center gap-1 bg-white border border-gray-200 rounded-full px-1 py-1">
+              <button
+                onClick={() => setSortType("default")}
+                className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
+                  sortType === "default"
+                    ? "bg-indigo-600 text-white"
+                    : "text-gray-500 hover:text-indigo-600"
+                }`}
+              >
+                默认
+              </button>
+              <button
+                onClick={() => setSortType("popular")}
+                className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
+                  sortType === "popular"
+                    ? "bg-indigo-600 text-white"
+                    : "text-gray-500 hover:text-indigo-600"
+                }`}
+              >
+                <Flame size={11} />
+                热门
+              </button>
+              <button
+                onClick={() => setSortType("newest")}
+                className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
+                  sortType === "newest"
+                    ? "bg-indigo-600 text-white"
+                    : "text-gray-500 hover:text-indigo-600"
+                }`}
+              >
+                <Clock size={11} />
+                最新
+              </button>
+            </div>
             <button
               onClick={() => {
                 setShowFavoritesOnly(!showFavoritesOnly);
