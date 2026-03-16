@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { useSession } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 import { Sparkles, TrendingUp, Users, Zap, Flame, Clock, ArrowRight } from "lucide-react";
 import { prompts, TAGS, type Tag } from "@/data/prompts";
 import PromptCard from "@/components/PromptCard";
@@ -13,11 +14,20 @@ type SortType = "popular" | "newest";
 
 export default function HomePage() {
   const { data: session } = useSession();
+  const searchParams = useSearchParams();
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] = useState<Tag | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const [sortType, setSortType] = useState<SortType>("popular");
+
+  // 检测 URL 参数 ?favorites=1，自动激活收藏筛选
+  useEffect(() => {
+    if (searchParams.get("favorites") === "1") {
+      setShowFavoritesOnly(true);
+      setSelectedTag(null);
+    }
+  }, [searchParams]);
 
   // 加载收藏：登录用云端，未登录用 localStorage
   useEffect(() => {
@@ -204,11 +214,16 @@ export default function HomePage() {
               }}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all border ${
                 showFavoritesOnly
-                  ? "bg-red-500 text-white border-red-500"
+                  ? "bg-red-500 text-white border-red-500 shadow-sm"
                   : "bg-white text-gray-600 border-gray-200 hover:border-red-300 hover:text-red-500"
               }`}
             >
-              ❤️ 我的收藏 {favorites.length > 0 && `(${favorites.length})`}
+              {showFavoritesOnly ? "❤️" : "🤍"} 我的收藏
+              {favorites.length > 0 && (
+                <span className={`text-xs px-1.5 py-0.5 rounded-full ${showFavoritesOnly ? "bg-white/20" : "bg-red-100 text-red-500"}`}>
+                  {favorites.length}
+                </span>
+              )}
             </button>
           </div>
         </div>

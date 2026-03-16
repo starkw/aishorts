@@ -38,8 +38,10 @@ export default function Header() {
               全部提示词
             </Link>
             <Link
-              href="/"
-              className="hover:text-indigo-600 transition-colors flex items-center gap-1"
+              href="/?favorites=1"
+              className={`transition-colors flex items-center gap-1 ${
+                pathname === "/" ? "hover:text-indigo-600" : "hover:text-indigo-600"
+              }`}
             >
               <Heart size={14} />
               我的收藏
