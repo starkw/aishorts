@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Github, Heart, Share2, MessageSquare, Zap } from "lucide-react";
+import { Sparkles, Github, Share2, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -36,15 +36,6 @@ export default function Header() {
               }`}
             >
               全部提示词
-            </Link>
-            <Link
-              href="/?favorites=1"
-              className={`transition-colors flex items-center gap-1 ${
-                pathname === "/" ? "hover:text-indigo-600" : "hover:text-indigo-600"
-              }`}
-            >
-              <Heart size={14} />
-              我的收藏
             </Link>
             <Link
               href="/feedback"
