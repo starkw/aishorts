@@ -1287,51 +1287,6 @@ const skills = [
   })),
 ];
 
-const categories = ["创作", "办公", "开发", "设计", "营销", "文档", "AI工具"];
-
-// 分类映射：将细分类目映射到主要分类
-const categoryMap: Record<string, string> = {
-  // 创作相关
-  "创作": "创作",
-  "创意": "创作",
-  "写作": "创作",
-  "内容": "创作",
-  "社媒": "创作",
-  "社交": "创作",
-  // 办公相关
-  "办公": "办公",
-  "研究": "办公",
-  "生活": "办公",
-  "企业": "办公",
-  "项目管理": "办公",
-  "协作": "办公",
-  // 开发相关
-  "开发": "开发",
-  "前端": "开发",
-  "移动": "开发",
-  "数据库": "开发",
-  "测试": "开发",
-  "安全": "开发",
-  "部署": "开发",
-  "工具": "开发",
-  "云服务": "开发",
-  "自动化": "开发",
-  "集成": "开发",
-  "数据": "开发",
-  "质量": "开发",
-  // 设计相关
-  "设计": "设计",
-  "UI": "设计",
-  // 营销相关
-  "营销": "营销",
-  "SEO": "营销",
-  "分析": "营销",
-  // 文档相关
-  "文档": "文档",
-  // AI工具相关
-  "AI工具": "AI工具",
-};
-
 const tagConfig: Record<string, { label: string; className: string }> = {
   必装: { label: "⭐ 必装", className: "bg-yellow-100 text-yellow-700" },
   热门: { label: "🔥 热门", className: "bg-orange-100 text-orange-600" },
@@ -1364,24 +1319,19 @@ function CopyButton({ cmd }: { cmd: string }) {
 
 export default function OpenClawSkillsPage() {
   const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState("全部");
   const [activeFilter, setActiveFilter] = useState("全部");
 
   const filtered = skills.filter((s) => {
     const matchSearch =
       s.name.toLowerCase().includes(search.toLowerCase()) ||
       s.description.includes(search);
-    // 使用分类映射，将细分类目映射到主要分类
-    const mappedCategory = categoryMap[s.category] || s.category;
-    const matchCategory =
-      activeCategory === "全部" || mappedCategory === activeCategory;
     const matchFilter =
       activeFilter === "全部" ||
       (activeFilter === "必装" && s.tags.includes("必装")) ||
       (activeFilter === "热门" && s.tags.includes("热门")) ||
       (activeFilter === "社区" && s.tags.includes("社区")) ||
       (activeFilter === "Skills.sh" && s.tags.includes("Skills.sh"));
-    return matchSearch && matchCategory && matchFilter;
+    return matchSearch && matchFilter;
   });
 
   const mustCount = skills.filter((s) => s.tags.includes("必装")).length;
@@ -1441,9 +1391,9 @@ export default function OpenClawSkillsPage() {
         <div className="flex gap-2 flex-wrap items-center">
           {/* 全部 — 重置所有筛选 */}
           <button
-            onClick={() => { setActiveFilter("全部"); setActiveCategory("全部"); }}
+            onClick={() => { setActiveFilter("全部"); }}
             className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
-              activeFilter === "全部" && activeCategory === "全部"
+              activeFilter === "全部"
                 ? "bg-indigo-600 text-white border-indigo-600 shadow"
                 : "bg-white border-gray-200 text-gray-600 hover:border-indigo-300"
             }`}
@@ -1460,7 +1410,7 @@ export default function OpenClawSkillsPage() {
           ].map((f) => (
             <button
               key={f.key}
-              onClick={() => { setActiveFilter(f.key); setActiveCategory("全部"); }}
+              onClick={() => { setActiveFilter(f.key); }}
               className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
                 activeFilter === f.key
                   ? "bg-indigo-600 text-white border-indigo-600 shadow"
@@ -1468,23 +1418,6 @@ export default function OpenClawSkillsPage() {
               }`}
             >
               {f.label}
-            </button>
-          ))}
-
-          <span className="w-px h-4 bg-gray-200 mx-1" />
-
-          {/* 场景分类 */}
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => { setActiveCategory(cat); setActiveFilter("全部"); }}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-all border ${
-                activeCategory === cat
-                  ? "bg-indigo-600 text-white border-indigo-600 shadow"
-                  : "bg-white border-gray-200 text-gray-600 hover:border-indigo-300"
-              }`}
-            >
-              {cat}
             </button>
           ))}
         </div>
