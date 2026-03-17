@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Search, Copy, Check } from "lucide-react";
+import { skillsShTop100 } from "@/data/skills-sh-top100";
 
 const skills = [
   // 必装
@@ -376,14 +377,923 @@ const skills = [
     tags: ["社区"],
     category: "社媒",
   },
+  // ========== Skills.sh 热门技能（AI Agent 开放技能生态） ==========
+  {
+    id: 100,
+    emoji: "🔍",
+    name: "Skills 技能查找器",
+    description: "全球最大的开放 AI Agent 技能生态核心工具。587K+ 安装量，帮你在海量技能库中快速搜索、发现并安装所需技能，支持关键词和分类浏览。",
+    installCmd: "npx skills add vercel-labs/skills",
+    tags: ["Skills.sh", "热门"],
+    category: "AI工具",
+    downloads: "587K",
+  },
+  {
+    id: 101,
+    emoji: "⚛️",
+    name: "Vercel React 最佳实践",
+    description: "Vercel 官方出品的 React 开发最佳实践技能包。涵盖组件设计、状态管理、性能优化、SSR/SSG 策略，让 AI Agent 按 Vercel 标准写出高质量 React 代码。",
+    installCmd: "npx skills add vercel-labs/agent-skills",
+    tags: ["Skills.sh", "热门"],
+    category: "前端",
+    downloads: "218K",
+  },
+  {
+    id: 102,
+    emoji: "🎨",
+    name: "网页设计规范",
+    description: "Vercel 官方的网页设计指南技能。包括响应式布局、色彩体系、排版规范、组件一致性等，让 AI Agent 生成的页面符合专业设计标准。",
+    installCmd: "npx skills add vercel-labs/agent-skills",
+    tags: ["Skills.sh", "热门"],
+    category: "设计",
+    downloads: "173K",
+  },
+  {
+    id: 103,
+    emoji: "🖌️",
+    name: "前端设计指南（Anthropic）",
+    description: "Anthropic 官方出品的前端设计技能。教 AI Agent 如何从零构建美观的前端界面，涵盖 HTML/CSS/JS 最佳实践、动画交互、可访问性、现代 UI 模式。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh", "热门"],
+    category: "设计",
+    downloads: "166K",
+  },
+  {
+    id: 104,
+    emoji: "🎬",
+    name: "Remotion 视频制作",
+    description: "用代码制作视频的最佳实践。Remotion 官方技能包，让 AI Agent 掌握程序化视频生成、动画编排、批量渲染、字幕叠加等高级技巧。",
+    installCmd: "npx skills add remotion-dev/skills",
+    tags: ["Skills.sh", "热门"],
+    category: "创作",
+    downloads: "152K",
+  },
+  {
+    id: 105,
+    emoji: "☁️",
+    name: "Azure AI 服务",
+    description: "微软官方 Azure AI 技能包。涵盖 Azure OpenAI、认知服务、机器学习部署等。138K+ 安装量，企业级 AI 开发必备，让 Agent 熟练操作 Azure 云服务。",
+    installCmd: "npx skills add microsoft/github-copilot-for-azure",
+    tags: ["Skills.sh", "热门"],
+    category: "AI工具",
+    downloads: "138K",
+  },
+  {
+    id: 106,
+    emoji: "🌐",
+    name: "Agent 浏览器",
+    description: "Vercel 官方的 AI Agent 浏览器控制技能。让 Agent 能像人一样浏览网页、截图、提取信息、填写表单、自动化网页操作，是 Agent 上网冲浪的核心能力。",
+    installCmd: "npx skills add vercel-labs/agent-browser",
+    tags: ["Skills.sh", "热门"],
+    category: "AI工具",
+    downloads: "106K",
+  },
+  {
+    id: 107,
+    emoji: "🧩",
+    name: "Vercel 组合模式",
+    description: "Vercel 官方的 React 组合模式技能。教 Agent 掌握 Server Components、Client Components、Streaming、Partial Prerendering 等现代 React 架构模式。",
+    installCmd: "npx skills add vercel-labs/agent-skills",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "88K",
+  },
+  {
+    id: 108,
+    emoji: "🛠️",
+    name: "技能创建器（Anthropic）",
+    description: "Anthropic 官方出品的技能创建工具。帮你快速创建和发布自定义 AI Agent 技能，包含技能模板、测试框架和发布流程，人人都能成为技能开发者。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh", "热门"],
+    category: "AI工具",
+    downloads: "88K",
+  },
+  {
+    id: 109,
+    emoji: "✨",
+    name: "UI/UX 专业设计 Pro Max",
+    description: "66K+ 安装量的顶级 UI/UX 设计技能。让 AI Agent 具备专业设计师水平，精通色彩理论、字体搭配、间距节奏、响应式布局、微交互动效和可用性测试。",
+    installCmd: "npx skills add nextlevelbuilder/ui-ux-pro-max-skill",
+    tags: ["Skills.sh", "热门"],
+    category: "设计",
+    downloads: "66K",
+  },
+  {
+    id: 110,
+    emoji: "📱",
+    name: "React Native 开发",
+    description: "Vercel 官方 React Native 技能包。涵盖跨平台移动开发最佳实践、导航管理、原生模块桥接、性能调优、热更新，让 Agent 帮你写手机 App。",
+    installCmd: "npx skills add vercel-labs/agent-skills",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "62K",
+  },
+  {
+    id: 111,
+    emoji: "💡",
+    name: "头脑风暴",
+    description: "obra/superpowers 系列技能之一。帮助 AI Agent 进行结构化头脑风暴，从多角度发散思维、组织创意、评估可行性，产出高质量的创意方案。",
+    installCmd: "npx skills add obra/superpowers",
+    tags: ["Skills.sh"],
+    category: "办公",
+    downloads: "59K",
+  },
+  {
+    id: 112,
+    emoji: "🖼️",
+    name: "AI 图片生成（Skills.sh）",
+    description: "inferen-sh 出品的 AI 图片生成技能。支持文字描述生成图片、图片风格迁移、图片编辑等，集成多个主流图片生成模型，56K+ 安装量。",
+    installCmd: "npx skills add inferen-sh/skills",
+    tags: ["Skills.sh", "热门"],
+    category: "创作",
+    downloads: "56K",
+  },
+  {
+    id: 113,
+    emoji: "🤖",
+    name: "浏览器自动化",
+    description: "browser-use 官方技能包。50K+ 安装量，让 AI Agent 完全控制浏览器——自动登录、填表、爬取数据、截图、模拟点击，实现复杂的网页自动化流程。",
+    installCmd: "npx skills add browser-use/browser-use",
+    tags: ["Skills.sh", "热门"],
+    category: "AI工具",
+    downloads: "50K",
+  },
+  {
+    id: 114,
+    emoji: "📊",
+    name: "SEO 审计分析",
+    description: "45K+ 安装的专业 SEO 审计技能。让 Agent 自动检查网站的 SEO 健康度——分析 meta 标签、页面速度、移动端适配、关键词密度、反向链接，生成优化报告。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh", "热门"],
+    category: "营销",
+    downloads: "45K",
+  },
+  {
+    id: 115,
+    emoji: "📑",
+    name: "PDF 文档处理（Anthropic）",
+    description: "Anthropic 官方 PDF 处理技能。读取/解析/生成 PDF 文档，支持文本提取、表格识别、批量转换，办公必备。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "文档",
+    downloads: "41K",
+  },
+  {
+    id: 116,
+    emoji: "✍️",
+    name: "营销文案写作",
+    description: "coreyhaines31 营销系列技能之一。让 AI Agent 写出高转化率的营销文案——Landing Page、广告标题、产品描述、邮件营销、社媒推文，38K+ 安装。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "38K",
+  },
+  {
+    id: 117,
+    emoji: "📽️",
+    name: "PPT 演示文稿",
+    description: "Anthropic 官方 PPTX 处理技能。AI Agent 可以创建、编辑、美化 PowerPoint 演示文稿，支持模板、图表、动画，36K+ 安装量。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "文档",
+    downloads: "36K",
+  },
+  {
+    id: 118,
+    emoji: "🐘",
+    name: "Supabase 数据库最佳实践",
+    description: "Supabase 官方 Agent 技能包。让 AI Agent 精通 PostgreSQL 数据库设计、RLS 策略、Edge Functions、实时订阅、存储管理等 Supabase 全栈开发。",
+    installCmd: "npx skills add supabase/agent-skills",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "36K",
+  },
+  {
+    id: 119,
+    emoji: "▲",
+    name: "Next.js 最佳实践",
+    description: "Vercel 官方 Next.js 技能包。涵盖 App Router、Server Actions、中间件、缓存策略、ISR/SSG/SSR 最佳实践，按 Vercel 标准写 Next.js 应用。",
+    installCmd: "npx skills add vercel-labs/next-skills",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "36K",
+  },
+  {
+    id: 120,
+    emoji: "🛡️",
+    name: "网站安全审计",
+    description: "squirrelscan 出品的网站安全扫描技能。自动检测 XSS、CSRF、SQL 注入等安全漏洞，分析 HTTP 头安全配置，生成修复建议报告。",
+    installCmd: "npx skills add squirrelscan/skills",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "36K",
+  },
+  {
+    id: 121,
+    emoji: "🔧",
+    name: "系统化调试",
+    description: "obra/superpowers 系列。教 AI Agent 用系统化方法排查 Bug——二分法定位、日志分析、堆栈追踪、断点策略，从猜测式调试升级为科学调试。",
+    installCmd: "npx skills add obra/superpowers",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "32K",
+  },
+  {
+    id: 122,
+    emoji: "📝",
+    name: "Word 文档处理",
+    description: "Anthropic 官方 DOCX 技能。创建/编辑/转换 Word 文档，支持样式模板、表格、页眉页脚、批量文档处理，办公自动化利器。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "文档",
+    downloads: "32K",
+  },
+  {
+    id: 123,
+    emoji: "📋",
+    name: "写作计划",
+    description: "obra/superpowers 系列。帮 AI Agent 制定结构化写作计划——大纲设计、章节编排、论点组织、素材收集，适合长文/报告/论文写作前的系统规划。",
+    installCmd: "npx skills add obra/superpowers",
+    tags: ["Skills.sh"],
+    category: "创作",
+    downloads: "31K",
+  },
+  {
+    id: 124,
+    emoji: "📊",
+    name: "Excel 表格处理",
+    description: "Anthropic 官方 XLSX 技能。AI Agent 能读取/创建/编辑 Excel 表格，支持公式、图表、数据透视表、批量数据处理，数据分析必备。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "文档",
+    downloads: "29K",
+  },
+  {
+    id: 125,
+    emoji: "🧠",
+    name: "营销心理学",
+    description: "coreyhaines31 营销系列。让 AI Agent 掌握消费者心理学——锚定效应、社会认同、稀缺性、损失厌恶等 20+ 营销心理策略，写出更有说服力的文案。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "27K",
+  },
+  {
+    id: 126,
+    emoji: "🧪",
+    name: "测试驱动开发（TDD）",
+    description: "obra/superpowers 系列。教 AI Agent 实践 TDD——先写测试再写代码、红绿重构循环、单元测试/集成测试策略，写出更可靠的代码。",
+    installCmd: "npx skills add obra/superpowers",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "27K",
+  },
+  {
+    id: 127,
+    emoji: "🌐",
+    name: "Web 应用测试",
+    description: "Anthropic 官方 Web 应用测试技能。涵盖端到端测试、性能测试、可访问性测试、跨浏览器兼容性、自动化回归测试，保障应用质量。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "26K",
+  },
+  {
+    id: 128,
+    emoji: "🔗",
+    name: "程序化 SEO",
+    description: "coreyhaines31 营销系列。教 Agent 实现程序化 SEO——自动生成 Landing Page、动态 meta 标签、内链策略、Schema 标记，批量生产 SEO 内容。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "25K",
+  },
+  {
+    id: 129,
+    emoji: "📈",
+    name: "内容策略",
+    description: "coreyhaines31 营销系列。从内容定位到发布日历，全面的内容营销策略——受众分析、关键词规划、内容矩阵、分发渠道、效果追踪。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "25K",
+  },
+  {
+    id: 130,
+    emoji: "🔐",
+    name: "Better Auth 认证最佳实践",
+    description: "better-auth 官方技能包。让 AI Agent 掌握现代认证方案——OAuth、JWT、Session、MFA、社交登录、密码哈希，构建安全的用户认证系统。",
+    installCmd: "npx skills add better-auth/skills",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "24K",
+  },
+  {
+    id: 131,
+    emoji: "🎯",
+    name: "shadcn/ui 组件库",
+    description: "shadcn 官方技能包。让 AI Agent 精通 shadcn/ui 组件用法——安装配置、主题定制、组件组合、表单验证、暗色模式，React 项目 UI 开发首选。",
+    installCmd: "npx skills add shadcn/ui",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "22K",
+  },
+  {
+    id: 132,
+    emoji: "🔌",
+    name: "MCP 服务构建器",
+    description: "Anthropic 官方 MCP（Model Context Protocol）构建技能。教 Agent 创建自定义 MCP 服务器，扩展 AI 的工具调用能力，连接任意外部系统。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "AI工具",
+    downloads: "22K",
+  },
+  {
+    id: 133,
+    emoji: "📱",
+    name: "社媒内容创作",
+    description: "coreyhaines31 营销系列。帮 AI Agent 创作各平台社媒内容——Twitter/X、LinkedIn、Instagram 适配的文案风格、配图建议、发布时间策略。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "22K",
+  },
+  {
+    id: 134,
+    emoji: "💰",
+    name: "营销创意生成",
+    description: "coreyhaines31 营销系列。帮 Agent 快速生成营销创意——活动方案、推广角度、病毒式传播策略、跨界合作灵感，22K+ 安装。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "22K",
+  },
+  {
+    id: 135,
+    emoji: "🎨",
+    name: "Canvas 画布设计",
+    description: "Anthropic 官方 Canvas 设计技能。让 AI Agent 在 HTML5 Canvas 上绑制图表、信息图、数据可视化、交互动画，20K+ 安装。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "设计",
+    downloads: "20K",
+  },
+  {
+    id: 136,
+    emoji: "🎨",
+    name: "Tailwind 设计系统",
+    description: "wshobson/agents 出品。教 AI Agent 用 Tailwind CSS 构建完整设计系统——色彩 Token、间距规范、响应式断点、组件样式、暗色模式。",
+    installCmd: "npx skills add wshobson/agents",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "20K",
+  },
+  {
+    id: 137,
+    emoji: "✏️",
+    name: "文案编辑",
+    description: "coreyhaines31 营销系列。专业级文案润色和编辑——语法检查、语气调整、可读性优化、品牌一致性校验，21K+ 安装。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "21K",
+  },
+  {
+    id: 138,
+    emoji: "💲",
+    name: "定价策略",
+    description: "coreyhaines31 营销系列。帮 Agent 制定产品定价策略——竞品定价分析、心理定价、分级定价、促销策略、价值定位。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "21K",
+  },
+  {
+    id: 139,
+    emoji: "🚀",
+    name: "产品上线策略",
+    description: "coreyhaines31 营销系列。完整的产品发布策略——上线前预热、发布日执行清单、ProductHunt 策略、媒体联络、用户反馈收集。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "20K",
+  },
+  {
+    id: 140,
+    emoji: "🔥",
+    name: "Firecrawl 网页爬取",
+    description: "Firecrawl 官方技能包。让 AI Agent 强力爬取网页内容——绕过反爬、JavaScript 渲染、批量抓取、输出干净 Markdown/JSON，14K+ 安装。",
+    installCmd: "npx skills add firecrawl/cli",
+    tags: ["Skills.sh"],
+    category: "AI工具",
+    downloads: "14K",
+  },
+  {
+    id: 141,
+    emoji: "🤖",
+    name: "AI SDK 开发",
+    description: "Vercel AI SDK 官方技能包。教 Agent 使用 Vercel AI SDK 构建 AI 应用——流式输出、工具调用、结构化输出、多模型切换、聊天界面。",
+    installCmd: "npx skills add vercel/ai",
+    tags: ["Skills.sh"],
+    category: "AI工具",
+    downloads: "12K",
+  },
+  {
+    id: 142,
+    emoji: "📊",
+    name: "数据分析",
+    description: "supercent-io 技能模板。让 AI Agent 执行数据分析全流程——数据清洗、统计分析、可视化图表、趋势预测、报告生成。",
+    installCmd: "npx skills add supercent-io/skills-template",
+    tags: ["Skills.sh"],
+    category: "办公",
+    downloads: "12K",
+  },
+  {
+    id: 143,
+    emoji: "🎭",
+    name: "中文文本人性化",
+    description: "op7418 出品的中文 AI 文本去机器味技能。检测并改写 AI 生成的中文内容，让文风更加自然、口语化，适配小红书/知乎/公众号等平台风格。",
+    installCmd: "npx skills add op7418/humanizer-zh",
+    tags: ["Skills.sh"],
+    category: "创作",
+    downloads: "8.4K",
+  },
+  {
+    id: 144,
+    emoji: "🎭",
+    name: "Playwright 测试最佳实践",
+    description: "currents-dev 出品的 Playwright 测试技能。教 Agent 写出稳定的端到端测试——页面对象模式、网络拦截、视觉回归、并行执行、CI 集成。",
+    installCmd: "npx skills add currents-dev/playwright-best-practices-skill",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "11K",
+  },
+  {
+    id: 145,
+    emoji: "💚",
+    name: "Vue 最佳实践",
+    description: "Vue 生态技能包。涵盖 Vue 3 Composition API、Pinia 状态管理、Vue Router、组件设计模式、TypeScript 集成等最佳实践。",
+    installCmd: "npx skills add hyf0/vue-skills",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "9.8K",
+  },
+  {
+    id: 146,
+    emoji: "⚡",
+    name: "Vite 构建工具",
+    description: "antfu 出品的 Vite 技能包。教 Agent 精通 Vite 配置——插件开发、HMR 优化、构建优化、多页面应用、库模式打包。",
+    installCmd: "npx skills add antfu/skills",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "9.9K",
+  },
+  {
+    id: 147,
+    emoji: "🐘",
+    name: "Neon Postgres 数据库",
+    description: "Neon 官方 Agent 技能包。让 AI Agent 精通 Serverless Postgres——连接管理、分支策略、查询优化、迁移脚本、自动扩缩容。",
+    installCmd: "npx skills add neondatabase/agent-skills",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "9.3K",
+  },
+  {
+    id: 148,
+    emoji: "🧠",
+    name: "自我进化 Agent",
+    description: "charon-fan 出品。让 AI Agent 具备自我改进能力——分析历史对话、识别弱项、自动调整策略、持续优化表现，越用越聪明。",
+    installCmd: "npx skills add charon-fan/agent-playbook",
+    tags: ["Skills.sh"],
+    category: "AI工具",
+    downloads: "11K",
+  },
+  {
+    id: 149,
+    emoji: "🖥️",
+    name: "界面设计",
+    description: "dammyjay93 出品的专业界面设计技能。让 Agent 掌握完整的界面设计流程——信息架构、线框图、视觉设计、原型交互、设计规范输出。",
+    installCmd: "npx skills add dammyjay93/interface-design",
+    tags: ["Skills.sh"],
+    category: "设计",
+    downloads: "8.4K",
+  },
+  {
+    id: 150,
+    emoji: "🚀",
+    name: "部署到 Vercel",
+    description: "Vercel 官方部署技能。一键部署 Next.js/React/Vue 应用到 Vercel——域名绑定、环境变量、预览部署、自动 CI/CD、边缘函数配置。",
+    installCmd: "npx skills add vercel-labs/agent-skills",
+    tags: ["Skills.sh"],
+    category: "部署",
+    downloads: "8.5K",
+  },
+  {
+    id: 151,
+    emoji: "🔄",
+    name: "Git 工作流",
+    description: "supercent-io 技能模板。教 Agent 掌握专业的 Git 工作流——分支策略、Commit 规范、PR 流程、冲突解决、版本发布管理。",
+    installCmd: "npx skills add supercent-io/skills-template",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "11K",
+  },
+  {
+    id: 152,
+    emoji: "📧",
+    name: "邮件营销序列",
+    description: "coreyhaines31 营销系列。设计高转化率的邮件营销自动化序列——欢迎邮件、培育流程、促销活动、弃购挽回、再激活策略。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "19K",
+  },
+  {
+    id: 153,
+    emoji: "📱",
+    name: "Expo 原生 UI 构建",
+    description: "Expo 官方技能包。帮 Agent 使用 Expo 构建跨平台原生 UI——组件库、导航、手势交互、动画、原生模块，19K+ 安装。",
+    installCmd: "npx skills add expo/skills",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "19K",
+  },
+  {
+    id: 154,
+    emoji: "🏷️",
+    name: "Schema 结构化标记",
+    description: "coreyhaines31 营销系列。教 Agent 为网页添加 Schema.org 结构化数据——产品信息、评价、FAQ、面包屑，提升搜索引擎展示效果。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "19K",
+  },
+  {
+    id: 155,
+    emoji: "📰",
+    name: "宝玉发微信公众号",
+    description: "jimliu/baoyu-skills 系列。帮 AI Agent 自动撰写并发布微信公众号文章——排版、封面图、摘要、标签，12K+ 安装。",
+    installCmd: "npx skills add jimliu/baoyu-skills",
+    tags: ["Skills.sh"],
+    category: "社媒",
+    downloads: "12K",
+  },
+  {
+    id: 156,
+    emoji: "🖼️",
+    name: "宝玉 AI 配图",
+    description: "jimliu/baoyu-skills 系列。自动为文章生成高质量配图——风格匹配、尺寸适配、文字叠加，让每篇文章都有精美插图。",
+    installCmd: "npx skills add jimliu/baoyu-skills",
+    tags: ["Skills.sh"],
+    category: "创作",
+    downloads: "12K",
+  },
+  {
+    id: 157,
+    emoji: "📕",
+    name: "宝玉小红书配图",
+    description: "jimliu/baoyu-skills 系列。专门为小红书生成吸睛封面图和内容配图——符合小红书审美风格，提升点击率。",
+    installCmd: "npx skills add jimliu/baoyu-skills",
+    tags: ["Skills.sh"],
+    category: "社媒",
+    downloads: "11K",
+  },
+  {
+    id: 158,
+    emoji: "📊",
+    name: "宝玉信息图",
+    description: "jimliu/baoyu-skills 系列。自动生成数据信息图——图表、流程图、对比图、统计可视化，让数据更直观。",
+    installCmd: "npx skills add jimliu/baoyu-skills",
+    tags: ["Skills.sh"],
+    category: "创作",
+    downloads: "10K",
+  },
+  {
+    id: 159,
+    emoji: "🔍",
+    name: "AI SEO 优化",
+    description: "coreyhaines31 营销系列。针对 AI 搜索引擎优化——让内容被 ChatGPT、Perplexity、Gemini 等 AI 搜索引擎引用和推荐。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "12K",
+  },
+  {
+    id: 160,
+    emoji: "🔎",
+    name: "Tavily 智能搜索",
+    description: "Tavily AI 官方搜索技能。为 AI Agent 提供专门优化的实时网页搜索能力——比普通搜索更精准、更适合 Agent 理解和使用。",
+    installCmd: "npx skills add tavily-ai/skills",
+    tags: ["Skills.sh"],
+    category: "AI工具",
+    downloads: "12K",
+  },
+  {
+    id: 161,
+    emoji: "🎥",
+    name: "Seedance2 视频 API",
+    description: "hexiaochun 出品。集成 Seedance2 视频生成 API——文生视频、图生视频、视频编辑，高质量 AI 视频制作，12K+ 安装。",
+    installCmd: "npx skills add hexiaochun/seedance2-api",
+    tags: ["Skills.sh"],
+    category: "创作",
+    downloads: "12K",
+  },
+  {
+    id: 162,
+    emoji: "🏗️",
+    name: "Turborepo 单体仓库",
+    description: "Vercel Turborepo 官方技能包。让 Agent 精通 Monorepo 管理——任务编排、缓存策略、包管理、工作区配置，11K+ 安装。",
+    installCmd: "npx skills add vercel/turborepo",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "11K",
+  },
+  {
+    id: 163,
+    emoji: "🎯",
+    name: "广告创意",
+    description: "coreyhaines31 营销系列。帮 Agent 制作高效广告创意——Facebook/Google/TikTok 广告文案、视觉设计建议、A/B 测试方案。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "11K",
+  },
+  {
+    id: 164,
+    emoji: "🏷️",
+    name: "产品营销定位",
+    description: "coreyhaines31 营销系列。帮 Agent 制定产品营销定位——目标用户画像、价值主张、竞品差异化、品牌故事，23K+ 安装。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "23K",
+  },
+  {
+    id: 165,
+    emoji: "🏆",
+    name: "竞品替代方案",
+    description: "coreyhaines31 营销系列。帮 Agent 分析竞品替代方案——功能对比、定价比较、迁移策略、SEO 竞品页面，19K+ 安装。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "19K",
+  },
+  {
+    id: 166,
+    emoji: "👋",
+    name: "用户引导优化",
+    description: "coreyhaines31 营销系列。优化用户 Onboarding 流程——注册引导、功能介绍、首次体验、激活策略，19K+ 安装。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "19K",
+  },
+  {
+    id: 167,
+    emoji: "🎪",
+    name: "品牌视觉指南",
+    description: "Anthropic 官方品牌设计技能。帮 Agent 制定完整的品牌视觉规范——Logo 使用、色彩系统、字体规范、图片风格、设计模板。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "设计",
+    downloads: "14K",
+  },
+  {
+    id: 168,
+    emoji: "🎨",
+    name: "主题工厂",
+    description: "Anthropic 官方主题生成技能。帮 Agent 快速生成自定义 UI 主题——色彩方案、组件样式、暗色模式、品牌定制。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "设计",
+    downloads: "16K",
+  },
+  {
+    id: 169,
+    emoji: "🔄",
+    name: "代码重构",
+    description: "supercent-io 技能模板。教 Agent 进行专业的代码重构——提取函数/类、简化条件、消除重复、提升可读性，保持测试通过。",
+    installCmd: "npx skills add supercent-io/skills-template",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "11K",
+  },
+  {
+    id: 170,
+    emoji: "⚙️",
+    name: "工作流自动化",
+    description: "supercent-io 技能模板。教 Agent 设计和实现工作流自动化——CI/CD 管道、自动化脚本、任务调度、事件驱动流程。",
+    installCmd: "npx skills add supercent-io/skills-template",
+    tags: ["Skills.sh"],
+    category: "办公",
+    downloads: "12K",
+  },
+  {
+    id: 171,
+    emoji: "📖",
+    name: "API 文档生成",
+    description: "supercent-io 技能模板。帮 Agent 自动生成专业的 API 文档——OpenAPI/Swagger 规范、接口示例、错误码说明、使用指南。",
+    installCmd: "npx skills add supercent-io/skills-template",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "11K",
+  },
+  {
+    id: 172,
+    emoji: "📐",
+    name: "API 设计原则",
+    description: "wshobson/agents 出品。教 Agent 设计优秀的 RESTful/GraphQL API——命名规范、版本策略、分页设计、错误处理、认证方案。",
+    installCmd: "npx skills add wshobson/agents",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "10K",
+  },
+  {
+    id: 173,
+    emoji: "📝",
+    name: "技术写作",
+    description: "supercent-io 技能模板。教 Agent 写出专业技术文档——用户手册、开发指南、架构文档、变更日志，11K+ 安装。",
+    installCmd: "npx skills add supercent-io/skills-template",
+    tags: ["Skills.sh"],
+    category: "创作",
+    downloads: "11K",
+  },
+  {
+    id: 174,
+    emoji: "🍃",
+    name: "SwiftUI 专家",
+    description: "avdlee 出品的 SwiftUI 开发技能。让 Agent 精通 iOS/macOS 开发——视图组合、动画、数据流、Navigation、Widget，9K+ 安装。",
+    installCmd: "npx skills add avdlee/swiftui-agent-skill",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "9.1K",
+  },
+  {
+    id: 175,
+    emoji: "🦋",
+    name: "Flutter 动画",
+    description: "madteacher 出品的 Flutter 动画技能。教 Agent 实现流畅的 Flutter 动画效果——隐式/显式动画、Hero 过渡、自定义 Painter。",
+    installCmd: "npx skills add madteacher/mad-agents-skills",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "9.1K",
+  },
+  {
+    id: 176,
+    emoji: "🎯",
+    name: "Next.js App Router 模式",
+    description: "wshobson/agents 出品。深入 Next.js App Router 架构模式——布局嵌套、加载状态、错误边界、并行路由、拦截路由。",
+    installCmd: "npx skills add wshobson/agents",
+    tags: ["Skills.sh"],
+    category: "前端",
+    downloads: "8.8K",
+  },
+  {
+    id: 177,
+    emoji: "🏗️",
+    name: "架构模式",
+    description: "wshobson/agents 出品。教 Agent 掌握软件架构模式——微服务、事件驱动、CQRS、领域驱动设计、六边形架构、清洁架构。",
+    installCmd: "npx skills add wshobson/agents",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "8.6K",
+  },
+  {
+    id: 178,
+    emoji: "📄",
+    name: "文档协同写作",
+    description: "Anthropic 官方文档协作技能。帮 Agent 参与多人文档协作——版本追踪、评审标注、合并冲突、协作编辑，13K+ 安装。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "文档",
+    downloads: "13K",
+  },
+  {
+    id: 179,
+    emoji: "🎨",
+    name: "Web Artifacts 构建器",
+    description: "Anthropic 官方技能。帮 Agent 快速构建可交互的 Web 小工具/演示页面——独立 HTML/CSS/JS，无需框架，一键预览。",
+    installCmd: "npx skills add anthropics/skills",
+    tags: ["Skills.sh"],
+    category: "创作",
+    downloads: "15K",
+  },
+  {
+    id: 180,
+    emoji: "🐙",
+    name: "Git Commit 规范",
+    description: "GitHub 官方 awesome-copilot 技能。教 Agent 写出规范的 Git commit message——Conventional Commits、语义化版本、变更日志自动生成。",
+    installCmd: "npx skills add github/awesome-copilot",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "15K",
+  },
+  {
+    id: 181,
+    emoji: "📑",
+    name: "PRD 产品需求文档",
+    description: "GitHub 官方 awesome-copilot 技能。帮 Agent 撰写专业的产品需求文档——用户故事、功能规格、验收标准、技术约束，10K+ 安装。",
+    installCmd: "npx skills add github/awesome-copilot",
+    tags: ["Skills.sh"],
+    category: "办公",
+    downloads: "10K",
+  },
+  {
+    id: 182,
+    emoji: "🔄",
+    name: "代码重构（GitHub）",
+    description: "GitHub 官方 awesome-copilot 技能。专注大规模代码重构——安全重命名、提取模块、接口重构、向后兼容，9.4K 安装。",
+    installCmd: "npx skills add github/awesome-copilot",
+    tags: ["Skills.sh"],
+    category: "开发",
+    downloads: "9.4K",
+  },
+  {
+    id: 183,
+    emoji: "📊",
+    name: "Excalidraw 图表生成",
+    description: "GitHub 官方 awesome-copilot 技能。帮 Agent 生成 Excalidraw 手绘风格图表——流程图、架构图、思维导图、序列图，9.4K 安装。",
+    installCmd: "npx skills add github/awesome-copilot",
+    tags: ["Skills.sh"],
+    category: "设计",
+    downloads: "9.4K",
+  },
+  {
+    id: 184,
+    emoji: "📝",
+    name: "文档编写器（GitHub）",
+    description: "GitHub 官方 awesome-copilot 技能。帮 Agent 写出优质技术文档——README、贡献指南、部署文档、API 参考，9.3K 安装。",
+    installCmd: "npx skills add github/awesome-copilot",
+    tags: ["Skills.sh"],
+    category: "文档",
+    downloads: "9.3K",
+  },
+  {
+    id: 185,
+    emoji: "📊",
+    name: "分析追踪",
+    description: "coreyhaines31 营销系列。帮 Agent 设置和优化数据分析追踪——GA4、Mixpanel、Posthog 事件埋点、转化漏斗、用户行为分析。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "20K",
+  },
+  {
+    id: 186,
+    emoji: "💌",
+    name: "冷启动邮件",
+    description: "coreyhaines31 营销系列。帮 Agent 写出高回复率的冷启动邮件——个性化开头、价值钩子、CTA 设计、跟进序列，11K+ 安装。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "11K",
+  },
+  {
+    id: 187,
+    emoji: "🛒",
+    name: "免费工具获客策略",
+    description: "coreyhaines31 营销系列。教 Agent 用免费工具驱动增长——计算器、检查器、生成器等小工具吸引流量，转化为付费用户，18K 安装。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "18K",
+  },
+  {
+    id: 188,
+    emoji: "🔁",
+    name: "裂变推荐计划",
+    description: "coreyhaines31 营销系列。帮 Agent 设计用户推荐计划——奖励机制、邀请链接、层级奖励、反作弊策略，18K 安装。",
+    installCmd: "npx skills add coreyhaines31/marketingskills",
+    tags: ["Skills.sh"],
+    category: "营销",
+    downloads: "18K",
+  },
+  {
+    id: 189,
+    emoji: "💎",
+    name: "Sleek 移动端设计",
+    description: "sleekdotdesign 出品的移动端设计技能。让 Agent 做出苹果级的移动端 UI——圆角、模糊效果、手势交互、流畅动画，18K 安装。",
+    installCmd: "npx skills add sleekdotdesign/agent-skills",
+    tags: ["Skills.sh"],
+    category: "设计",
+    downloads: "18K",
+  },
+  // Skills.sh 热门前100个技能
+  ...skillsShTop100.map((skill, index) => ({
+    ...skill,
+    id: 190 + index, // 从190开始，避免ID冲突
+    tags: skill.tags || ["Skills.sh"],
+    downloads: skill.installs || "0",
+  })),
 ];
 
-const categories = ["创作", "社媒", "研究", "办公", "开发", "生活"];
+const categories = ["全部", "创作", "社媒", "研究", "办公", "开发", "生活", "前端", "营销", "设计", "文档", "AI工具", "部署", "工具", "云服务", "自动化", "创意", "企业", "移动", "数据库", "测试", "项目管理", "安全", "UI", "集成", "写作", "SEO", "分析", "质量", "内容", "协作", "数据", "社交"];
 
 const tagConfig: Record<string, { label: string; className: string }> = {
   必装: { label: "⭐ 必装", className: "bg-yellow-100 text-yellow-700" },
   热门: { label: "🔥 热门", className: "bg-orange-100 text-orange-600" },
   社区: { label: "社区", className: "bg-purple-50 text-purple-600" },
+  "Skills.sh": { label: "🌐 Skills.sh", className: "bg-blue-100 text-blue-600" },
 };
 
 function CopyButton({ cmd }: { cmd: string }) {
@@ -424,12 +1334,14 @@ export default function OpenClawSkillsPage() {
       activeFilter === "全部" ||
       (activeFilter === "必装" && s.tags.includes("必装")) ||
       (activeFilter === "热门" && s.tags.includes("热门")) ||
-      (activeFilter === "社区" && s.tags.includes("社区"));
+      (activeFilter === "社区" && s.tags.includes("社区")) ||
+      (activeFilter === "Skills.sh" && s.tags.includes("Skills.sh"));
     return matchSearch && matchCategory && matchFilter;
   });
 
   const mustCount = skills.filter((s) => s.tags.includes("必装")).length;
   const hotCount = skills.filter((s) => s.tags.includes("热门")).length;
+  const skillsShCount = skills.filter((s) => s.tags.includes("Skills.sh")).length;
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-indigo-50/40 to-white">
@@ -444,7 +1356,7 @@ export default function OpenClawSkillsPage() {
         </p>
 
         {/* 统计 */}
-        <div className="flex justify-center gap-10 mb-8">
+        <div className="flex justify-center gap-8 sm:gap-10 mb-8">
           <div>
             <div className="text-2xl font-bold text-indigo-600">{skills.length}+</div>
             <div className="text-sm text-gray-400">精选技能</div>
@@ -456,6 +1368,10 @@ export default function OpenClawSkillsPage() {
           <div>
             <div className="text-2xl font-bold text-indigo-600">{hotCount}</div>
             <div className="text-sm text-gray-400">🔥 热门</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-blue-600">{skillsShCount}</div>
+            <div className="text-sm text-gray-400">🌐 Skills.sh</div>
           </div>
         </div>
 
@@ -490,11 +1406,12 @@ export default function OpenClawSkillsPage() {
             全部
           </button>
 
-          {/* 快速筛选：必装 / 热门 / 社区 */}
+          {/* 快速筛选：必装 / 热门 / 社区 / Skills.sh */}
           {[
             { key: "必装", label: "⭐ 必装" },
             { key: "热门", label: "🔥 热门" },
             { key: "社区", label: "社区" },
+            { key: "Skills.sh", label: "🌐 Skills.sh" },
           ].map((f) => (
             <button
               key={f.key}
@@ -546,14 +1463,20 @@ export default function OpenClawSkillsPage() {
               </div>
 
               {/* 描述 */}
-              <p className="text-xs text-gray-500 leading-relaxed mb-3 flex-1 line-clamp-2">
+              <p className="text-xs text-gray-500 leading-relaxed mb-3 flex-1 line-clamp-3">
                 {skill.description}
               </p>
 
-              {/* 底部：标签 + 复制按钮 */}
+              {/* 安装命令 */}
+              <div className="bg-gray-50 border border-gray-100 rounded-lg px-3 py-2 mb-3 flex items-center justify-between gap-2">
+                <code className="text-xs text-gray-600 font-mono truncate flex-1">{skill.installCmd}</code>
+                <CopyButton cmd={skill.installCmd} />
+              </div>
+
+              {/* 底部：标签 + 下载量 */}
               <div className="flex items-center justify-between mt-auto">
                 <div className="flex flex-wrap gap-1">
-                  {skill.tags.map((tag) => (
+                  {skill.tags.map((tag: string) => (
                     <span
                       key={tag}
                       className={`text-xs px-2 py-0.5 rounded-full font-medium ${
@@ -567,28 +1490,54 @@ export default function OpenClawSkillsPage() {
                     {skill.category}
                   </span>
                 </div>
-                <CopyButton cmd={skill.installCmd} />
+                {(skill as any).downloads && (
+                  <span className="text-xs text-gray-400 font-medium flex items-center gap-1">
+                    ⬇ {(skill as any).downloads}
+                  </span>
+                )}
               </div>
             </div>
           ))}
         </div>
 
         {/* 底部说明 */}
-        <div className="mt-12 text-center bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-2xl p-8">
-          <div className="text-3xl mb-3">🦞</div>
-          <h3 className="text-lg font-bold text-gray-900 mb-2">
-            如何安装技能？
-          </h3>
-          <p className="text-sm text-gray-500 mb-4">
-            先全局安装 ClawHub CLI，再用 <code className="bg-gray-100 px-1 rounded text-xs">clawhub install</code> 命令安装技能
-          </p>
-          <div className="flex flex-col gap-2 items-center">
-            <div className="bg-white border border-gray-200 rounded-xl px-5 py-3 inline-block font-mono text-sm text-gray-700">
-              npm i -g clawhub
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* 龙虾技能安装 */}
+          <div className="text-center bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-2xl p-8">
+            <div className="text-3xl mb-3">🦞</div>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              龙虾技能安装
+            </h3>
+            <p className="text-sm text-gray-500 mb-4">
+              先安装 ClawHub CLI，再用 <code className="bg-gray-100 px-1 rounded text-xs">clawhub install</code> 安装
+            </p>
+            <div className="flex flex-col gap-2 items-center">
+              <div className="bg-white border border-gray-200 rounded-xl px-5 py-3 inline-block font-mono text-sm text-gray-700">
+                npm i -g clawhub
+              </div>
+              <div className="text-xs text-gray-400">然后执行</div>
+              <div className="bg-white border border-gray-200 rounded-xl px-5 py-3 inline-block font-mono text-sm text-gray-700">
+                clawhub install &lt;skill-name&gt;
+              </div>
             </div>
-            <div className="text-xs text-gray-400">然后复制上方命令，在终端执行即可</div>
-            <div className="bg-white border border-gray-200 rounded-xl px-5 py-3 inline-block font-mono text-sm text-gray-700">
-              clawhub install &lt;skill-name&gt;
+          </div>
+
+          {/* Skills.sh 安装 */}
+          <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl p-8">
+            <div className="text-3xl mb-3">🌐</div>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              Skills.sh 技能安装
+            </h3>
+            <p className="text-sm text-gray-500 mb-4">
+              无需安装 CLI，直接用 <code className="bg-gray-100 px-1 rounded text-xs">npx skills add</code> 一键安装
+            </p>
+            <div className="flex flex-col gap-2 items-center">
+              <div className="bg-white border border-gray-200 rounded-xl px-5 py-3 inline-block font-mono text-sm text-gray-700">
+                npx skills add &lt;owner/repo&gt;
+              </div>
+              <div className="text-xs text-gray-400 mt-1">
+                支持 Cursor / Claude Code / Windsurf / Copilot 等主流 AI Agent
+              </div>
             </div>
           </div>
         </div>

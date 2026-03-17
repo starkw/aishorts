@@ -1,0 +1,15 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 圆形背景，更现代 -->
+  <rect width="40" height="40" rx="12" fill="url(#g3)"/>
+  <!-- 四角星（代表AI魔法/提示词精华） -->
+  <path d="M20 7 L21.8 16.2 L31 18 L21.8 19.8 L20 29 L18.2 19.8 L9 18 L18.2 16.2 Z" fill="white"/>
+  <!-- 右下小星 -->
+  <path d="M28 25 L28.8 28.2 L32 29 L28.8 29.8 L28 33 L27.2 29.8 L24 29 L27.2 28.2 Z" fill="white" opacity="0.6"/>
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="0.5" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,13 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="40" height="40" rx="10" fill="url(#g2)"/>
+  <!-- AI 字母组合 -->
+  <text x="5" y="26" font-family="Arial Black, sans-serif" font-weight="900" font-size="18" fill="white" letter-spacing="-1">AI</text>
+  <!-- 右上角小星星 -->
+  <path d="M30 8 L31.2 11.2 L34.5 11.5 L32.1 13.6 L32.9 17 L30 15.2 L27.1 17 L27.9 13.6 L25.5 11.5 L28.8 11.2 Z" fill="white" opacity="0.9"/>
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>
