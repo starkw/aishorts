@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Search, Copy, Check } from "lucide-react";
 import { skillsShTop100 } from "@/data/skills-sh-top100";
+import { skillsShTrending24h, parseTrending24h } from "@/data/skills-sh-trending";
 
 const skills = [
   // 必装
@@ -1321,17 +1322,87 @@ export default function OpenClawSkillsPage() {
   const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState("全部");
 
-  const filtered = skills.filter((s) => {
-    const matchSearch =
-      s.name.toLowerCase().includes(search.toLowerCase()) ||
-      s.description.includes(search);
-    const matchFilter =
-      activeFilter === "全部" ||
-      (activeFilter === "必装" && s.tags.includes("必装")) ||
-      (activeFilter === "热门" && s.tags.includes("热门")) ||
-      (activeFilter === "Skills.sh" && s.tags.includes("Skills.sh"));
-    return matchSearch && matchFilter;
-  });
+  // 获取技能的24小时安装数
+  const getTrending24h = (skillName: string, installCmd?: string): number => {
+    // 从安装命令中提取技能名称（如果是 skills.sh 的技能）
+    if (installCmd?.includes("skillsadd") || installCmd?.includes("skills add")) {
+      const match = installCmd.match(/skills(?:add| add)\s+([^\s]+)/);
+      if (match) {
+        const repo = match[1].split("/").pop()?.toLowerCase();
+        if (repo) {
+          // 尝试精确匹配
+          const exactMatch = Object.keys(skillsShTrending24h).find(
+            (key) => key.toLowerCase() === repo
+          );
+          if (exactMatch) {
+            return parseTrending24h(skillsShTrending24h[exactMatch]);
+          }
+          // 尝试部分匹配
+          const partialMatch = Object.keys(skillsShTrending24h).find(
+            (key) => key.toLowerCase().includes(repo) || repo.includes(key.toLowerCase())
+          );
+          if (partialMatch) {
+            return parseTrending24h(skillsShTrending24h[partialMatch]);
+          }
+        }
+      }
+    }
+    
+    // 尝试直接匹配技能名称
+    const nameLower = skillName.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+    const trendingKey = Object.keys(skillsShTrending24h).find(
+      (key) => {
+        const keyLower = key.toLowerCase();
+        return keyLower === nameLower || 
+               nameLower.includes(keyLower) || 
+               keyLower.includes(nameLower);
+      }
+    );
+    if (trendingKey) {
+      return parseTrending24h(skillsShTrending24h[trendingKey]);
+    }
+    return 0;
+  };
+
+  const filtered = useMemo(() => {
+    let result = skills.filter((s) => {
+      const matchSearch =
+        s.name.toLowerCase().includes(search.toLowerCase()) ||
+        s.description.includes(search);
+      const matchFilter =
+        activeFilter === "全部" ||
+        (activeFilter === "必装" && s.tags.includes("必装")) ||
+        (activeFilter === "热门" && s.tags.includes("热门")) ||
+        (activeFilter === "Skills.sh" && s.tags.includes("Skills.sh"));
+      return matchSearch && matchFilter;
+    });
+
+    // 如果选择"热门"，按24小时安装数排序（与 skills.sh/trending 保持一致）
+    if (activeFilter === "热门") {
+      result = [...result].sort((a, b) => {
+        const aTrending = getTrending24h(a.name, a.installCmd);
+        const bTrending = getTrending24h(b.name, b.installCmd);
+        // 如果都有24小时数据，按24小时安装数降序
+        if (aTrending > 0 && bTrending > 0) {
+          return bTrending - aTrending;
+        }
+        // 如果只有一个有24小时数据，有数据的排在前面
+        if (aTrending > 0) return -1;
+        if (bTrending > 0) return 1;
+        // 都没有24小时数据，按总安装数降序（如果有）
+        const parseDownloads = (val: string | undefined): number => {
+          if (!val) return 0;
+          const num = parseFloat(val.replace(/[KM]/g, ""));
+          return val.includes("K") ? num * 1000 : num;
+        };
+        const aDownloads = parseDownloads((a as any).downloads);
+        const bDownloads = parseDownloads((b as any).downloads);
+        return bDownloads - aDownloads;
+      });
+    }
+
+    return result;
+  }, [search, activeFilter]);
 
   const mustCount = skills.filter((s) => s.tags.includes("必装")).length;
   const hotCount = skills.filter((s) => s.tags.includes("热门")).length;
