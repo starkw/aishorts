@@ -1287,7 +1287,50 @@ const skills = [
   })),
 ];
 
-const categories = ["创作", "社媒", "研究", "办公", "开发", "生活", "前端", "营销", "设计", "文档", "AI工具", "部署", "工具", "云服务", "自动化", "创意", "企业", "移动", "数据库", "测试", "项目管理", "安全", "UI", "集成", "写作", "SEO", "分析", "质量", "内容", "协作", "数据", "社交"];
+const categories = ["创作", "办公", "开发", "设计", "营销", "文档", "AI工具"];
+
+// 分类映射：将细分类目映射到主要分类
+const categoryMap: Record<string, string> = {
+  // 创作相关
+  "创作": "创作",
+  "创意": "创作",
+  "写作": "创作",
+  "内容": "创作",
+  "社媒": "创作",
+  "社交": "创作",
+  // 办公相关
+  "办公": "办公",
+  "研究": "办公",
+  "生活": "办公",
+  "企业": "办公",
+  "项目管理": "办公",
+  "协作": "办公",
+  // 开发相关
+  "开发": "开发",
+  "前端": "开发",
+  "移动": "开发",
+  "数据库": "开发",
+  "测试": "开发",
+  "安全": "开发",
+  "部署": "开发",
+  "工具": "开发",
+  "云服务": "开发",
+  "自动化": "开发",
+  "集成": "开发",
+  "数据": "开发",
+  "质量": "开发",
+  // 设计相关
+  "设计": "设计",
+  "UI": "设计",
+  // 营销相关
+  "营销": "营销",
+  "SEO": "营销",
+  "分析": "营销",
+  // 文档相关
+  "文档": "文档",
+  // AI工具相关
+  "AI工具": "AI工具",
+};
 
 const tagConfig: Record<string, { label: string; className: string }> = {
   必装: { label: "⭐ 必装", className: "bg-yellow-100 text-yellow-700" },
@@ -1328,8 +1371,10 @@ export default function OpenClawSkillsPage() {
     const matchSearch =
       s.name.toLowerCase().includes(search.toLowerCase()) ||
       s.description.includes(search);
+    // 使用分类映射，将细分类目映射到主要分类
+    const mappedCategory = categoryMap[s.category] || s.category;
     const matchCategory =
-      activeCategory === "全部" || s.category === activeCategory;
+      activeCategory === "全部" || mappedCategory === activeCategory;
     const matchFilter =
       activeFilter === "全部" ||
       (activeFilter === "必装" && s.tags.includes("必装")) ||
