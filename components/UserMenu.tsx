@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { signOut } from "next-auth/react";
 import { LogOut, Heart, User } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Session } from "next-auth";
 
 interface UserMenuProps {
@@ -62,13 +63,14 @@ export default function UserMenu({ session }: UserMenuProps) {
 
           {/* 菜单项 */}
           <div className="py-1">
-            <button
+            <Link
+              href="/?favorites=1"
               onClick={() => setOpen(false)}
               className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
             >
               <Heart size={15} className="text-red-400" />
               我的收藏
-            </button>
+            </Link>
             <button
               onClick={() => signOut({ callbackUrl: "/" })}
               className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-colors"
