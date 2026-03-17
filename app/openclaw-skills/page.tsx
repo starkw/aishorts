@@ -1329,7 +1329,6 @@ export default function OpenClawSkillsPage() {
       activeFilter === "全部" ||
       (activeFilter === "必装" && s.tags.includes("必装")) ||
       (activeFilter === "热门" && s.tags.includes("热门")) ||
-      (activeFilter === "社区" && s.tags.includes("社区")) ||
       (activeFilter === "Skills.sh" && s.tags.includes("Skills.sh"));
     return matchSearch && matchFilter;
   });
@@ -1401,11 +1400,10 @@ export default function OpenClawSkillsPage() {
             全部
           </button>
 
-          {/* 快速筛选：必装 / 热门 / 社区 / Skills.sh */}
+          {/* 快速筛选：必装 / 热门 / Skills.sh */}
           {[
             { key: "必装", label: "⭐ 必装" },
             { key: "热门", label: "🔥 热门" },
-            { key: "社区", label: "社区" },
             { key: "Skills.sh", label: "🌐 Skills.sh" },
           ].map((f) => (
             <button
