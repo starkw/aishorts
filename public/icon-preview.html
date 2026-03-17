@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>新图标预览</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; background: #f5f5f7; padding: 40px; text-align: center; }
+    h1 { color: #1d1d1f; margin-bottom: 40px; }
+    .preview { background: white; border-radius: 16px; padding: 40px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); display: inline-block; }
+    .icon-grid { display: flex; gap: 32px; align-items: center; justify-content: center; flex-wrap: wrap; }
+    .icon-item { text-align: center; }
+    .icon-item h3 { font-size: 14px; color: #666; margin-top: 12px; }
+    .size-16 { width: 16px; height: 16px; }
+    .size-32 { width: 32px; height: 32px; }
+    .size-64 { width: 64px; height: 64px; }
+    .size-128 { width: 128px; height: 128px; }
+    .browser-tab { background: #f0f0f0; padding: 8px 16px; border-radius: 8px 8px 0 0; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 0; }
+    .browser-tab img { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <h1>🎨 新图标设计预览</h1>
+  
+  <div class="preview">
+    <div class="icon-grid">
+      <div class="icon-item">
+        <div class="browser-tab">
+          <img src="/icon.svg" alt="Favicon">
+          <span>AI Shorts</span>
+        </div>
+        <h3>浏览器标签页</h3>
+      </div>
+      
+      <div class="icon-item">
+        <img src="/icon.svg" class="size-16" alt="16px">
+        <h3>16×16px</h3>
+      </div>
+      
+      <div class="icon-item">
+        <img src="/icon.svg" class="size-32" alt="32px">
+        <h3>32×32px</h3>
+      </div>
+      
+      <div class="icon-item">
+        <img src="/icon.svg" class="size-64" alt="64px">
+        <h3>64×64px</h3>
+      </div>
+      
+      <div class="icon-item">
+        <img src="/icon.svg" class="size-128" alt="128px">
+        <h3>128×128px</h3>
+      </div>
+    </div>
+    
+    <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid #e5e5e5;">
+      <h2 style="font-size: 18px; color: #333; margin-bottom: 20px;">设计元素</h2>
+      <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;">
+        <div style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 8px;">🧩</div>
+          <div style="font-size: 12px; color: #666;">拼图块角色</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 8px;">😊</div>
+          <div style="font-size: 12px; color: #666;">友好笑脸</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 8px;">👍</div>
+          <div style="font-size: 12px; color: #666;">竖起大拇指</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 8px;">💡</div>
+          <div style="font-size: 12px; color: #666;">发光灯泡</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p style="margin-top: 40px; color: #999; font-size: 13px;">
+    新图标已部署，刷新页面即可看到效果 ✨
+  </p>
+</body>
+</html>
