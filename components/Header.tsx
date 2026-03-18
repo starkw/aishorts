@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Github, Share2, MessageSquare } from "lucide-react";
+import { Sparkles, Share2, MessageSquare, Book } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -45,6 +45,15 @@ export default function Header() {
               反馈
             </Link>
             <Link
+              href="/docs"
+              className={`transition-colors flex items-center gap-1 ${
+                pathname === "/docs" ? "text-indigo-600 font-medium" : "hover:text-indigo-600"
+              }`}
+            >
+              <Book size={14} />
+              文档
+            </Link>
+            <Link
               href="/openclaw-skills"
               className={`transition-colors flex items-center gap-1 ${
                 pathname === "/openclaw-skills"
@@ -54,15 +63,6 @@ export default function Header() {
             >
               🦞 OpenClaw Skills
             </Link>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-indigo-600 transition-colors flex items-center gap-1"
-            >
-              <Github size={14} />
-              GitHub
-            </a>
           </nav>
 
           {/* 右侧操作区 */}
