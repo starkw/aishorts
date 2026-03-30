@@ -1408,10 +1408,96 @@ export default function OpenClawSkillsPage() {
   const hotCount = skills.filter((s) => s.tags.includes("热门")).length;
   const skillsShCount = skills.filter((s) => s.tags.includes("Skills.sh")).length;
 
+  const [heroCopiedIdx, setHeroCopiedIdx] = useState<number | null>(null);
+
+  const heroExamples = [
+    { emoji: "🏗️", label: "多Agent团队", cmd: "clawhub install multi-agent-team" },
+    { emoji: "🌐", label: "网页搜索",     cmd: "clawhub install web-search" },
+    { emoji: "🖼️", label: "AI图片生成",  cmd: "clawhub install ai-image-gen" },
+    { emoji: "🧑", label: "AI文本人性化", cmd: "clawhub install humanizer" },
+  ];
+
+  const heroCopyCmd = (cmd: string, idx: number) => {
+    navigator.clipboard.writeText(cmd).then(() => {
+      setHeroCopiedIdx(idx);
+      setTimeout(() => setHeroCopiedIdx(null), 2000);
+    });
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-indigo-50/40 to-white">
+
+      {/* ——— 顶部大横幅 ——— */}
+      <section className="bg-gradient-to-br from-slate-50 via-blue-50/60 to-indigo-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 lg:py-20 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          {/* 左侧文案 */}
+          <div className="flex-1 text-center lg:text-left">
+            <h2 className="text-4xl sm:text-5xl font-black text-gray-900 leading-tight mb-4">
+              装上这个 <span className="text-blue-600">Skill，</span>
+              <br />
+              你的龙虾才算真正<span className="text-blue-600">开挂</span>
+            </h2>
+            <p className="text-gray-500 text-base sm:text-lg mb-8 max-w-md mx-auto lg:mx-0">
+              精选推荐，高速下载体验，轻松查找 ClawHub 3.0 万个 AI Skills
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <a
+                href="#skills-list"
+                className="px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 active:scale-95 transition-all shadow-md shadow-blue-200 text-center"
+              >
+                查看精选榜单
+              </a>
+              <button
+                onClick={() => {
+                  document.getElementById("skills-list")?.scrollIntoView({ behavior: "smooth" });
+                  setActiveFilter("全部");
+                }}
+                className="px-6 py-3 bg-white border border-gray-200 text-gray-700 text-sm font-semibold rounded-xl hover:border-blue-300 hover:text-blue-600 transition-all text-center"
+              >
+                探索全部技能
+              </button>
+            </div>
+          </div>
+
+          {/* 右侧卡片 */}
+          <div className="w-full max-w-sm lg:max-w-xs xl:max-w-sm shrink-0">
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-xl p-5 space-y-3">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">热门技能 · 一键复制安装命令</p>
+              {heroExamples.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl px-3 py-2.5"
+                >
+                  <span className="text-lg shrink-0">{item.emoji}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-medium text-gray-700 mb-0.5">{item.label}</div>
+                    <code className="text-xs text-gray-400 truncate block">{item.cmd}</code>
+                  </div>
+                  <button
+                    onClick={() => heroCopyCmd(item.cmd, idx)}
+                    className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg text-xs font-medium transition-colors"
+                  >
+                    {heroCopiedIdx === idx ? (
+                      <><Check size={11} /> 已复制</>
+                    ) : (
+                      <><Copy size={11} /> 复制</>
+                    )}
+                  </button>
+                </div>
+              ))}
+              <a
+                href="#skills-list"
+                className="block text-center text-xs text-indigo-500 hover:text-indigo-700 pt-1 transition-colors"
+              >
+                查看全部 {skills.length}+ 个技能 →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero */}
-      <section className="max-w-5xl mx-auto px-4 pt-12 pb-8 text-center">
+      <section id="skills-list" className="max-w-5xl mx-auto px-4 pt-12 pb-8 text-center">
         <div className="text-8xl mb-4 select-none">🦞</div>
         <h1 className="text-4xl font-bold text-gray-900 mb-3">
           龙虾技能包商店
