@@ -1414,7 +1414,6 @@ export default function OpenClawSkillsPage() {
     { emoji: "🏗️", label: "多Agent团队", cmd: "clawhub install multi-agent-team" },
     { emoji: "🌐", label: "网页搜索",     cmd: "clawhub install web-search" },
     { emoji: "🖼️", label: "AI图片生成",  cmd: "clawhub install ai-image-gen" },
-    { emoji: "🧑", label: "AI文本人性化", cmd: "clawhub install humanizer" },
   ];
 
   const heroCopyCmd = (cmd: string, idx: number) => {
