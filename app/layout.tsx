@@ -1,35 +1,30 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Providers from "@/components/Providers";
 import { auth } from "@/auth";
 import { Analytics } from "@vercel/analytics/react";
 
-const geist = Geist({
-  subsets: ["latin"],
-});
-
 const siteUrl = "https://www.aishorts.top";
 
 export const metadata: Metadata = {
   title: {
-    default: "AI Shorts - 精选 AI 提示词库 | ChatGPT 提示词大全",
+    default: "AI Shorts - 免费 AI 图像生成 | 不用注册，不用付费",
     template: "%s | AI Shorts",
   },
   description:
-    "AI Shorts 收录 278+ 精选高质量 AI 提示词，涵盖写作、编程、营销、翻译等16个分类，一键复制，立刻提升你的 ChatGPT、Claude、Gemini 使用效率。",
+    "打开就能用的免费 AI 出图工具。支持文生图与图生图，64 个现成模板，输出不加水印，图片只存在你的浏览器里。不需要 ChatGPT 账号，不需要信用卡。",
   keywords: [
-    "AI提示词",
-    "ChatGPT提示词",
-    "Prompt",
-    "提示词大全",
-    "ChatGPT技巧",
-    "AI工具",
-    "Claude提示词",
-    "提示词模板",
-    "AI写作",
-    "AI编程",
+    "免费AI绘画",
+    "AI图像生成",
+    "免费文生图",
+    "AI画图工具",
+    "图生图",
+    "在线AI绘图",
+    "免注册AI绘画",
+    "AI生成图片",
+    "AI头像生成",
+    "商品图生成",
   ],
   authors: [{ name: "AI Shorts", url: siteUrl }],
   creator: "AI Shorts",
@@ -42,22 +37,22 @@ export const metadata: Metadata = {
     locale: "zh_CN",
     url: siteUrl,
     siteName: "AI Shorts",
-    title: "AI Shorts - 精选 AI 提示词库 | ChatGPT 提示词大全",
+    title: "AI Shorts - 免费 AI 图像生成 | 不用注册，不用付费",
     description:
-      "278+ 精选 AI 提示词，涵盖写作、编程、营销、翻译等16个分类，一键复制，立刻提升你的 ChatGPT 使用效率。",
+      "打开就能用的免费 AI 出图工具，支持文生图与图生图，输出不加水印，图片只存在你的浏览器里。",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "AI Shorts - 精选 AI 提示词库",
+        alt: "AI Shorts - 免费 AI 图像生成",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Shorts - 精选 AI 提示词库",
-    description: "278+ 精选 AI 提示词，一键复制，立刻提升你的 ChatGPT 使用效率。",
+    title: "AI Shorts - 免费 AI 图像生成",
+    description: "不用注册、不用付费的 AI 出图工具，支持文生图与图生图，输出不加水印。",
     images: [`${siteUrl}/og-image.png`],
   },
   robots: {
@@ -90,7 +85,7 @@ export default async function RootLayout({
 
   return (
     <html lang="zh-CN">
-      <body className={`${geist.className} antialiased`}>
+      <body className="antialiased">
         <Providers session={session}>
           <Header />
           {children}
