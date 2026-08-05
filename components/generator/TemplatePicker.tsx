@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import {
   CATEGORY_GRADIENT,
-  CATEGORY_IMAGE,
+  templateImage,
   TEMPLATE_CATEGORIES,
   templates,
   type Template,
@@ -62,7 +62,7 @@ export default function TemplatePicker({ onPick }: Props) {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={CATEGORY_IMAGE[t.category]}
+                src={templateImage(t)}
                 alt=""
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
