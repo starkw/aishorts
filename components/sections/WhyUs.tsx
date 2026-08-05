@@ -55,10 +55,10 @@ export default function WhyUs() {
                 </div>
                 <div className="max-w-md">
                   <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                    没有账号，就没有门槛
+                    不用 ChatGPT，也不用 API 密钥
                   </h3>
                   <p className="text-sm text-white/70 leading-relaxed mt-3">
-                    没有邮箱、没有手机号、没有第三方登录。打开网页直接开始生成，我们也不需要知道你是谁。
+                    不需要 ChatGPT Plus 订阅，也不需要你自己的 OpenAI 密钥。打开网页就能开始生成，我们也不需要知道你是谁。
                   </p>
                 </div>
               </div>
@@ -73,9 +73,9 @@ export default function WhyUs() {
                   <Num n="02" />
                 </div>
                 <div className="mt-6">
-                  <h3 className="text-base font-semibold text-gray-900">一分钱都不收</h3>
+                  <h3 className="text-base font-semibold text-gray-900">零注册，零费用</h3>
                   <p className="text-sm text-gray-600 leading-relaxed mt-1.5">
-                    站点靠广告养生成成本，不收信用卡、不做订阅、不设付费墙。
+                    没有邮箱、没有手机号、没有第三方登录。生成成本由站内广告覆盖，不收信用卡、不做订阅、不设付费墙。
                   </p>
                 </div>
               </div>
@@ -116,10 +116,10 @@ export default function WhyUs() {
                   className="hidden sm:block w-24 h-24 rounded-2xl object-cover ring-1 ring-white/10 shrink-0"
                 />
                 <div>
-                  <h3 className="text-base font-semibold text-white">图片只留在你本机</h3>
+                  <h3 className="text-base font-semibold text-white">图片只留在你的设备上</h3>
                   <p className="text-xs font-mono text-gray-400 leading-relaxed mt-2">
                     <span className="text-amber-400">$ </span>
-                    生成结果以二进制存进浏览器 IndexedDB，不经过我们的服务器，你随时可以自己清空。
+                    生成结果以二进制形式存进浏览器 IndexedDB，不经过我们的服务器，你随时可以自己清空。
                   </p>
                 </div>
               </div>
