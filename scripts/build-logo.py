@@ -1,52 +1,71 @@
-"""生成品牌标识：单色金的光谱星芒，输出 SVG 与各尺寸 PNG 图标。
+"""生成品牌标识：圆角色块 + 白色字母 A，输出 SVG 与各尺寸 PNG 图标。
 
-造型 = 12 根锥形射线（6 长 6 短交替，构成六重对称）+ 中心圆点。
-射线根部与圆点之间留一圈负空间，单色扁平不用渐变，
-质感靠形状精度和留白，小尺寸下也不糊。
+字母用轮廓多边形定义而不是描边，SVG 与 PNG 共用同一套坐标，
+两边渲染一致。外三角挖去内三角得到 Λ 形双腿，横杠是一个梯形，
+两端分别贴合左右腿的内边缘，插入后无缝合并。
 """
 
 import math
 import os
 
 VIEW = 64.0
-C = VIEW / 2
+RADIUS = 14.0                      # 色块圆角
 
-N_RAYS = 12
-HALF_ANGLE = 13.0     # 每根射线的半角，越大越敦实
-R_LONG = 28.0
-R_SHORT = 18.5
-R_BASE = 8.5          # 射线根部半径
-R_CORE = 5.0          # 中心圆点半径，与根部之间留 3.5 的负空间
-GOLD = "#F59E0B"      # amber-500，与站点字标同色系
+APEX = (32.0, 13.5)                # 字母外顶点
+BASE_Y = 50.5                      # 字母基线
+OUT_L, OUT_R = 15.5, 48.5          # 外轮廓底部两角
+IN_APEX_Y = 26.0                   # 内三角顶点，决定顶部厚度
+IN_L, IN_R = 22.5, 41.5            # 内三角底部两角，决定腿的厚度
+BAR_TOP, BAR_BOT = 37.6, 43.2      # 横杠上下沿
 
-
-def pt(r, deg):
-    a = math.radians(deg)
-    return (C + r * math.cos(a), C + r * math.sin(a))
+GRAD_FROM = "#FBBF24"              # amber-400
+GRAD_TO = "#EA580C"                # orange-600
 
 
-def rays():
-    """返回每根射线的三个顶点：尖端 + 两个根部点。"""
-    out = []
-    step = 360.0 / N_RAYS
-    for i in range(N_RAYS):
-        th = -90.0 + i * step
-        tip = pt(R_LONG if i % 2 == 0 else R_SHORT, th)
-        b1 = pt(R_BASE, th - HALF_ANGLE)
-        b2 = pt(R_BASE, th + HALF_ANGLE)
-        out.append((tip, b2, b1))
-    return out
+def f(v):
+    return f"{v:.2f}"
+
+
+def poly(pts):
+    return "M" + "L".join(f"{f(x)} {f(y)}" for x, y in pts) + "Z"
+
+
+def outer():
+    return [APEX, (OUT_R, BASE_Y), (OUT_L, BASE_Y)]
+
+
+def inner():
+    return [(32.0, IN_APEX_Y), (IN_R, BASE_Y), (IN_L, BASE_Y)]
+
+
+def inner_edge_x(y, left):
+    """内三角某一高度上的左右边缘横坐标，用来对齐横杠两端。"""
+    end = IN_L if left else IN_R
+    t = (y - IN_APEX_Y) / (BASE_Y - IN_APEX_Y)
+    return 32.0 + (end - 32.0) * t
+
+
+def crossbar():
+    return [
+        (inner_edge_x(BAR_TOP, True), BAR_TOP),
+        (inner_edge_x(BAR_TOP, False), BAR_TOP),
+        (inner_edge_x(BAR_BOT, False), BAR_BOT),
+        (inner_edge_x(BAR_BOT, True), BAR_BOT),
+    ]
 
 
 def svg():
-    f = lambda v: f"{v:.2f}"
-    parts = []
-    for tri in rays():
-        d = "M" + "L".join(f"{f(x)} {f(y)}" for x, y in tri) + "Z"
-        parts.append(f'<path d="{d}"/>')
-    parts.append(f'<circle cx="{f(C)}" cy="{f(C)}" r="{f(R_CORE)}"/>')
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {VIEW:.0f} {VIEW:.0f}" '
-            f'fill="{GOLD}">{"".join(parts)}</svg>\n')
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {VIEW:.0f} {VIEW:.0f}">'
+        f'<defs><linearGradient id="t" x1="0" y1="0" x2="1" y2="1">'
+        f'<stop offset="0" stop-color="{GRAD_FROM}"/>'
+        f'<stop offset="1" stop-color="{GRAD_TO}"/>'
+        f'</linearGradient></defs>'
+        f'<rect width="{VIEW:.0f}" height="{VIEW:.0f}" rx="{f(RADIUS)}" fill="url(#t)"/>'
+        f'<path d="{poly(outer())}{poly(inner())}" fill="#fff" fill-rule="evenodd"/>'
+        f'<path d="{poly(crossbar())}" fill="#fff"/>'
+        f'</svg>\n'
+    )
 
 
 def png(sizes):
@@ -54,16 +73,32 @@ def png(sizes):
 
     ss = 8
     n = int(VIEW * ss)
-    mask = Image.new("L", (n, n), 0)
-    d = ImageDraw.Draw(mask)
-    for tri in rays():
-        d.polygon([(x * ss, y * ss) for x, y in tri], fill=255)
-    r = R_CORE * ss
-    d.ellipse([C * ss - r, C * ss - r, C * ss + r, C * ss + r], fill=255)
+    S = lambda pts: [(x * ss, y * ss) for x, y in pts]
 
-    rgb = tuple(int(GOLD[i:i + 2], 16) for i in (1, 3, 5))
+    # 渐变底 + 圆角裁切
+    grad = Image.new("RGB", (n, n))
+    gd = ImageDraw.Draw(grad)
+    c0 = tuple(int(GRAD_FROM[i:i + 2], 16) for i in (1, 3, 5))
+    c1 = tuple(int(GRAD_TO[i:i + 2], 16) for i in (1, 3, 5))
+    for i in range(2 * n):
+        t = i / (2 * n - 1)
+        gd.line([(i, 0), (0, i)],
+                fill=tuple(round(c0[j] + (c1[j] - c0[j]) * t) for j in range(3)))
+
+    tile = Image.new("L", (n, n), 0)
+    ImageDraw.Draw(tile).rounded_rectangle([0, 0, n - 1, n - 1],
+                                           radius=RADIUS * ss, fill=255)
+
+    # 字母遮罩：外三角填充，内三角挖空，横杠补回
+    letter = Image.new("L", (n, n), 0)
+    ld = ImageDraw.Draw(letter)
+    ld.polygon(S(outer()), fill=255)
+    ld.polygon(S(inner()), fill=0)
+    ld.polygon(S(crossbar()), fill=255)
+
     big = Image.new("RGBA", (n, n), (0, 0, 0, 0))
-    big.paste(Image.new("RGBA", (n, n), rgb + (255,)), (0, 0), mask)
+    big.paste(grad.convert("RGBA"), (0, 0), tile)
+    big.paste(Image.new("RGBA", (n, n), (255, 255, 255, 255)), (0, 0), letter)
 
     for s in sizes:
         img = big.resize((s, s), Image.LANCZOS)
