@@ -41,7 +41,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2 font-bold text-lg shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-aperture.svg"
+              src="/logo-mark.svg"
               alt="AI Shorts"
               width={28}
               height={28}

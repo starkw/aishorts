@@ -71,10 +71,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo-aperture.svg", type: "image/svg+xml" },
+      { url: "/logo-mark.svg", type: "image/svg+xml" },
       { url: "/favicon.png", sizes: "64x64", type: "image/png" },
     ],
-    apple: "/logo-aperture-180.png",
+    apple: "/logo-mark-180.png",
     shortcut: "/favicon.png",
   },
 };

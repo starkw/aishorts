@@ -32,7 +32,7 @@ export default function SiteFooter() {
             <div className="flex items-center gap-2 mb-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo-aperture.svg"
+                src="/logo-mark.svg"
                 alt="AI Shorts"
                 width={26}
                 height={26}
