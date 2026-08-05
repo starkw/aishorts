@@ -53,7 +53,7 @@ export default function TemplatePicker({ onPick }: Props) {
   return (
     <div className="space-y-3">
       <div className="flex items-baseline justify-between">
-        <span className="text-sm text-gray-600">或者，挑一个风格开始：</span>
+        <span className="text-sm text-gray-600">或者选择一种风格作为起点：</span>
         <span className="text-sm font-semibold text-gray-300">{visible.length}</span>
       </div>
 
@@ -79,20 +79,20 @@ export default function TemplatePicker({ onPick }: Props) {
         <div
           ref={railRef}
           onScroll={syncArrows}
-          className="flex gap-3 overflow-x-auto no-scrollbar pb-1"
+          className="flex gap-4 overflow-x-auto no-scrollbar pb-1"
         >
           {visible.map((t) => (
             <button
               key={t.id}
               onClick={() => choose(t)}
-              className={`group shrink-0 w-[184px] text-left rounded-2xl bg-white overflow-hidden ring-1 transition-all ${
+              className={`group shrink-0 w-[208px] text-left rounded-xl bg-white overflow-hidden ring-1 transition-all ${
                 picked === t.id
                   ? "ring-2 ring-amber-400"
-                  : "ring-black/5 hover:ring-amber-300 hover:shadow-md"
+                  : "ring-black/[0.07] hover:ring-amber-300 hover:shadow-md"
               }`}
             >
               <div
-                className={`relative h-[116px] bg-gradient-to-br ${CATEGORY_GRADIENT[t.category]}`}
+                className={`relative h-[156px] bg-gradient-to-br ${CATEGORY_GRADIENT[t.category]}`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -105,9 +105,10 @@ export default function TemplatePicker({ onPick }: Props) {
                   {t.mode === "i2i" ? "I2I" : "T2I"}
                 </span>
               </div>
-              <div className="px-3 py-2.5">
-                <h4 className="text-[13px] font-semibold text-gray-900 truncate">{t.name}</h4>
-                <p className="text-[11px] text-gray-500 leading-snug line-clamp-2 mt-0.5">
+              {/* 定高，让描述占一行或两行的卡片底边依然对齐 */}
+              <div className="h-[84px] px-3.5 pt-3">
+                <h4 className="text-sm font-semibold text-gray-900 truncate">{t.name}</h4>
+                <p className="text-[11px] text-gray-400 leading-snug line-clamp-2 mt-1">
                   {t.description}
                 </p>
               </div>
@@ -119,18 +120,18 @@ export default function TemplatePicker({ onPick }: Props) {
           <button
             onClick={() => scroll(-1)}
             aria-label="上一组"
-            className="absolute left-1 top-[58px] -translate-y-1/2 w-8 h-8 rounded-full bg-white shadow-md ring-1 ring-black/5 flex items-center justify-center text-gray-600 hover:text-gray-900"
+            className="absolute left-2 top-[120px] -translate-y-1/2 w-[34px] h-[34px] rounded-full bg-white shadow-md ring-1 ring-black/5 flex items-center justify-center text-gray-600 hover:text-gray-900"
           >
-            <ChevronLeft size={16} />
+            <ChevronLeft size={17} />
           </button>
         )}
         {!atEnd && (
           <button
             onClick={() => scroll(1)}
             aria-label="下一组"
-            className="absolute right-1 top-[58px] -translate-y-1/2 w-8 h-8 rounded-full bg-white shadow-md ring-1 ring-black/5 flex items-center justify-center text-gray-600 hover:text-gray-900"
+            className="absolute right-2 top-[120px] -translate-y-1/2 w-[34px] h-[34px] rounded-full bg-white shadow-md ring-1 ring-black/5 flex items-center justify-center text-gray-600 hover:text-gray-900"
           >
-            <ChevronRight size={16} />
+            <ChevronRight size={17} />
           </button>
         )}
       </div>
