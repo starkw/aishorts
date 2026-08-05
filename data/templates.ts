@@ -2,13 +2,13 @@ import type { AspectRatio } from "@/lib/providers/types";
 
 export type TemplateCategory =
   | "摄影"
-  | "插画"
-  | "商品"
-  | "标志品牌"
-  | "界面稿"
-  | "角色"
+  | "插图"
+  | "产品"
+  | "标志和品牌"
+  | "UI模型"
+  | "人物"
   | "风景"
-  | "字体排版";
+  | "排版";
 
 export type TemplateMode = "t2i" | "i2i";
 
@@ -26,36 +26,36 @@ export interface Template {
 /** 分类样图，同时用于首页瀑布流与生成器里的模板缩略卡；同类多张轮换以免大量卡片撞图 */
 export const CATEGORY_IMAGES: Record<TemplateCategory, string[]> = {
   摄影: ["/tpl/photo.jpg", "/tpl/photo-2.jpg", "/tpl/photo-3.jpg"],
-  插画: ["/tpl/illustration.jpg", "/tpl/illustration-2.jpg", "/tpl/illustration-3.jpg"],
-  商品: ["/tpl/product.jpg", "/tpl/product-2.jpg", "/tpl/product-3.jpg"],
-  标志品牌: ["/tpl/brand.jpg", "/tpl/brand-2.jpg"],
-  界面稿: ["/tpl/ui.jpg", "/tpl/ui-2.jpg", "/tpl/ui-3.jpg"],
-  角色: ["/tpl/character.jpg", "/tpl/character-2.jpg", "/tpl/character-3.jpg"],
+  插图: ["/tpl/illustration.jpg", "/tpl/illustration-2.jpg", "/tpl/illustration-3.jpg"],
+  产品: ["/tpl/product.jpg", "/tpl/product-2.jpg", "/tpl/product-3.jpg"],
+  标志和品牌: ["/tpl/brand.jpg", "/tpl/brand-2.jpg"],
+  UI模型: ["/tpl/ui.jpg", "/tpl/ui-2.jpg", "/tpl/ui-3.jpg"],
+  人物: ["/tpl/character.jpg", "/tpl/character-2.jpg", "/tpl/character-3.jpg"],
   风景: ["/tpl/landscape.jpg", "/tpl/landscape-2.jpg", "/tpl/landscape-3.jpg"],
-  字体排版: ["/tpl/typography.jpg", "/tpl/typography-2.jpg", "/tpl/typography-3.jpg"],
+  排版: ["/tpl/typography.jpg", "/tpl/typography-2.jpg", "/tpl/typography-3.jpg"],
 };
 
 /** 样图加载完成前的占位底色 */
 export const CATEGORY_GRADIENT: Record<TemplateCategory, string> = {
   摄影: "from-slate-700 via-slate-800 to-slate-900",
-  插画: "from-rose-400 via-orange-400 to-amber-400",
-  商品: "from-zinc-200 via-zinc-300 to-zinc-400",
-  标志品牌: "from-amber-400 via-orange-500 to-rose-500",
-  界面稿: "from-sky-400 via-blue-500 to-indigo-500",
-  角色: "from-fuchsia-400 via-purple-500 to-violet-600",
+  插图: "from-rose-400 via-orange-400 to-amber-400",
+  产品: "from-zinc-200 via-zinc-300 to-zinc-400",
+  标志和品牌: "from-amber-400 via-orange-500 to-rose-500",
+  UI模型: "from-sky-400 via-blue-500 to-indigo-500",
+  人物: "from-fuchsia-400 via-purple-500 to-violet-600",
   风景: "from-emerald-400 via-teal-500 to-cyan-600",
-  字体排版: "from-neutral-800 via-neutral-700 to-neutral-900",
+  排版: "from-neutral-800 via-neutral-700 to-neutral-900",
 };
 
 export const TEMPLATE_CATEGORIES: TemplateCategory[] = [
   "摄影",
-  "插画",
-  "商品",
-  "标志品牌",
-  "界面稿",
-  "角色",
+  "插图",
+  "产品",
+  "标志和品牌",
+  "UI模型",
+  "人物",
   "风景",
-  "字体排版",
+  "排版",
 ];
 
 export const templates: Template[] = [
@@ -146,7 +146,7 @@ export const templates: Template[] = [
     id: "ink-illustration",
     name: "水墨插画",
     description: "东方水墨质感，留白讲究。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Traditional East Asian ink wash illustration, expressive brush strokes, generous negative space, limited ink tones with one subtle accent color, textured rice paper background",
@@ -156,7 +156,7 @@ export const templates: Template[] = [
     id: "isometric-city",
     name: "等距微缩城市",
     description: "干净的等距插画，适合科普与产品说明。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Isometric miniature city illustration, clean vector style, soft ambient occlusion, pastel palette with bright accents, tiny detailed buildings and streets, plain light background",
@@ -166,7 +166,7 @@ export const templates: Template[] = [
     id: "paper-cutout",
     name: "剪纸分层",
     description: "层叠纸艺风格，适合专题头图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Layered paper cutout illustration, stacked construction paper with visible edge shadows, bold simple shapes, coordinated warm palette, soft studio lighting, editorial composition",
@@ -176,7 +176,7 @@ export const templates: Template[] = [
     id: "science-infographic",
     name: "科普图解",
     description: "教学与科普配图，文字后期再加。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Educational science illustration, clean flat vector style, clear visual hierarchy, labeled areas left blank for text, cohesive three-color palette, white background",
@@ -186,7 +186,7 @@ export const templates: Template[] = [
     id: "watercolor-landscape",
     name: "水彩风景",
     description: "柔和水彩晕染，适合封面与卡片。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Soft watercolor landscape painting, wet-on-wet color bleeding, visible paper texture, muted natural palette, loose confident brushwork, plenty of white space",
@@ -196,7 +196,7 @@ export const templates: Template[] = [
     id: "pencil-sketch",
     name: "铅笔素描",
     description: "把照片转成有手绘感的素描。",
-    category: "插画",
+    category: "插图",
     mode: "i2i",
     prompt:
       "Convert this photo into a detailed graphite pencil sketch, visible hatching and shading strokes, preserve the original composition and likeness, white paper background, no color",
@@ -206,7 +206,7 @@ export const templates: Template[] = [
     id: "oil-painting",
     name: "油画质感",
     description: "厚涂油画笔触，适合肖像与静物。",
-    category: "插画",
+    category: "插图",
     mode: "i2i",
     prompt:
       "Transform this image into a classical oil painting, thick impasto brush strokes, rich layered pigments, warm gallery lighting, preserve subject identity and composition",
@@ -216,7 +216,7 @@ export const templates: Template[] = [
     id: "sticker-pack",
     name: "贴纸风格",
     description: "粗描边贴纸，适合表情包与周边。",
-    category: "插画",
+    category: "插图",
     mode: "i2i",
     prompt:
       "Turn the subject into a die-cut sticker illustration: bold white outline, simplified flat shading, vibrant saturated colors, transparent-looking plain background, playful and clean",
@@ -228,7 +228,7 @@ export const templates: Template[] = [
     id: "white-packshot",
     name: "白底商品图",
     description: "电商主图标配，保留原商品细节。",
-    category: "商品",
+    category: "产品",
     mode: "i2i",
     prompt:
       "Turn this product photo into a clean marketplace packshot on pure white background, even soft studio lighting, subtle contact shadow, preserve the exact shape, label text, color and material of the product",
@@ -238,7 +238,7 @@ export const templates: Template[] = [
     id: "studio-product",
     name: "影棚质感图",
     description: "专业布光的商品静物。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Professional studio product photography, seamless gradient backdrop, controlled three-point lighting, crisp specular highlights, soft reflection beneath the product, premium commercial look",
@@ -248,7 +248,7 @@ export const templates: Template[] = [
     id: "premium-black-studio",
     name: "高端黑金质感",
     description: "数码与配饰类的高级感场景。",
-    category: "商品",
+    category: "产品",
     mode: "i2i",
     prompt:
       "Place this product in a dramatic black studio setup, rim lighting along the edges, deep matte black surface with subtle reflection, premium electronics advertising mood, keep the product unchanged",
@@ -258,7 +258,7 @@ export const templates: Template[] = [
     id: "kitchen-lifestyle",
     name: "厨房生活场景",
     description: "把商品放进真实的居家场景。",
-    category: "商品",
+    category: "产品",
     mode: "i2i",
     prompt:
       "Place this product naturally on a bright kitchen counter lifestyle scene, morning daylight, tasteful props like linen and ceramics slightly out of focus, keep the product's shape and label unchanged",
@@ -268,7 +268,7 @@ export const templates: Template[] = [
     id: "coffee-bag-campaign",
     name: "咖啡品牌场景",
     description: "咖啡豆袋的暖调宣传图。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Warm coffee roaster product scene, kraft coffee bag as hero, scattered roasted beans, ceramic cup with crema, morning window light with soft shadows, cozy artisanal mood",
@@ -278,7 +278,7 @@ export const templates: Template[] = [
     id: "cosmetic-swatch",
     name: "美妆质地特写",
     description: "膏体、乳霜、水珠的微距展示。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Macro beauty product texture shot, creamy swatch with glossy peaks, water droplets, soft gradient backdrop, refined highlights, clean minimal composition, luxury cosmetics advertising",
@@ -288,7 +288,7 @@ export const templates: Template[] = [
     id: "unboxing-flatlay",
     name: "开箱平铺图",
     description: "套装与订阅盒的整齐俯拍。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Organized flat lay of a product bundle viewed from directly above, items arranged on a grid with even spacing, soft diffused light, neutral textured background, editorial e-commerce styling",
@@ -298,7 +298,7 @@ export const templates: Template[] = [
     id: "jewelry-velvet",
     name: "珠宝绒布展示",
     description: "首饰目录图，控制高光。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Jewelry catalog photograph on deep velvet fabric, controlled specular highlights on metal and gemstones, macro detail, elegant dark background, premium material rendering",
@@ -310,7 +310,7 @@ export const templates: Template[] = [
     id: "app-icon",
     name: "App 图标",
     description: "圆角方形应用图标，中心图形清晰。",
-    category: "标志品牌",
+    category: "标志和品牌",
     mode: "t2i",
     prompt:
       "Modern mobile app icon, rounded square, single bold centered symbol, smooth gradient background, subtle inner depth and soft shadow, no text, crisp at small sizes",
@@ -320,7 +320,7 @@ export const templates: Template[] = [
     id: "3d-icon-object",
     name: "3D 图标物件",
     description: "立体质感的小物件图标。",
-    category: "标志品牌",
+    category: "标志和品牌",
     mode: "t2i",
     prompt:
       "Polished 3D object icon floating on a soft pastel background, glossy and matte material mix, soft studio lighting, gentle drop shadow, playful but professional, centered composition",
@@ -330,7 +330,7 @@ export const templates: Template[] = [
     id: "logo-badge",
     name: "徽章标志",
     description: "咖啡馆、社群适用的徽章 logo。",
-    category: "标志品牌",
+    category: "标志和品牌",
     mode: "t2i",
     prompt:
       "Vintage badge logo concept, circular emblem with clean linework, balanced symmetry, two-color print-friendly palette, space reserved for a wordmark, flat vector look",
@@ -340,7 +340,7 @@ export const templates: Template[] = [
     id: "retro-monoline",
     name: "复古单线标志",
     description: "均匀线宽的复古标识风格。",
-    category: "标志品牌",
+    category: "标志和品牌",
     mode: "t2i",
     prompt:
       "Retro monoline logo mark, uniform stroke weight, geometric construction, 1970s inspired curves, single accent color on cream background, clean vector rendering",
@@ -350,7 +350,7 @@ export const templates: Template[] = [
     id: "brand-identity-mockup",
     name: "品牌 VI 展示",
     description: "名片、信封、标签的整套呈现。",
-    category: "标志品牌",
+    category: "标志和品牌",
     mode: "t2i",
     prompt:
       "Brand identity mockup flat lay: business cards, envelope, tag and stationery arranged on a textured surface, cohesive minimal palette, soft daylight, top-down view, blank areas for logo",
@@ -360,7 +360,7 @@ export const templates: Template[] = [
     id: "brand-merch",
     name: "周边样机",
     description: "T恤、帆布袋、贴纸的品牌预览。",
-    category: "标志品牌",
+    category: "标志和品牌",
     mode: "t2i",
     prompt:
       "Brand merchandise mockup set: t-shirt, tote bag, stickers and enamel pin arranged together, consistent brand colors, soft studio lighting, clean neutral background",
@@ -370,7 +370,7 @@ export const templates: Template[] = [
     id: "packaging-system",
     name: "包装系列",
     description: "同系列产品的包装家族。",
-    category: "标志品牌",
+    category: "标志和品牌",
     mode: "t2i",
     prompt:
       "Cohesive packaging family for related products, three boxes of different sizes standing together, minimal typography placeholders, consistent color system, studio lighting on light gray",
@@ -380,7 +380,7 @@ export const templates: Template[] = [
     id: "wellness-moodboard",
     name: "品牌情绪板",
     description: "美妆与生活方式品牌的调性板。",
-    category: "标志品牌",
+    category: "标志和品牌",
     mode: "t2i",
     prompt:
       "Wellness brand mood board collage: color swatches, natural textures, soft fabric, botanical elements and material samples arranged in a grid, calm neutral palette, top-down soft light",
@@ -392,7 +392,7 @@ export const templates: Template[] = [
     id: "saas-dashboard",
     name: "SaaS 仪表盘",
     description: "产品官网用的后台界面示意。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Modern SaaS dashboard UI mockup, left sidebar navigation, metric cards with charts, clean typography hierarchy, generous whitespace, light theme with one accent color, crisp screen rendering",
@@ -402,7 +402,7 @@ export const templates: Template[] = [
     id: "mobile-app-ui",
     name: "移动端界面",
     description: "手机 App 页面样机。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Mobile app UI screen inside a modern phone frame, clean card-based layout, bottom tab bar, soft shadows, light background, single accent color, realistic device mockup on gradient backdrop",
@@ -412,7 +412,7 @@ export const templates: Template[] = [
     id: "startup-landing",
     name: "官网落地页",
     description: "创业公司首页设计稿。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Startup landing page design mockup, bold hero headline area, product screenshot, feature cards row, testimonial section, modern sans-serif typography, plenty of whitespace, light theme",
@@ -422,7 +422,7 @@ export const templates: Template[] = [
     id: "onboarding-flow",
     name: "引导流程",
     description: "三屏新手引导串联展示。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Mobile onboarding flow shown as three phone screens side by side, friendly illustration on each screen, progress dots, clear primary button, soft pastel background",
@@ -432,7 +432,7 @@ export const templates: Template[] = [
     id: "pricing-comparison",
     name: "定价对比区",
     description: "三档定价卡片布局。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Pricing section UI with three tier cards, middle card highlighted as recommended, feature checkmark lists, clean borders and subtle shadows, light background, scannable hierarchy",
@@ -442,7 +442,7 @@ export const templates: Template[] = [
     id: "data-table",
     name: "数据表格",
     description: "后台管理系统的密集表格。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Dense admin data table UI, column headers with sort indicators, status badges, alternating row backgrounds, filter bar above, pagination below, professional light theme",
@@ -452,7 +452,7 @@ export const templates: Template[] = [
     id: "empty-state",
     name: "空状态插图",
     description: "产品内的友好空状态。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Friendly product empty-state illustration, simple flat vector character or object, encouraging composition, soft brand colors, lots of white space, area below reserved for text",
@@ -462,7 +462,7 @@ export const templates: Template[] = [
     id: "case-study-hero",
     name: "案例头图",
     description: "SaaS 客户案例的头部视觉。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Polished case study hero visual, floating product screenshots at a slight angle, soft gradient backdrop, abstract geometric accents, professional B2B aesthetic",
@@ -474,7 +474,7 @@ export const templates: Template[] = [
     id: "brand-mascot",
     name: "品牌吉祥物",
     description: "3D 质感的可爱品牌形象。",
-    category: "角色",
+    category: "人物",
     mode: "t2i",
     prompt:
       "Cute 3D brand mascot character, friendly rounded shapes, glossy toy-like material, big expressive eyes, cheerful pose, soft studio lighting, plain light background, centered",
@@ -484,7 +484,7 @@ export const templates: Template[] = [
     id: "pixar-3d",
     name: "3D 动画角色",
     description: "把人像转成动画电影质感。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Transform this portrait into a stylized 3D animated movie character, soft subsurface skin shading, expressive oversized eyes, keep recognizable facial features, cinematic key light, blurred background",
@@ -494,7 +494,7 @@ export const templates: Template[] = [
     id: "anime-transform",
     name: "动漫化",
     description: "照片转日系动漫画风。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Convert this portrait into modern anime illustration style, clean cel shading, expressive eyes, soft rim light, preserve hairstyle, outfit and facial identity, detailed but clean background",
@@ -504,7 +504,7 @@ export const templates: Template[] = [
     id: "professional-avatar",
     name: "职业头像",
     description: "随手拍转成职场专业头像。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Turn this casual photo into a clean professional avatar: neutral studio background, flattering soft key light, tidy business-casual appearance, keep the face completely unchanged, square crop",
@@ -514,7 +514,7 @@ export const templates: Template[] = [
     id: "pixel-art-avatar",
     name: "像素头像",
     description: "复古像素风格的个人头像。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Convert this portrait into crisp pixel art, limited retro palette, clear pixel grid with no anti-aliasing blur, preserve hairstyle and recognizable identity cues, simple flat background",
@@ -524,7 +524,7 @@ export const templates: Template[] = [
     id: "plush-toy",
     name: "毛绒玩具化",
     description: "把人物或宠物变成毛绒公仔。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Transform the subject into a cute plush collectible toy, soft fuzzy fabric texture, visible stitching, chunky simplified proportions, sitting on a plain pastel surface, product photo lighting",
@@ -534,7 +534,7 @@ export const templates: Template[] = [
     id: "expression-sheet",
     name: "表情设定表",
     description: "同一角色的多表情一致性展示。",
-    category: "角色",
+    category: "人物",
     mode: "t2i",
     prompt:
       "Character expression sheet with six consistent head poses in a grid: happy, surprised, thinking, sad, confident, laughing. Same character design and colors across all, clean white background",
@@ -544,7 +544,7 @@ export const templates: Template[] = [
     id: "glasses-tryon",
     name: "眼镜试戴",
     description: "在人像上叠加眼镜，光影自然。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Add everyday eyeglasses to this portrait with realistic fit, believable lens reflections and a soft shadow on the nose bridge, keep the face, pose, hair and lighting completely unchanged",
@@ -638,7 +638,7 @@ export const templates: Template[] = [
     id: "typography-poster",
     name: "字体海报",
     description: "以文字为主体的视觉海报。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Bold typographic poster design, oversized headline as the main visual element, strong grid alignment, limited two-color palette, generous margins, Swiss international style, print quality",
@@ -648,7 +648,7 @@ export const templates: Template[] = [
     id: "magazine-cover",
     name: "杂志封面",
     description: "编辑设计感的封面版式。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Editorial magazine cover layout, striking central image area, masthead at the top, coverline text blocks along the sides, refined serif and sans mix, high-end print aesthetic",
@@ -658,7 +658,7 @@ export const templates: Template[] = [
     id: "quote-card-bg",
     name: "语录卡背景",
     description: "留白充足的引言卡底图。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Clean quote card background, soft abstract gradient with subtle grain texture, large empty center area reserved for text, calm sophisticated palette, no lettering in the image",
@@ -668,7 +668,7 @@ export const templates: Template[] = [
     id: "podcast-cover",
     name: "播客封面",
     description: "抽象识别度高的节目封面。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Podcast cover art concept, bold abstract geometric composition, strong focal contrast, memorable at thumbnail size, space reserved for the show title, modern confident palette",
@@ -678,7 +678,7 @@ export const templates: Template[] = [
     id: "youtube-thumbnail",
     name: "视频封面",
     description: "高点击率的视频缩略图。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Video thumbnail concept with one clear focal subject, high contrast lighting, bold color blocking, empty area on one side reserved for large title text, eye-catching at small sizes",
@@ -688,7 +688,7 @@ export const templates: Template[] = [
     id: "event-poster",
     name: "活动海报底图",
     description: "线下活动海报的视觉底稿。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Event poster base design, risograph-inspired texture, bold overlapping shapes, limited three-color palette with visible misregistration, clear empty zones for event details",
@@ -698,7 +698,7 @@ export const templates: Template[] = [
     id: "newsletter-header",
     name: "邮件头图",
     description: "Newsletter 顶部横幅。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Editorial newsletter header banner, abstract illustrative composition, wide letterbox format, calm palette with one accent, refined and uncluttered, space for a short title",
@@ -708,7 +708,7 @@ export const templates: Template[] = [
     id: "instagram-launch",
     name: "发布日海报",
     description: "新品发布的方形社交图。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Square product launch announcement visual, strong focal contrast, bold geometric background, celebratory but restrained mood, clear empty band for announcement copy",
@@ -1022,7 +1022,7 @@ export const templates: Template[] = [
     id: "math-concept",
     name: "数学概念图",
     description: "把抽象概念画成图形，不堆公式。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Illustration visualizing an abstract mathematical concept through pure geometry and color relationships, clean vector shapes, no formulas or dense labels, generous white space, editorial palette",
@@ -1032,7 +1032,7 @@ export const templates: Template[] = [
     id: "cloud-architecture",
     name: "云架构示意",
     description: "高层架构图，不涉及具体实现细节。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "High level cloud architecture illustration, simplified boxes and connectors in isometric perspective, calm technical palette, clear visual hierarchy, no readable text or real code",
@@ -1042,7 +1042,7 @@ export const templates: Template[] = [
     id: "timeline-visual",
     name: "时间线视觉",
     description: "历史或产品演进的时间线插图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Horizontal timeline illustration with evenly spaced milestone markers, flat illustrative style, muted historical palette, decorative period motifs, label areas intentionally left blank",
@@ -1052,7 +1052,7 @@ export const templates: Template[] = [
     id: "flashcard-art",
     name: "识字卡插画",
     description: "友好的教学卡片插图，留出文字位。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Friendly educational flashcard illustration, single clear subject on a soft solid background, rounded shapes and warm cheerful palette, empty band at the bottom for a word",
@@ -1062,7 +1062,7 @@ export const templates: Template[] = [
     id: "climate-report",
     name: "气候报告插图",
     description: "环境议题的报告配图，克制不说教。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Climate and sustainability report illustration, stylized landscape with subtle data inspired shapes, restrained natural palette of greens and blues, calm informative tone, no dense labels",
@@ -1072,7 +1072,7 @@ export const templates: Template[] = [
     id: "fintech-trust",
     name: "金融科技插图",
     description: "强调安全与信任感的金融配图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Fintech illustration conveying security and trust, abstract shield and layered card motifs, geometric flat style, confident blue and deep navy palette with one warm accent, clean composition",
@@ -1082,7 +1082,7 @@ export const templates: Template[] = [
     id: "healthcare-explainer",
     name: "医疗科普图",
     description: "非诊断性的健康科普插图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Non diagnostic healthcare explainer illustration, soft rounded human and organic forms, gentle teal and warm neutral palette, reassuring approachable tone, no medical claims or labels",
@@ -1092,7 +1092,7 @@ export const templates: Template[] = [
     id: "journal-visual",
     name: "手账情绪图",
     description: "温柔的心理健康与习惯养成配图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Gentle mental wellness illustration, a quiet figure in a soft interior, warm muted palette, hand drawn texture, calm and unhurried mood, generous breathing space",
@@ -1102,7 +1102,7 @@ export const templates: Template[] = [
     id: "supply-chain",
     name: "供应链图示",
     description: "物流与库存流程的运营插图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Operations illustration of a supply chain flow, simplified vehicles warehouses and route lines, isometric perspective, clean industrial palette, clear left to right reading order",
@@ -1112,7 +1112,7 @@ export const templates: Template[] = [
     id: "ai-workflow-hero",
     name: "AI 流程头图",
     description: "自动化与工作流文章的头图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Blog header illustration about AI workflows and automation, abstract nodes and flowing connections, subtle gradient depth, modern technical palette, balanced wide composition",
@@ -1122,7 +1122,7 @@ export const templates: Template[] = [
     id: "oss-project",
     name: "开源项目图",
     description: "适合 README 与发布贴的项目视觉。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Open source project visual, abstract modular blocks assembling into a whole, flat vector style with crisp edges, developer friendly dark palette with a bright accent, centered composition",
@@ -1132,7 +1132,7 @@ export const templates: Template[] = [
     id: "api-docs-hero",
     name: "接口文档头图",
     description: "开发者文档头图，有代码结构但无真代码。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Developer documentation hero illustration, abstract code block shapes and bracket motifs, monospace inspired rhythm without readable text, dark editor palette with syntax color accents",
@@ -1142,7 +1142,7 @@ export const templates: Template[] = [
     id: "legal-doc-visual",
     name: "法务流程图",
     description: "中性的合同与文档流程配图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Neutral legal technology illustration, stacked document shapes with seal and signature motifs, restrained navy and warm paper palette, orderly geometric composition, no readable text",
@@ -1152,7 +1152,7 @@ export const templates: Template[] = [
     id: "impact-report",
     name: "影响力报告图",
     description: "公益年报封面视觉。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Impact report cover illustration, abstract community and growth motifs, hopeful warm palette, flat shapes with subtle grain texture, clear empty area for a report title",
@@ -1162,7 +1162,7 @@ export const templates: Template[] = [
     id: "course-cover",
     name: "在线课程封面",
     description: "课程落地页与卡片的封面图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Online course cover illustration, clear central subject metaphor, bold flat shapes, confident two color palette with a bright accent, strong silhouette that stays readable when small",
@@ -1172,7 +1172,7 @@ export const templates: Template[] = [
     id: "spell-card-art",
     name: "卡牌插画",
     description: "桌游或数字卡牌的中心画面。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Fantasy card game central artwork, dramatic magical effect as the focal point, painterly rendering with strong rim light, rich saturated palette, composition framed for a card border",
@@ -1182,7 +1182,7 @@ export const templates: Template[] = [
     id: "region-map",
     name: "奇幻地图",
     description: "装饰性地图底稿，地名后期再加。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Decorative fantasy region map, hand drawn coastlines mountains and forests, aged parchment texture, compass rose and border ornament, all place labels intentionally left blank",
@@ -1192,7 +1192,7 @@ export const templates: Template[] = [
     id: "neighborhood-map",
     name: "街区手绘地图",
     description: "本地指南用的装饰性地图。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Charming hand illustrated neighborhood map, simplified buildings parks and streets from a slightly tilted top view, warm friendly palette, decorative but clear, no text labels",
@@ -1202,7 +1202,7 @@ export const templates: Template[] = [
     id: "museum-diorama",
     name: "微缩场景",
     description: "微缩模型质感，适合科普与历史。",
-    category: "插画",
+    category: "插图",
     mode: "t2i",
     prompt:
       "Miniature diorama scene with tilt shift depth of field, handcrafted model materials, warm museum spotlighting, meticulous small scale detail, dark neutral surround",
@@ -1212,7 +1212,7 @@ export const templates: Template[] = [
     id: "comic-panel",
     name: "漫画分格",
     description: "把画面转成漫画质感，带网点。",
-    category: "插画",
+    category: "插图",
     mode: "i2i",
     prompt:
       "Turn this image into a bold comic book panel, heavy confident inking, limited flat color fills, controlled halftone dot texture, dynamic contrast, keep the original subject recognizable",
@@ -1222,7 +1222,7 @@ export const templates: Template[] = [
     id: "editorial-ink",
     name: "编辑线描",
     description: "高对比钢笔线稿，适合专栏配图。",
-    category: "插画",
+    category: "插图",
     mode: "i2i",
     prompt:
       "Convert this photo into high contrast editorial ink linework, confident varied line weight, cross hatching for shadow, pure white background, no gray tones",
@@ -1232,7 +1232,7 @@ export const templates: Template[] = [
     id: "clay-render",
     name: "黏土渲染",
     description: "柔软的黏土质感 3D 效果。",
-    category: "插画",
+    category: "插图",
     mode: "i2i",
     prompt:
       "Turn the subject into a soft clay like 3D render, matte modeling clay material with visible thumb texture, rounded simplified forms, soft studio light, pastel background",
@@ -1242,7 +1242,7 @@ export const templates: Template[] = [
     id: "watercolor-portrait",
     name: "水彩人像",
     description: "柔和水彩风，保留可辨识的五官。",
-    category: "插画",
+    category: "插图",
     mode: "i2i",
     prompt:
       "Transform this portrait into a soft watercolor illustration, wet edges and paper bleed, loose brushwork with white paper showing through, keep facial features clearly recognizable",
@@ -1252,7 +1252,7 @@ export const templates: Template[] = [
     id: "minimal-line-avatar",
     name: "极简线条头像",
     description: "单线条头像，克制而优雅。",
-    category: "插画",
+    category: "插图",
     mode: "i2i",
     prompt:
       "Create an elegant minimal line art avatar from this portrait, single consistent line weight, only essential contours, flat solid background, no shading, preserve recognizable features",
@@ -1262,7 +1262,7 @@ export const templates: Template[] = [
     id: "pet-oil-portrait",
     name: "宠物油画",
     description: "把宠物照画成古典油画肖像。",
-    category: "插画",
+    category: "插图",
     mode: "i2i",
     prompt:
       "Turn this pet photo into a classical oil portrait, visible brush strokes and impasto texture, dark rich background with a warm key light, dignified pose, preserve markings and expression",
@@ -1274,7 +1274,7 @@ export const templates: Template[] = [
     id: "floating-product-ad",
     name: "悬浮商品广告",
     description: "商品悬浮的现代广告视觉。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Modern floating product advertisement, item suspended in mid air with a soft contact shadow below, gradient studio backdrop, crisp rim light, generous empty space for headline copy",
@@ -1284,7 +1284,7 @@ export const templates: Template[] = [
     id: "watch-macro",
     name: "腕表微距",
     description: "精密器物特写，控制高光。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Premium watch macro photograph, extreme detail on dial texture and case chamfers, controlled specular highlights, dark gradient background, precise focus stacking look",
@@ -1294,7 +1294,7 @@ export const templates: Template[] = [
     id: "sneaker-street",
     name: "球鞋街头广告",
     description: "城市光感下的球鞋大片。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Sneaker campaign photograph, product hero on urban concrete, dramatic mixed street lighting with colored reflections, wet ground bounce, strong product focus, night mood",
@@ -1304,7 +1304,7 @@ export const templates: Template[] = [
     id: "supplement-clean",
     name: "健康品净场",
     description: "干净的保健品场景，不做疗效暗示。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Clean wellness product scene, supplement bottle on a bright neutral surface with fresh botanical props, soft even daylight, airy minimal styling, no medical claims or text",
@@ -1314,7 +1314,7 @@ export const templates: Template[] = [
     id: "candle-cozy",
     name: "香薰暖场景",
     description: "居家香氛的温暖生活场景。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Warm lifestyle scene for a candle or home fragrance, soft flickering light, layered linen and wood textures, cozy evening atmosphere, shallow depth of field, muted earthy palette",
@@ -1324,7 +1324,7 @@ export const templates: Template[] = [
     id: "pet-supplies",
     name: "宠物用品图",
     description: "友好的宠物周边商品图。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Friendly pet accessory product photograph, playful arrangement on a bright pastel surface, soft even light, cheerful approachable palette, clean catalog styling",
@@ -1334,7 +1334,7 @@ export const templates: Template[] = [
     id: "furniture-context",
     name: "家具场景图",
     description: "把家具放进可信的房间环境。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Furniture piece shown in a believable room context, natural window light with soft shadows, complementary but understated decor, architectural framing, realistic material rendering",
@@ -1344,7 +1344,7 @@ export const templates: Template[] = [
     id: "skincare-shelf",
     name: "护肤置物架",
     description: "浴室置物架上的护肤陈列。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Clean bathroom shelf scene for skincare products, stone and ceramic surfaces, soft diffused daylight, restrained neutral palette, calm spa like styling, orderly arrangement",
@@ -1354,7 +1354,7 @@ export const templates: Template[] = [
     id: "travel-gear-flatlay",
     name: "旅行装备平铺",
     description: "打包清单式的物品平铺图。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Travel gear flat lay from directly above, organized grid of packing essentials, even soft light, muted utilitarian palette, tidy geometric spacing on a textured surface",
@@ -1364,7 +1364,7 @@ export const templates: Template[] = [
     id: "toy-package",
     name: "玩具包装渲染",
     description: "收藏玩具的包装概念图。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Collectible toy packaging concept render, blister box with a clear window, bold graphic panels with no readable text, studio product lighting, vibrant retail shelf appeal",
@@ -1374,7 +1374,7 @@ export const templates: Template[] = [
     id: "accessory-campaign",
     name: "配饰广告",
     description: "箱包与配饰的品牌广告图。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Accessory campaign visual for bags and small leather goods, sculptural arrangement on a colored pedestal, hard directional light with clean shadows, editorial fashion palette",
@@ -1384,7 +1384,7 @@ export const templates: Template[] = [
     id: "retail-popup",
     name: "快闪店陈列",
     description: "线下快闪的紧凑陈列概念。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Compact retail pop up display concept, modular shelving with product arrangement, bold brand color blocking, even retail lighting, clean signage areas left blank",
@@ -1394,7 +1394,7 @@ export const templates: Template[] = [
     id: "spa-package",
     name: "水疗套餐图",
     description: "适合礼卡与预约页的疗愈图。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Calming spa promotional image, folded towels stones and botanicals, warm soft lighting with gentle steam, muted natural palette, serene uncluttered composition",
@@ -1404,7 +1404,7 @@ export const templates: Template[] = [
     id: "seasonal-banner",
     name: "季节促销横幅",
     description: "克制的电商促销图，不堆折扣字。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Tasteful seasonal ecommerce banner, product grouping with seasonal props, warm festive but restrained styling, wide letterbox composition, clear empty zone for promotional copy",
@@ -1414,7 +1414,7 @@ export const templates: Template[] = [
     id: "phone-editor-preview",
     name: "手机端预览",
     description: "商品在手机界面里的展示效果。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Product shown inside a modern smartphone screen mockup held at a slight angle, clean studio background, realistic screen reflection, sharp device edges, generous surrounding space",
@@ -1424,7 +1424,7 @@ export const templates: Template[] = [
     id: "before-after-cleanup",
     name: "商品图前后对比",
     description: "把粗糙商品图变成干净成品的对比。",
-    category: "商品",
+    category: "产品",
     mode: "i2i",
     prompt:
       "Create a clean side by side comparison from this rough product photo, left side untouched and right side cleaned with even lighting and a neutral background, preserve the product exactly",
@@ -1434,7 +1434,7 @@ export const templates: Template[] = [
     id: "sneakers-onfeet",
     name: "球鞋上脚图",
     description: "参考图生成上脚的生活方式照。",
-    category: "商品",
+    category: "产品",
     mode: "i2i",
     prompt:
       "Create an on feet lifestyle shot from this sneaker reference, natural walking stance on textured pavement, soft daylight, preserve the shoe silhouette colorway and branding exactly",
@@ -1444,7 +1444,7 @@ export const templates: Template[] = [
     id: "watch-wrist-tryon",
     name: "腕表上手",
     description: "在手腕照片上预览腕表佩戴效果。",
-    category: "商品",
+    category: "产品",
     mode: "i2i",
     prompt:
       "Preview this watch on a wrist photo, believable strap fit and perspective, matching light direction and skin tone, preserve the hand pose background and the watch design exactly",
@@ -1454,7 +1454,7 @@ export const templates: Template[] = [
     id: "product-shadow-fix",
     name: "商品影子修正",
     description: "为商品补自然的落地阴影与反射。",
-    category: "商品",
+    category: "产品",
     mode: "i2i",
     prompt:
       "Add a natural contact shadow and subtle surface reflection under this product, consistent with a single soft key light, clean seamless background, preserve product shape and color",
@@ -1464,7 +1464,7 @@ export const templates: Template[] = [
     id: "color-variant",
     name: "配色变体",
     description: "同一商品生成不同配色版本。",
-    category: "商品",
+    category: "产品",
     mode: "i2i",
     prompt:
       "Generate a different colorway of this product, apply the new color only to the main body while preserving material finish highlights logo placement and overall geometry",
@@ -1474,7 +1474,7 @@ export const templates: Template[] = [
     id: "gift-set-scene",
     name: "礼盒套装场景",
     description: "节日礼盒组合的成套展示。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Gift set product scene, coordinated items arranged with ribbon and tissue, warm holiday lighting, rich but restrained palette, premium unhurried styling",
@@ -1484,7 +1484,7 @@ export const templates: Template[] = [
     id: "beverage-splash",
     name: "饮品动感图",
     description: "带液体动态的饮品广告图。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Beverage advertising photograph with a frozen liquid splash, condensation on the container, backlit to make the drink glow, dark gradient background, high shutter crispness",
@@ -1494,7 +1494,7 @@ export const templates: Template[] = [
     id: "tech-exploded",
     name: "数码分解图",
     description: "电子产品的分解结构展示。",
-    category: "商品",
+    category: "产品",
     mode: "t2i",
     prompt:
       "Exploded view render of a consumer electronics device, components separated along a vertical axis, precise engineering alignment, dark studio backdrop with crisp edge lighting",
@@ -1506,7 +1506,7 @@ export const templates: Template[] = [
     id: "cyberpunk-portrait",
     name: "赛博人像",
     description: "霓虹光效的未来感人物。",
-    category: "角色",
+    category: "人物",
     mode: "t2i",
     prompt:
       "Cyberpunk character portrait, neon rim lighting in cyan and magenta, rain slicked city bokeh behind, detailed techwear costume, cinematic close up framing, moody dark palette",
@@ -1516,7 +1516,7 @@ export const templates: Template[] = [
     id: "fantasy-character-card",
     name: "奇幻角色卡",
     description: "带背景氛围的角色立绘。",
-    category: "角色",
+    category: "人物",
     mode: "t2i",
     prompt:
       "Fantasy character card illustration, full body hero pose with detailed costume and props, atmospheric environment behind, painterly rendering, dramatic key light, vertical card framing",
@@ -1526,7 +1526,7 @@ export const templates: Template[] = [
     id: "stylized-game-character",
     name: "风格化游戏角色",
     description: "适合游戏立项的角色概念。",
-    category: "角色",
+    category: "人物",
     mode: "t2i",
     prompt:
       "Stylized game character concept, exaggerated proportions with clear silhouette, hand painted texture look, neutral turnaround pose, flat studio background, consistent design language",
@@ -1536,7 +1536,7 @@ export const templates: Template[] = [
     id: "rpg-sheet",
     name: "角色设定表",
     description: "正侧背三视图的角色设定。",
-    category: "角色",
+    category: "人物",
     mode: "t2i",
     prompt:
       "Character design sheet with front side and back views aligned on a common baseline, consistent proportions and costume details across all views, flat neutral background, clean line and color",
@@ -1546,7 +1546,7 @@ export const templates: Template[] = [
     id: "cute-robot-mascot",
     name: "机器人吉祥物",
     description: "圆润可爱的机器人形象。",
-    category: "角色",
+    category: "人物",
     mode: "t2i",
     prompt:
       "Cute robot mascot character, rounded friendly geometry, glossy 3D render with soft studio lighting, expressive simple face, cheerful two color palette, centered on a plain background",
@@ -1556,7 +1556,7 @@ export const templates: Template[] = [
     id: "author-headshot-illust",
     name: "作者头像插画",
     description: "适合简介与个人站的插画头像。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Create a professional illustrated headshot from this portrait, clean editorial illustration style, limited warm palette, simple background, keep facial structure and features recognizable",
@@ -1566,7 +1566,7 @@ export const templates: Template[] = [
     id: "creator-avatar",
     name: "创作者头像",
     description: "适合频道与社群的友好头像。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Turn this portrait into a friendly creator avatar, bold outlines and simplified shading, vivid accent background, approachable expression, preserve recognizable facial features and hairstyle",
@@ -1576,7 +1576,7 @@ export const templates: Template[] = [
     id: "pet-avatar",
     name: "宠物头像",
     description: "把宠物照做成精致头像，保留花纹。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Turn this pet photo into a polished avatar, clean circular composition, soft studio lighting, vibrant solid background, preserve the animal markings fur texture and expression exactly",
@@ -1586,7 +1586,7 @@ export const templates: Template[] = [
     id: "outfit-swap",
     name: "换装对比",
     description: "在保留人物的前提下更换服装。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Change the clothing in this portrait to a different outfit, believable fabric drape and fit matching the pose, consistent lighting, preserve the face body proportions and background unchanged",
@@ -1596,7 +1596,7 @@ export const templates: Template[] = [
     id: "evening-gown-tryon",
     name: "礼服试穿",
     description: "预览正式礼服的穿着效果。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Preview an elegant evening gown on this photo, natural fabric flow and realistic fit to the existing pose, matching light direction, keep the face hair and background completely unchanged",
@@ -1606,7 +1606,7 @@ export const templates: Template[] = [
     id: "blazer-tryon",
     name: "西装试穿",
     description: "把休闲装换成正式西装外套。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Change the casual clothing in this portrait into a well tailored blazer, realistic shoulder fit lapel and fabric texture, consistent lighting, preserve face pose and background exactly",
@@ -1616,7 +1616,7 @@ export const templates: Template[] = [
     id: "jacket-tryon",
     name: "外套试穿",
     description: "在原图上试穿夹克或外套。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Try a streetwear jacket on this portrait, believable layering over existing clothing, natural folds and shadow, matching ambient light, keep the subject pose and setting unchanged",
@@ -1626,7 +1626,7 @@ export const templates: Template[] = [
     id: "sunglasses-tryon",
     name: "墨镜试戴",
     description: "加上墨镜并保持光线可信。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Add sunglasses to this portrait, correct fit to face geometry, realistic lens reflection and shadow on the nose bridge, preserve facial features pose and lighting direction exactly",
@@ -1636,7 +1636,7 @@ export const templates: Template[] = [
     id: "cap-tryon",
     name: "帽子试戴",
     description: "在人像上自然地加一顶帽子。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Add a baseball cap to this portrait, believable fit over the hairline with a natural brim shadow, matching light direction and color temperature, preserve the face and background",
@@ -1646,7 +1646,7 @@ export const templates: Template[] = [
     id: "necklace-tryon",
     name: "项链试戴",
     description: "预览项链的垂坠与比例。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Show a necklace on this portrait, natural drape following the neckline and correct scale, realistic metal highlights matching the scene light, preserve skin texture and identity",
@@ -1656,7 +1656,7 @@ export const templates: Template[] = [
     id: "earrings-tryon",
     name: "耳饰试戴",
     description: "在人像上预览耳饰效果。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Preview earrings on this portrait, accurate placement and scale relative to the ear, realistic material highlights and subtle shadow, keep the face hairstyle and lighting unchanged",
@@ -1666,7 +1666,7 @@ export const templates: Template[] = [
     id: "lipstick-tryon",
     name: "口红试色",
     description: "换口红颜色但保留唇部质感。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Preview a different lipstick shade on this portrait, natural lip texture and highlight retained, believable edge definition, preserve skin tone facial identity and lighting exactly",
@@ -1676,7 +1676,7 @@ export const templates: Template[] = [
     id: "eyeshadow-tryon",
     name: "眼妆试色",
     description: "预览自然眼影效果。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Preview subtle eyeshadow on this portrait, soft natural blending in the crease, believable color intensity, preserve eye shape lashes skin texture and overall facial identity",
@@ -1686,7 +1686,7 @@ export const templates: Template[] = [
     id: "hair-color-preview",
     name: "发色预览",
     description: "换发色但保留发型与光线。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Preview a different hair color on this portrait, natural root to tip variation and realistic shine, preserve the exact hairstyle strand detail facial features and scene lighting",
@@ -1696,7 +1696,7 @@ export const templates: Template[] = [
     id: "haircut-preview",
     name: "发型预览",
     description: "预览新发型，不改动五官。",
-    category: "角色",
+    category: "人物",
     mode: "i2i",
     prompt:
       "Preview a neat shorter haircut on this portrait, natural hairline and volume, believable strand detail, keep the face proportions expression background and lighting completely unchanged",
@@ -1708,7 +1708,7 @@ export const templates: Template[] = [
     id: "album-cover-ambient",
     name: "氛围专辑封面",
     description: "情绪强烈的方形专辑封面底图。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Square ambient music album cover, abstract atmospheric gradient with grain texture, strong single mood, deep restrained palette, no lettering anywhere, room for type to be added later",
@@ -1718,7 +1718,7 @@ export const templates: Template[] = [
     id: "scifi-book-cover",
     name: "科幻书封",
     description: "克制的科幻封面方向。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Minimal science fiction book cover direction, single bold geometric motif against a vast empty field, restrained two color palette, subtle grain, clear vertical space reserved for the title",
@@ -1728,7 +1728,7 @@ export const templates: Template[] = [
     id: "mystery-book-cover",
     name: "悬疑书封",
     description: "带氛围感的小说封面底稿。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Atmospheric mystery novel cover direction, moody illustrated scene with fog and a single light source, muted desaturated palette, cinematic vignette, generous title area at the top",
@@ -1738,7 +1738,7 @@ export const templates: Template[] = [
     id: "bold-ad-type",
     name: "大字广告版式",
     description: "强冲击的大字广告底图。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Bold advertising layout background, oversized geometric shapes creating a strong grid, high contrast complementary colors, deliberate asymmetric balance, wide clear zones for large type",
@@ -1748,7 +1748,7 @@ export const templates: Template[] = [
     id: "hand-lettered-quote",
     name: "手写金句卡",
     description: "手写感的语录卡底图。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Hand lettered quote card background, organic brush texture and ink splatter framing an empty center, warm paper tone, natural imperfect edges, calm crafted feel",
@@ -1758,7 +1758,7 @@ export const templates: Template[] = [
     id: "meetup-poster",
     name: "技术沙龙海报",
     description: "开发者活动的干净海报方向。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Clean tech meetup poster direction, precise modular grid with abstract code inspired shapes, confident dark background with one bright accent, structured empty bands for event details",
@@ -1768,7 +1768,7 @@ export const templates: Template[] = [
     id: "music-night-poster",
     name: "音乐现场海报",
     description: "小型演出海报的视觉方向。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Live music night poster direction, energetic abstract light streaks and grain, saturated duotone palette, gritty texture overlay, strong empty area reserved for lineup type",
@@ -1778,7 +1778,7 @@ export const templates: Template[] = [
     id: "film-screening-poster",
     name: "放映会海报",
     description: "文艺放映活动的氛围海报。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Atmospheric film screening poster concept, single evocative image with heavy negative space, muted cinematic palette, subtle halftone grain, classic art house composition",
@@ -1788,7 +1788,7 @@ export const templates: Template[] = [
     id: "farmers-market-poster",
     name: "市集海报",
     description: "温暖的社区市集海报底图。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Warm community market poster base, hand drawn produce motifs arranged as a border, sunny earthy palette, textured paper feel, open center left empty for event copy",
@@ -1798,7 +1798,7 @@ export const templates: Template[] = [
     id: "risograph-poster",
     name: "孔版印刷海报",
     description: "限色套印质感的海报方向。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Risograph style poster direction, two ink layers with visible misregistration, bold simplified shapes, coarse paper grain, limited fluorescent palette, strong graphic impact",
@@ -1808,7 +1808,7 @@ export const templates: Template[] = [
     id: "workshop-poster-base",
     name: "工作坊海报底",
     description: "社区活动海报底稿，文字后期加。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Community workshop poster base, friendly abstract shapes in a soft warm palette, clear structural zones, gentle paper texture, all text areas intentionally left blank",
@@ -1818,7 +1818,7 @@ export const templates: Template[] = [
     id: "menu-board",
     name: "菜单板视觉",
     description: "餐饮菜单板的版式方向。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Cafe menu board visual direction, dark chalkboard surface with decorative botanical corners, warm rim lighting, clearly defined empty columns where menu items will be set",
@@ -1828,7 +1828,7 @@ export const templates: Template[] = [
     id: "flyer-base",
     name: "服务传单底图",
     description: "本地服务传单的底稿。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Local service flyer base layout, clean color block bands with a strong diagonal, professional trustworthy palette, generous blank areas for headline body and contact details",
@@ -1838,7 +1838,7 @@ export const templates: Template[] = [
     id: "handbook-cover",
     name: "手册封面",
     description: "简洁的员工手册封面底图。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Clean employee handbook cover background, restrained geometric pattern in corporate neutral tones, subtle depth, professional and calm, large empty area reserved for the title",
@@ -1848,7 +1848,7 @@ export const templates: Template[] = [
     id: "linkedin-banner",
     name: "职业主页横幅",
     description: "职业社交主页的背景横幅。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Professional profile banner background, wide abstract gradient with soft geometric layering, calm confident palette, no text embedded, left side kept visually quiet for an avatar overlay",
@@ -1858,7 +1858,7 @@ export const templates: Template[] = [
     id: "personal-brand-banner",
     name: "个人品牌横幅",
     description: "个人站或简历的头部背景。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Personal brand banner background, minimal abstract composition with a single accent shape, refined muted palette, plenty of empty space, understated and modern",
@@ -1868,7 +1868,7 @@ export const templates: Template[] = [
     id: "report-cover",
     name: "报告封面",
     description: "专业报告与白皮书的封面。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Professional report cover design, structured grid with a bold abstract data inspired graphic, corporate palette with one strong accent, clear hierarchy zones left blank for type",
@@ -1878,7 +1878,7 @@ export const templates: Template[] = [
     id: "tiktok-tutorial-cover",
     name: "竖版教程封面",
     description: "竖屏教程封面，留出前后对比区。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Vertical tutorial cover layout, split composition with two clear panels for a before and after visual, bold divider, high contrast palette, empty band at the top for a hook headline",
@@ -1888,7 +1888,7 @@ export const templates: Template[] = [
     id: "wedding-suite",
     name: "婚礼请柬套系",
     description: "请柬与卡片的整套视觉方向。",
-    category: "字体排版",
+    category: "排版",
     mode: "t2i",
     prompt:
       "Wedding stationery suite direction, coordinated invitation cards laid out flat, delicate botanical line work, soft blush and cream palette, elegant spacing, text areas left blank",
@@ -1900,7 +1900,7 @@ export const templates: Template[] = [
     id: "finance-mobile-home",
     name: "理财 App 首页",
     description: "层级清晰、观感可信的金融首页。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Mobile finance app home screen mockup, clear balance card at the top, tidy transaction list below, trustworthy blue and neutral palette, generous spacing, crisp modern UI rendering",
@@ -1910,7 +1910,7 @@ export const templates: Template[] = [
     id: "invoice-ui",
     name: "发票管理界面",
     description: "面向小企业的账务软件界面。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Invoice management software interface mockup, sidebar navigation with a dense data table and status chips, calm professional palette, clear typographic hierarchy, desktop viewport framing",
@@ -1920,7 +1920,7 @@ export const templates: Template[] = [
     id: "budget-planner",
     name: "预算规划界面",
     description: "带图表的记账与预算视图。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Budget planning app screen, donut chart and category breakdown bars, friendly rounded cards, soft pastel accents on a light background, clean readable layout",
@@ -1930,7 +1930,7 @@ export const templates: Template[] = [
     id: "telehealth-mockup",
     name: "问诊 App 界面",
     description: "在线医疗产品的界面稿。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Telehealth product screen mockup, video consultation layout with appointment cards, calm teal and white palette, accessible spacing and contrast, modern medical product styling",
@@ -1940,7 +1940,7 @@ export const templates: Template[] = [
     id: "app-feature-graphic",
     name: "应用商店主图",
     description: "带手机样机的应用商店特色图。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "App store feature graphic, two floating phone mockups at a slight angle on a bold gradient background, soft device shadows, clear empty copy zone on one side",
@@ -1950,7 +1950,7 @@ export const templates: Template[] = [
     id: "game-inventory-icons",
     name: "游戏道具图标",
     description: "风格统一的道具图标组。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Cohesive game inventory icon set arranged in a grid, consistent lighting angle and outline weight across all items, rich fantasy material palette, dark slot backgrounds",
@@ -1960,7 +1960,7 @@ export const templates: Template[] = [
     id: "isometric-tool-map",
     name: "产品系统图",
     description: "等距视角的产品能力全景图。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Isometric system map for a product explainer, connected modules and pathways on a soft grid plane, clean technical palette with one accent, orderly depth, no readable text",
@@ -1970,7 +1970,7 @@ export const templates: Template[] = [
     id: "floorplan-visual",
     name: "户型示意图",
     description: "干净的三维户型图。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Clean 3D floorplan visual viewed from above at a slight tilt, simplified furniture blocks, soft ambient occlusion, light neutral materials with one accent color, no dimension labels",
@@ -1980,7 +1980,7 @@ export const templates: Template[] = [
     id: "settings-screen",
     name: "设置页界面",
     description: "分组清晰的设置页样式。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Mobile settings screen mockup, grouped preference rows with toggles and chevrons, clear section headers, restrained neutral palette, generous vertical rhythm, crisp rendering",
@@ -1990,7 +1990,7 @@ export const templates: Template[] = [
     id: "analytics-chart-set",
     name: "数据图表组",
     description: "成套的图表组件展示。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Analytics chart component set, line area and bar charts arranged as cards, consistent axis styling and one accent color, light dashboard background, precise clean rendering",
@@ -2000,7 +2000,7 @@ export const templates: Template[] = [
     id: "checkout-flow",
     name: "结算流程界面",
     description: "电商结算步骤的界面稿。",
-    category: "界面稿",
+    category: "UI模型",
     mode: "t2i",
     prompt:
       "Ecommerce checkout flow mockup, step indicator with order summary and payment form, trustworthy neutral palette with a green confirmation accent, clear field hierarchy",
