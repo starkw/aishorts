@@ -23,6 +23,30 @@ export interface Template {
   ratio: AspectRatio;
 }
 
+/** 分类样图，同时用于首页瀑布流与生成器里的模板缩略卡 */
+export const CATEGORY_IMAGE: Record<TemplateCategory, string> = {
+  摄影: "/tpl/photo.jpg",
+  插画: "/tpl/illustration.jpg",
+  商品: "/tpl/product.jpg",
+  标志品牌: "/tpl/brand.jpg",
+  界面稿: "/tpl/ui.jpg",
+  角色: "/tpl/character.jpg",
+  风景: "/tpl/landscape.jpg",
+  字体排版: "/tpl/typography.jpg",
+};
+
+/** 样图加载完成前的占位底色 */
+export const CATEGORY_GRADIENT: Record<TemplateCategory, string> = {
+  摄影: "from-slate-700 via-slate-800 to-slate-900",
+  插画: "from-rose-400 via-orange-400 to-amber-400",
+  商品: "from-zinc-200 via-zinc-300 to-zinc-400",
+  标志品牌: "from-amber-400 via-orange-500 to-rose-500",
+  界面稿: "from-sky-400 via-blue-500 to-indigo-500",
+  角色: "from-fuchsia-400 via-purple-500 to-violet-600",
+  风景: "from-emerald-400 via-teal-500 to-cyan-600",
+  字体排版: "from-neutral-800 via-neutral-700 to-neutral-900",
+};
+
 export const TEMPLATE_CATEGORIES: TemplateCategory[] = [
   "摄影",
   "插画",

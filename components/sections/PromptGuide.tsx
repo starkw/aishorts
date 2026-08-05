@@ -41,7 +41,7 @@ export default function PromptGuide() {
   return (
     <section className="bg-gray-50 border-y border-gray-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-        <p className="text-center text-xs font-semibold tracking-widest text-indigo-500 uppercase mb-3">
+        <p className="text-center text-xs font-semibold tracking-widest text-amber-600 uppercase mb-3">
           实用指南
         </p>
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-3">
@@ -59,7 +59,7 @@ export default function PromptGuide() {
               <ul className="space-y-2.5">
                 {block.items.map((item) => (
                   <li key={item} className="flex gap-2.5 text-sm text-gray-500 leading-relaxed">
-                    <span className="mt-1.5 w-1 h-1 rounded-full bg-indigo-400 shrink-0" />
+                    <span className="mt-1.5 w-1 h-1 rounded-full bg-amber-400 shrink-0" />
                     {item}
                   </li>
                 ))}

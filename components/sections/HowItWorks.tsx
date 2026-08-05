@@ -26,7 +26,7 @@ export default function HowItWorks() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {STEPS.map((step, i) => (
           <div key={step.title} className="relative">
-            <div className="text-5xl font-black text-indigo-100 leading-none mb-3 select-none">
+            <div className="text-5xl font-black text-amber-100 leading-none mb-3 select-none">
               {String(i + 1).padStart(2, "0")}
             </div>
             <h3 className="text-base font-semibold text-gray-900 mb-2">{step.title}</h3>

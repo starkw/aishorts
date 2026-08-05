@@ -26,20 +26,20 @@ export default function Header() {
             height={30}
             className="object-contain block -translate-y-1"
           />
-          <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
             AI Shorts
           </span>
         </Link>
 
         <nav className="hidden sm:flex items-center gap-6 text-sm text-gray-600">
           {NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-indigo-600 transition-colors">
+            <Link key={item.href} href={item.href} className="hover:text-amber-600 transition-colors">
               {item.label}
             </Link>
           ))}
           <Link
             href="/feedback"
-            className="flex items-center gap-1 hover:text-indigo-600 transition-colors"
+            className="flex items-center gap-1 hover:text-amber-600 transition-colors"
           >
             <MessageSquare size={14} />
             反馈
@@ -49,7 +49,7 @@ export default function Header() {
         <div className="flex items-center gap-2 shrink-0">
           <Link
             href="/#generator"
-            className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 active:scale-95 transition-all"
+            className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 bg-amber-400 text-gray-900 text-sm font-medium rounded-lg hover:bg-amber-300 active:scale-95 transition-all"
           >
             <Sparkles size={13} />
             免费出图

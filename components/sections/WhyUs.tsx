@@ -48,11 +48,11 @@ export default function WhyUs() {
           {REASONS.map(({ icon: Icon, title, body }, i) => (
             <div
               key={title}
-              className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md hover:border-indigo-100 transition-all"
+              className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md hover:border-amber-200 transition-all"
             >
               <div className="flex items-center justify-between mb-4">
-                <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center">
-                  <Icon size={18} className="text-indigo-600" />
+                <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center">
+                  <Icon size={18} className="text-amber-600" />
                 </div>
                 <span className="text-xs font-mono text-gray-300">
                   {String(i + 1).padStart(2, "0")}

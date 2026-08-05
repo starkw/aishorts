@@ -81,9 +81,9 @@ export default function FeedbackPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 border-b border-gray-100 py-12">
+      <section className="bg-gradient-to-br from-amber-50 via-white to-orange-50 border-b border-gray-100 py-12">
         <div className="max-w-2xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-700 text-xs font-medium px-3 py-1.5 rounded-full mb-4">
             <MessageSquare size={12} />
             用户反馈
           </div>
@@ -105,7 +105,7 @@ export default function FeedbackPage() {
               onChange={(e) => setUsername(e.target.value)}
               placeholder="你的昵称（选填，默认匿名）"
               maxLength={30}
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all"
             />
             <textarea
               value={content}
@@ -113,7 +113,7 @@ export default function FeedbackPage() {
               placeholder="分享你的想法、建议或优质提示词..."
               rows={4}
               maxLength={1000}
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all resize-none"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all resize-none"
             />
             <div className="flex items-center justify-between">
               <span className="text-xs text-gray-400">{content.length}/1000</span>
@@ -123,7 +123,7 @@ export default function FeedbackPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium rounded-xl transition-colors"
+                  className="flex items-center gap-1.5 px-4 py-2 bg-amber-400 hover:bg-amber-300 disabled:opacity-60 text-white text-sm font-medium rounded-xl transition-colors"
                 >
                   {loading ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}
                   提交
@@ -154,8 +154,8 @@ export default function FeedbackPage() {
             list.map((item) => (
               <div key={item.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
                 <div className="flex items-center gap-2.5 mb-3">
-                  <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <User size={14} className="text-indigo-500" />
+                  <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <User size={14} className="text-amber-500" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-800">{item.username}</p>

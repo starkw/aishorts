@@ -50,35 +50,55 @@ export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
-      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-3">常见问题</h2>
-      <p className="text-gray-500 text-center mb-10">关于免费额度、隐私和使用限制</p>
+    <section id="faq" className="bg-gray-50 border-y border-gray-100">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+        <div className="grid lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1.45fr)] gap-8 lg:gap-14">
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight mb-3">
+              常见问题
+            </h2>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              关于免费额度、隐私保护和使用限制。还有其他疑问可以在反馈页留言。
+            </p>
+          </div>
 
-      <div className="space-y-2.5">
-        {FAQS.map((item, i) => {
-          const expanded = open === i;
-          return (
-            <div
-              key={item.q}
-              className="border border-gray-200 rounded-xl bg-white overflow-hidden transition-colors hover:border-gray-300"
-            >
-              <button
-                onClick={() => setOpen(expanded ? null : i)}
-                aria-expanded={expanded}
-                className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
-              >
-                <span className="text-sm font-medium text-gray-800">{item.q}</span>
-                <ChevronDown
-                  size={16}
-                  className={`shrink-0 text-gray-400 transition-transform ${expanded ? "rotate-180" : ""}`}
-                />
-              </button>
-              {expanded && (
-                <p className="px-5 pb-4 text-sm text-gray-500 leading-relaxed">{item.a}</p>
-              )}
-            </div>
-          );
-        })}
+          <div className="space-y-2">
+            {FAQS.map((item, i) => {
+              const expanded = open === i;
+              return (
+                <div
+                  key={item.q}
+                  className={`border rounded-xl bg-white overflow-hidden transition-colors ${
+                    expanded ? "border-amber-300" : "border-gray-200 hover:border-gray-300"
+                  }`}
+                >
+                  <button
+                    onClick={() => setOpen(expanded ? null : i)}
+                    aria-expanded={expanded}
+                    className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
+                  >
+                    <span className="text-sm font-medium text-gray-800">{item.q}</span>
+                    <span
+                      className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
+                        expanded ? "bg-amber-400" : "bg-gray-100"
+                      }`}
+                    >
+                      <ChevronDown
+                        size={13}
+                        className={`transition-transform ${
+                          expanded ? "rotate-180 text-gray-900" : "text-gray-500"
+                        }`}
+                      />
+                    </span>
+                  </button>
+                  {expanded && (
+                    <p className="px-5 pb-4 text-sm text-gray-500 leading-relaxed">{item.a}</p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );
