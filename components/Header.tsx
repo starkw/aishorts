@@ -17,14 +17,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-2">
-        <Link href="/" className="flex items-center gap-1 font-bold text-lg text-gray-900 shrink-0">
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg text-gray-900 shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo-lobster.png"
+            src="/logo-aperture.svg"
             alt="AI Shorts"
-            width={30}
-            height={30}
-            className="object-contain block -translate-y-1"
+            width={28}
+            height={28}
+            className="block"
           />
           <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
             AI Shorts

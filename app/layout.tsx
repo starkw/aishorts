@@ -70,8 +70,11 @@ export const metadata: Metadata = {
     google: "OdIVUVkWoVxWz9JvGPYign8FQfQNwfH8uOCykDTBieY",
   },
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      { url: "/logo-aperture.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", sizes: "64x64", type: "image/png" },
+    ],
+    apple: "/logo-aperture-180.png",
     shortcut: "/favicon.png",
   },
 };

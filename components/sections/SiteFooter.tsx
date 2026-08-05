@@ -29,14 +29,14 @@ export default function SiteFooter() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           <div>
-            <div className="flex items-center gap-1 mb-3">
+            <div className="flex items-center gap-2 mb-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo-lobster.png"
+                src="/logo-aperture.svg"
                 alt="AI Shorts"
-                width={28}
-                height={28}
-                className="object-contain"
+                width={26}
+                height={26}
+                className="block"
               />
               <span className="font-bold text-gray-900">AI Shorts</span>
             </div>
