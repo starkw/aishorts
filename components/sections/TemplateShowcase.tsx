@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Check, Copy, Search } from "lucide-react";
 import {
   CATEGORY_GRADIENT,
@@ -34,17 +34,11 @@ function interleaveByCategory(list: Template[]) {
   return out;
 }
 
-/** 同分类多张卡片共用一张样图，靠取景位移错开，避免看起来重复 */
-const OBJECT_POSITIONS = [
-  "object-center",
-  "object-top",
-  "object-bottom",
-  "object-left",
-  "object-right",
-];
-
 /** 让瀑布流有高低错落，循环一组互质长度的高度，避免同列出现规律 */
 const HEIGHTS = ["h-44", "h-64", "h-52", "h-80", "h-48", "h-72", "h-56", "h-60"];
+
+/** 199 张样图一次性铺满会拖垮首屏，滚到底再追加一批 */
+const PAGE = 40;
 
 export default function TemplateShowcase() {
   const [filter, setFilter] = useState<Filter>("全部");
@@ -72,6 +66,24 @@ export default function TemplateShowcase() {
     });
     return interleaveByCategory(matched);
   }, [filter, query]);
+
+  const [limit, setLimit] = useState(PAGE);
+  const sentinel = useRef<HTMLDivElement>(null);
+
+  useEffect(() => setLimit(PAGE), [filter, query]);
+
+  useEffect(() => {
+    const el = sentinel.current;
+    if (!el || limit >= visible.length) return;
+    const io = new IntersectionObserver(
+      ([e]) => e.isIntersecting && setLimit((n) => n + PAGE),
+      { rootMargin: "600px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [limit, visible.length]);
+
+  const shown = visible.slice(0, limit);
 
   const copy = (id: string, prompt: string) => {
     navigator.clipboard.writeText(prompt).then(() => {
@@ -123,7 +135,7 @@ export default function TemplateShowcase() {
 
         {/* 瀑布流 */}
         <div className="masonry">
-          {visible.map((t, i) => (
+          {shown.map((t, i) => (
             <div key={t.id} className="group relative rounded-2xl overflow-hidden">
               <div
                 className={`relative ${HEIGHTS[i % HEIGHTS.length]} bg-gradient-to-br ${
@@ -135,9 +147,8 @@ export default function TemplateShowcase() {
                   src={templateImage(t)}
                   alt=""
                   loading="lazy"
-                  className={`absolute inset-0 w-full h-full object-cover ${
-                    OBJECT_POSITIONS[i % OBJECT_POSITIONS.length]
-                  } transition-transform duration-500 group-hover:scale-105`}
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* 底部压暗，保证标题可读 */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15" />
@@ -175,6 +186,8 @@ export default function TemplateShowcase() {
             </div>
           ))}
         </div>
+
+        <div ref={sentinel} aria-hidden className="h-px" />
 
         {visible.length === 0 && (
           <p className="text-center text-sm text-gray-400 py-16">

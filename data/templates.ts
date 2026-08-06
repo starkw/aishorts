@@ -82,6 +82,7 @@ export const templates: Template[] = [
     prompt:
       "Candid street photography scene, late afternoon golden light, wet pavement reflections, 35mm documentary framing, natural motion blur on passersby, rich but realistic colors",
     ratio: "3:2",
+    image: "/tpl/t/street-photography.jpg",
   },
   {
     id: "food-photography",
@@ -92,7 +93,7 @@ export const templates: Template[] = [
     prompt:
       "Appetizing food photography, overhead three-quarter angle, soft diffused daylight, fresh ingredients scattered around, shallow depth of field, rustic ceramic plate, steam rising subtly",
     ratio: "1:1",
-    image: "/tpl/photo-2.jpg",
+    image: "/tpl/t/food-photography.jpg",
   },
   {
     id: "cozy-cafe",
@@ -103,6 +104,7 @@ export const templates: Template[] = [
     prompt:
       "Cozy specialty coffee shop interior, warm wood and matte black fixtures, hanging pendant lights, plants near the window, morning sunlight streaming in, wide interior shot, inviting atmosphere, no people",
     ratio: "3:2",
+    image: "/tpl/t/cozy-cafe.jpg",
   },
   {
     id: "headshot-background",
@@ -113,6 +115,7 @@ export const templates: Template[] = [
     prompt:
       "Replace the background with a clean professional neutral studio backdrop, keep the subject's face, pose, hair and clothing completely unchanged, match the original lighting direction, soft even key light",
     ratio: "3:4",
+    image: "/tpl/t/headshot-background.jpg",
   },
   {
     id: "restore-old-photo",
@@ -123,6 +126,7 @@ export const templates: Template[] = [
     prompt:
       "Restore this old photograph: remove scratches, creases and dust, recover natural facial detail, correct fading and color cast, keep the original composition and identity intact, realistic restrained result",
     ratio: "auto",
+    image: "/tpl/t/restore-old-photo.jpg",
   },
   {
     id: "cinematic-grade",
@@ -133,6 +137,7 @@ export const templates: Template[] = [
     prompt:
       "Apply a tasteful cinematic color grade: lifted shadows, teal-leaning darks, warm highlights, gentle contrast curve. Do not change composition, subject or content, only the color and tone",
     ratio: "auto",
+    image: "/tpl/t/cinematic-grade.jpg",
   },
   {
     id: "real-estate-daylight",
@@ -143,6 +148,7 @@ export const templates: Template[] = [
     prompt:
       "Improve this room listing photo: brighter natural daylight through windows, cleaner white balance, straightened verticals, reduced shadows, keep the layout, furniture and architecture exactly the same",
     ratio: "3:2",
+    image: "/tpl/t/real-estate-daylight.jpg",
   },
 
   // ——— 插画 ———
@@ -155,6 +161,7 @@ export const templates: Template[] = [
     prompt:
       "Traditional East Asian ink wash illustration, expressive brush strokes, generous negative space, limited ink tones with one subtle accent color, textured rice paper background",
     ratio: "3:4",
+    image: "/tpl/t/ink-illustration.jpg",
   },
   {
     id: "isometric-city",
@@ -165,7 +172,7 @@ export const templates: Template[] = [
     prompt:
       "Isometric miniature city illustration, clean vector style, soft ambient occlusion, pastel palette with bright accents, tiny detailed buildings and streets, plain light background",
     ratio: "1:1",
-    image: "/tpl/illustration-2.jpg",
+    image: "/tpl/t/isometric-city.jpg",
   },
   {
     id: "paper-cutout",
@@ -176,6 +183,7 @@ export const templates: Template[] = [
     prompt:
       "Layered paper cutout illustration, stacked construction paper with visible edge shadows, bold simple shapes, coordinated warm palette, soft studio lighting, editorial composition",
     ratio: "16:9",
+    image: "/tpl/t/paper-cutout.jpg",
   },
   {
     id: "science-infographic",
@@ -186,6 +194,7 @@ export const templates: Template[] = [
     prompt:
       "Educational science illustration, clean flat vector style, clear visual hierarchy, labeled areas left blank for text, cohesive three-color palette, white background",
     ratio: "4:3",
+    image: "/tpl/t/science-infographic.jpg",
   },
   {
     id: "watercolor-landscape",
@@ -196,7 +205,7 @@ export const templates: Template[] = [
     prompt:
       "Soft watercolor landscape painting, wet-on-wet color bleeding, visible paper texture, muted natural palette, loose confident brushwork, plenty of white space",
     ratio: "3:2",
-    image: "/tpl/illustration-3.jpg",
+    image: "/tpl/t/watercolor-landscape.jpg",
   },
   {
     id: "pencil-sketch",
@@ -207,6 +216,7 @@ export const templates: Template[] = [
     prompt:
       "Convert this photo into a detailed graphite pencil sketch, visible hatching and shading strokes, preserve the original composition and likeness, white paper background, no color",
     ratio: "auto",
+    image: "/tpl/t/pencil-sketch.jpg",
   },
   {
     id: "oil-painting",
@@ -217,6 +227,7 @@ export const templates: Template[] = [
     prompt:
       "Transform this image into a classical oil painting, thick impasto brush strokes, rich layered pigments, warm gallery lighting, preserve subject identity and composition",
     ratio: "auto",
+    image: "/tpl/t/oil-painting.jpg",
   },
   {
     id: "sticker-pack",
@@ -227,6 +238,7 @@ export const templates: Template[] = [
     prompt:
       "Turn the subject into a die-cut sticker illustration: bold white outline, simplified flat shading, vibrant saturated colors, transparent-looking plain background, playful and clean",
     ratio: "1:1",
+    image: "/tpl/t/sticker-pack.jpg",
   },
 
   // ——— 商品 ———
@@ -239,6 +251,7 @@ export const templates: Template[] = [
     prompt:
       "Turn this product photo into a clean marketplace packshot on pure white background, even soft studio lighting, subtle contact shadow, preserve the exact shape, label text, color and material of the product",
     ratio: "1:1",
+    image: "/tpl/t/white-packshot.jpg",
   },
   {
     id: "studio-product",
@@ -249,7 +262,7 @@ export const templates: Template[] = [
     prompt:
       "Professional studio product photography, seamless gradient backdrop, controlled three-point lighting, crisp specular highlights, soft reflection beneath the product, premium commercial look",
     ratio: "1:1",
-    image: "/tpl/product.jpg",
+    image: "/tpl/t/studio-product.jpg",
   },
   {
     id: "premium-black-studio",
@@ -260,7 +273,7 @@ export const templates: Template[] = [
     prompt:
       "Place this product in a dramatic black studio setup, rim lighting along the edges, deep matte black surface with subtle reflection, premium electronics advertising mood, keep the product unchanged",
     ratio: "1:1",
-    image: "/tpl/product-2.jpg",
+    image: "/tpl/t/premium-black-studio.jpg",
   },
   {
     id: "kitchen-lifestyle",
@@ -271,6 +284,7 @@ export const templates: Template[] = [
     prompt:
       "Place this product naturally on a bright kitchen counter lifestyle scene, morning daylight, tasteful props like linen and ceramics slightly out of focus, keep the product's shape and label unchanged",
     ratio: "4:3",
+    image: "/tpl/t/kitchen-lifestyle.jpg",
   },
   {
     id: "coffee-bag-campaign",
@@ -281,6 +295,7 @@ export const templates: Template[] = [
     prompt:
       "Warm coffee roaster product scene, kraft coffee bag as hero, scattered roasted beans, ceramic cup with crema, morning window light with soft shadows, cozy artisanal mood",
     ratio: "4:3",
+    image: "/tpl/t/coffee-bag-campaign.jpg",
   },
   {
     id: "cosmetic-swatch",
@@ -291,6 +306,7 @@ export const templates: Template[] = [
     prompt:
       "Macro beauty product texture shot, creamy swatch with glossy peaks, water droplets, soft gradient backdrop, refined highlights, clean minimal composition, luxury cosmetics advertising",
     ratio: "1:1",
+    image: "/tpl/t/cosmetic-swatch.jpg",
   },
   {
     id: "unboxing-flatlay",
@@ -301,6 +317,7 @@ export const templates: Template[] = [
     prompt:
       "Organized flat lay of a product bundle viewed from directly above, items arranged on a grid with even spacing, soft diffused light, neutral textured background, editorial e-commerce styling",
     ratio: "1:1",
+    image: "/tpl/t/unboxing-flatlay.jpg",
   },
   {
     id: "jewelry-velvet",
@@ -311,6 +328,7 @@ export const templates: Template[] = [
     prompt:
       "Jewelry catalog photograph on deep velvet fabric, controlled specular highlights on metal and gemstones, macro detail, elegant dark background, premium material rendering",
     ratio: "1:1",
+    image: "/tpl/t/jewelry-velvet.jpg",
   },
 
   // ——— 标志品牌 ———
@@ -323,6 +341,7 @@ export const templates: Template[] = [
     prompt:
       "Modern mobile app icon, rounded square, single bold centered symbol, smooth gradient background, subtle inner depth and soft shadow, no text, crisp at small sizes",
     ratio: "1:1",
+    image: "/tpl/t/app-icon.jpg",
   },
   {
     id: "3d-icon-object",
@@ -333,6 +352,7 @@ export const templates: Template[] = [
     prompt:
       "Polished 3D object icon floating on a soft pastel background, glossy and matte material mix, soft studio lighting, gentle drop shadow, playful but professional, centered composition",
     ratio: "1:1",
+    image: "/tpl/t/3d-icon-object.jpg",
   },
   {
     id: "logo-badge",
@@ -343,6 +363,7 @@ export const templates: Template[] = [
     prompt:
       "Vintage badge logo concept, circular emblem with clean linework, balanced symmetry, two-color print-friendly palette, space reserved for a wordmark, flat vector look",
     ratio: "1:1",
+    image: "/tpl/t/logo-badge.jpg",
   },
   {
     id: "retro-monoline",
@@ -353,6 +374,7 @@ export const templates: Template[] = [
     prompt:
       "Retro monoline logo mark, uniform stroke weight, geometric construction, 1970s inspired curves, single accent color on cream background, clean vector rendering",
     ratio: "1:1",
+    image: "/tpl/t/retro-monoline.jpg",
   },
   {
     id: "brand-identity-mockup",
@@ -363,7 +385,7 @@ export const templates: Template[] = [
     prompt:
       "Brand identity mockup flat lay: business cards, envelope, tag and stationery arranged on a textured surface, cohesive minimal palette, soft daylight, top-down view, blank areas for logo",
     ratio: "4:3",
-    image: "/tpl/brand-2.jpg",
+    image: "/tpl/t/brand-identity-mockup.jpg",
   },
   {
     id: "brand-merch",
@@ -374,6 +396,7 @@ export const templates: Template[] = [
     prompt:
       "Brand merchandise mockup set: t-shirt, tote bag, stickers and enamel pin arranged together, consistent brand colors, soft studio lighting, clean neutral background",
     ratio: "4:3",
+    image: "/tpl/t/brand-merch.jpg",
   },
   {
     id: "packaging-system",
@@ -384,7 +407,7 @@ export const templates: Template[] = [
     prompt:
       "Cohesive packaging family for related products, three boxes of different sizes standing together, minimal typography placeholders, consistent color system, studio lighting on light gray",
     ratio: "4:3",
-    image: "/tpl/brand.jpg",
+    image: "/tpl/t/packaging-system.jpg",
   },
   {
     id: "wellness-moodboard",
@@ -395,6 +418,7 @@ export const templates: Template[] = [
     prompt:
       "Wellness brand mood board collage: color swatches, natural textures, soft fabric, botanical elements and material samples arranged in a grid, calm neutral palette, top-down soft light",
     ratio: "4:3",
+    image: "/tpl/t/wellness-moodboard.jpg",
   },
 
   // ——— 界面稿 ———
@@ -407,7 +431,7 @@ export const templates: Template[] = [
     prompt:
       "Modern SaaS dashboard UI mockup, left sidebar navigation, metric cards with charts, clean typography hierarchy, generous whitespace, light theme with one accent color, crisp screen rendering",
     ratio: "16:9",
-    image: "/tpl/ui-3.jpg",
+    image: "/tpl/t/saas-dashboard.jpg",
   },
   {
     id: "mobile-app-ui",
@@ -418,7 +442,7 @@ export const templates: Template[] = [
     prompt:
       "Mobile app UI screen inside a modern phone frame, clean card-based layout, bottom tab bar, soft shadows, light background, single accent color, realistic device mockup on gradient backdrop",
     ratio: "9:16",
-    image: "/tpl/ui.jpg",
+    image: "/tpl/t/mobile-app-ui.jpg",
   },
   {
     id: "startup-landing",
@@ -429,6 +453,7 @@ export const templates: Template[] = [
     prompt:
       "Startup landing page design mockup, bold hero headline area, product screenshot, feature cards row, testimonial section, modern sans-serif typography, plenty of whitespace, light theme",
     ratio: "16:9",
+    image: "/tpl/t/startup-landing.jpg",
   },
   {
     id: "onboarding-flow",
@@ -439,6 +464,7 @@ export const templates: Template[] = [
     prompt:
       "Mobile onboarding flow shown as three phone screens side by side, friendly illustration on each screen, progress dots, clear primary button, soft pastel background",
     ratio: "16:9",
+    image: "/tpl/t/onboarding-flow.jpg",
   },
   {
     id: "pricing-comparison",
@@ -449,6 +475,7 @@ export const templates: Template[] = [
     prompt:
       "Pricing section UI with three tier cards, middle card highlighted as recommended, feature checkmark lists, clean borders and subtle shadows, light background, scannable hierarchy",
     ratio: "16:9",
+    image: "/tpl/t/pricing-comparison.jpg",
   },
   {
     id: "data-table",
@@ -459,6 +486,7 @@ export const templates: Template[] = [
     prompt:
       "Dense admin data table UI, column headers with sort indicators, status badges, alternating row backgrounds, filter bar above, pagination below, professional light theme",
     ratio: "16:9",
+    image: "/tpl/t/data-table.jpg",
   },
   {
     id: "empty-state",
@@ -469,6 +497,7 @@ export const templates: Template[] = [
     prompt:
       "Friendly product empty-state illustration, simple flat vector character or object, encouraging composition, soft brand colors, lots of white space, area below reserved for text",
     ratio: "4:3",
+    image: "/tpl/t/empty-state.jpg",
   },
   {
     id: "case-study-hero",
@@ -479,6 +508,7 @@ export const templates: Template[] = [
     prompt:
       "Polished case study hero visual, floating product screenshots at a slight angle, soft gradient backdrop, abstract geometric accents, professional B2B aesthetic",
     ratio: "16:9",
+    image: "/tpl/t/case-study-hero.jpg",
   },
 
   // ——— 角色 ———
@@ -491,6 +521,7 @@ export const templates: Template[] = [
     prompt:
       "Cute 3D brand mascot character, friendly rounded shapes, glossy toy-like material, big expressive eyes, cheerful pose, soft studio lighting, plain light background, centered",
     ratio: "1:1",
+    image: "/tpl/t/brand-mascot.jpg",
   },
   {
     id: "pixar-3d",
@@ -501,7 +532,7 @@ export const templates: Template[] = [
     prompt:
       "Transform this portrait into a stylized 3D animated movie character, soft subsurface skin shading, expressive oversized eyes, keep recognizable facial features, cinematic key light, blurred background",
     ratio: "1:1",
-    image: "/tpl/character.jpg",
+    image: "/tpl/t/pixar-3d.jpg",
   },
   {
     id: "anime-transform",
@@ -512,7 +543,7 @@ export const templates: Template[] = [
     prompt:
       "Convert this portrait into modern anime illustration style, clean cel shading, expressive eyes, soft rim light, preserve hairstyle, outfit and facial identity, detailed but clean background",
     ratio: "3:4",
-    image: "/tpl/character-3.jpg",
+    image: "/tpl/t/anime-transform.jpg",
   },
   {
     id: "professional-avatar",
@@ -523,6 +554,7 @@ export const templates: Template[] = [
     prompt:
       "Turn this casual photo into a clean professional avatar: neutral studio background, flattering soft key light, tidy business-casual appearance, keep the face completely unchanged, square crop",
     ratio: "1:1",
+    image: "/tpl/t/professional-avatar.jpg",
   },
   {
     id: "pixel-art-avatar",
@@ -533,6 +565,7 @@ export const templates: Template[] = [
     prompt:
       "Convert this portrait into crisp pixel art, limited retro palette, clear pixel grid with no anti-aliasing blur, preserve hairstyle and recognizable identity cues, simple flat background",
     ratio: "1:1",
+    image: "/tpl/t/pixel-art-avatar.jpg",
   },
   {
     id: "plush-toy",
@@ -543,6 +576,7 @@ export const templates: Template[] = [
     prompt:
       "Transform the subject into a cute plush collectible toy, soft fuzzy fabric texture, visible stitching, chunky simplified proportions, sitting on a plain pastel surface, product photo lighting",
     ratio: "1:1",
+    image: "/tpl/t/plush-toy.jpg",
   },
   {
     id: "expression-sheet",
@@ -553,6 +587,7 @@ export const templates: Template[] = [
     prompt:
       "Character expression sheet with six consistent head poses in a grid: happy, surprised, thinking, sad, confident, laughing. Same character design and colors across all, clean white background",
     ratio: "4:3",
+    image: "/tpl/t/expression-sheet.jpg",
   },
   {
     id: "glasses-tryon",
@@ -563,6 +598,7 @@ export const templates: Template[] = [
     prompt:
       "Add everyday eyeglasses to this portrait with realistic fit, believable lens reflections and a soft shadow on the nose bridge, keep the face, pose, hair and lighting completely unchanged",
     ratio: "3:4",
+    image: "/tpl/t/glasses-tryon.jpg",
   },
 
   // ——— 风景 ———
@@ -575,6 +611,7 @@ export const templates: Template[] = [
     prompt:
       "Alpine mountain range at sunrise, low golden light hitting snow-capped peaks, layered valley fog, crisp clear air, wide landscape composition, natural color grading",
     ratio: "16:9",
+    image: "/tpl/t/alpine-sunrise.jpg",
   },
   {
     id: "desert-road",
@@ -585,6 +622,7 @@ export const templates: Template[] = [
     prompt:
       "Empty desert highway stretching to the horizon, warm late-afternoon sun, distant mesas, heat haze, dramatic wide sky, cinematic road trip mood",
     ratio: "16:9",
+    image: "/tpl/t/desert-road.jpg",
   },
   {
     id: "floating-islands",
@@ -595,6 +633,7 @@ export const templates: Template[] = [
     prompt:
       "Fantasy floating islands suspended in a vast sky, waterfalls pouring off the edges into clouds, distant sunlight breaking through, epic scale, painterly concept art style",
     ratio: "16:9",
+    image: "/tpl/t/floating-islands.jpg",
   },
   {
     id: "underwater-scene",
@@ -605,6 +644,7 @@ export const templates: Template[] = [
     prompt:
       "Underwater ocean scene, god rays piercing from the surface, coral formations and drifting particles, deep blue gradient, serene and expansive, cinematic wide shot",
     ratio: "16:9",
+    image: "/tpl/t/underwater-scene.jpg",
   },
   {
     id: "low-poly-landscape",
@@ -615,6 +655,7 @@ export const templates: Template[] = [
     prompt:
       "Low-poly geometric landscape, faceted mountains and trees, flat shaded triangles, gradient sky, minimal clean composition, soft pastel color scheme",
     ratio: "16:9",
+    image: "/tpl/t/low-poly-landscape.jpg",
   },
   {
     id: "interior-restyle",
@@ -625,6 +666,7 @@ export const templates: Template[] = [
     prompt:
       "Restyle this room with new furniture and decor in a warm minimal style, keep the walls, windows, doors and overall architecture exactly the same, realistic daylight, magazine interior quality",
     ratio: "3:2",
+    image: "/tpl/t/interior-restyle.jpg",
   },
   {
     id: "season-change",
@@ -635,6 +677,7 @@ export const templates: Template[] = [
     prompt:
       "Change the season of this scene to autumn: warm foliage, golden low light, fallen leaves on the ground. Keep the composition, structures and camera angle exactly the same",
     ratio: "auto",
+    image: "/tpl/t/season-change.jpg",
   },
   {
     id: "architectural-sketch",
@@ -645,6 +688,7 @@ export const templates: Template[] = [
     prompt:
       "Turn this building photo into an architectural concept sketch, confident ink linework with light watercolor washes, visible construction lines, white paper background, professional presentation style",
     ratio: "3:2",
+    image: "/tpl/t/architectural-sketch.jpg",
   },
 
   // ——— 字体排版 ———
@@ -657,7 +701,7 @@ export const templates: Template[] = [
     prompt:
       "Bold typographic poster design, oversized headline as the main visual element, strong grid alignment, limited two-color palette, generous margins, Swiss international style, print quality",
     ratio: "2:3",
-    image: "/tpl/typography.jpg",
+    image: "/tpl/t/typography-poster.jpg",
   },
   {
     id: "magazine-cover",
@@ -668,7 +712,7 @@ export const templates: Template[] = [
     prompt:
       "Editorial magazine cover layout, striking central image area, masthead at the top, coverline text blocks along the sides, refined serif and sans mix, high-end print aesthetic",
     ratio: "2:3",
-    image: "/tpl/typography-3.jpg",
+    image: "/tpl/t/magazine-cover.jpg",
   },
   {
     id: "quote-card-bg",
@@ -679,6 +723,7 @@ export const templates: Template[] = [
     prompt:
       "Clean quote card background, soft abstract gradient with subtle grain texture, large empty center area reserved for text, calm sophisticated palette, no lettering in the image",
     ratio: "1:1",
+    image: "/tpl/t/quote-card-bg.jpg",
   },
   {
     id: "podcast-cover",
@@ -689,6 +734,7 @@ export const templates: Template[] = [
     prompt:
       "Podcast cover art concept, bold abstract geometric composition, strong focal contrast, memorable at thumbnail size, space reserved for the show title, modern confident palette",
     ratio: "1:1",
+    image: "/tpl/t/podcast-cover.jpg",
   },
   {
     id: "youtube-thumbnail",
@@ -699,6 +745,7 @@ export const templates: Template[] = [
     prompt:
       "Video thumbnail concept with one clear focal subject, high contrast lighting, bold color blocking, empty area on one side reserved for large title text, eye-catching at small sizes",
     ratio: "16:9",
+    image: "/tpl/t/youtube-thumbnail.jpg",
   },
   {
     id: "event-poster",
@@ -709,7 +756,7 @@ export const templates: Template[] = [
     prompt:
       "Event poster base design, risograph-inspired texture, bold overlapping shapes, limited three-color palette with visible misregistration, clear empty zones for event details",
     ratio: "2:3",
-    image: "/tpl/typography-2.jpg",
+    image: "/tpl/t/event-poster.jpg",
   },
   {
     id: "newsletter-header",
@@ -720,6 +767,7 @@ export const templates: Template[] = [
     prompt:
       "Editorial newsletter header banner, abstract illustrative composition, wide letterbox format, calm palette with one accent, refined and uncluttered, space for a short title",
     ratio: "16:9",
+    image: "/tpl/t/newsletter-header.jpg",
   },
   {
     id: "instagram-launch",
@@ -730,6 +778,7 @@ export const templates: Template[] = [
     prompt:
       "Square product launch announcement visual, strong focal contrast, bold geometric background, celebratory but restrained mood, clear empty band for announcement copy",
     ratio: "1:1",
+    image: "/tpl/t/instagram-launch.jpg",
   },
 
   // ——— 摄影（续） ———
@@ -742,7 +791,7 @@ export const templates: Template[] = [
     prompt:
       "High fashion editorial photograph, strong styling and silhouette, controlled studio lighting with one hard key, muted designer palette, confident pose, medium format look, fine grain",
     ratio: "3:4",
-    image: "/tpl/photo.jpg",
+    image: "/tpl/t/fashion-editorial.jpg",
   },
   {
     id: "lookbook-cover",
@@ -753,6 +802,7 @@ export const templates: Template[] = [
     prompt:
       "Fashion lookbook cover, garments styled on a clean rail and surface, soft directional daylight, calm neutral palette, generous empty space at the top for a title, refined minimal composition",
     ratio: "3:4",
+    image: "/tpl/t/lookbook-cover.jpg",
   },
   {
     id: "capsule-flatlay",
@@ -763,6 +813,7 @@ export const templates: Template[] = [
     prompt:
       "Coordinated fashion flat lay shot from directly above, a capsule wardrobe of neutral garments and accessories, even soft light, tidy geometric arrangement, light textured backdrop",
     ratio: "1:1",
+    image: "/tpl/t/capsule-flatlay.jpg",
   },
   {
     id: "fabric-macro",
@@ -773,6 +824,7 @@ export const templates: Template[] = [
     prompt:
       "Macro photograph of textile detail, visible weave and fiber structure, raking side light to reveal texture, shallow depth of field, natural undyed tones, premium material feel",
     ratio: "1:1",
+    image: "/tpl/t/fabric-macro.jpg",
   },
   {
     id: "careers-hero",
@@ -783,6 +835,7 @@ export const templates: Template[] = [
     prompt:
       "Careers page hero photograph of a bright modern workspace, natural collaboration in progress, candid unposed framing, large windows with soft daylight, warm neutral interior, wide composition",
     ratio: "16:9",
+    image: "/tpl/t/careers-hero.jpg",
   },
   {
     id: "gym-promo",
@@ -793,6 +846,7 @@ export const templates: Template[] = [
     prompt:
       "Fitness studio promotional photograph, clean equipment arrangement, dramatic side lighting with deep shadows, dark industrial interior, energetic but uncluttered, wide angle",
     ratio: "16:9",
+    image: "/tpl/t/gym-promo.jpg",
   },
   {
     id: "salon-window",
@@ -803,6 +857,7 @@ export const templates: Template[] = [
     prompt:
       "Boutique storefront photograph at dusk, warm interior glow through large windows, clean signage area left blank, tidy street frontage, inviting neighborhood atmosphere",
     ratio: "3:4",
+    image: "/tpl/t/salon-window.jpg",
   },
   {
     id: "restaurant-booth",
@@ -813,6 +868,7 @@ export const templates: Template[] = [
     prompt:
       "Hospitality interior photograph of a restaurant booth, warm pendant lighting, rich material palette of wood leather and brass, evening ambience, inviting depth, wide framing",
     ratio: "16:9",
+    image: "/tpl/t/restaurant-booth.jpg",
   },
   {
     id: "boutique-hotel-room",
@@ -823,6 +879,7 @@ export const templates: Template[] = [
     prompt:
       "Boutique hotel room interior photograph, layered textiles and warm wood, soft morning light through sheer curtains, considered styling, calm luxurious mood, architectural framing",
     ratio: "16:9",
+    image: "/tpl/t/boutique-hotel-room.jpg",
   },
   {
     id: "wedding-table",
@@ -833,6 +890,7 @@ export const templates: Template[] = [
     prompt:
       "Wedding tablescape photograph, layered linen and ceramics, seasonal florals in muted tones, candlelight with soft daylight fill, elegant restrained styling, shallow depth of field",
     ratio: "3:2",
+    image: "/tpl/t/wedding-table.jpg",
   },
   {
     id: "home-exterior-dusk",
@@ -843,6 +901,7 @@ export const templates: Template[] = [
     prompt:
       "Real estate exterior photograph at dusk, warm interior lights glowing against a deep blue twilight sky, manicured landscaping, clean architectural lines, wide balanced composition",
     ratio: "3:2",
+    image: "/tpl/t/home-exterior-dusk.jpg",
   },
   {
     id: "wildlife-macro",
@@ -853,6 +912,7 @@ export const templates: Template[] = [
     prompt:
       "Wildlife macro photograph, extreme detail in fur or feather texture, catchlight in the eye, creamy bokeh background, natural early morning light, telephoto compression",
     ratio: "3:2",
+    image: "/tpl/t/wildlife-macro.jpg",
   },
   {
     id: "travel-postcard",
@@ -863,6 +923,7 @@ export const templates: Template[] = [
     prompt:
       "Travel postcard scene with a strong sense of place, iconic landscape or streetscape, golden hour light, saturated but believable color, classic postcard framing",
     ratio: "3:2",
+    image: "/tpl/t/travel-postcard.jpg",
   },
   {
     id: "food-delivery-hero",
@@ -873,6 +934,7 @@ export const templates: Template[] = [
     prompt:
       "Appetizing food photograph for a delivery banner, hero dish in sharp focus, steam and fresh garnish, warm overhead light, clean surface with props out of focus, rich appetizing color",
     ratio: "16:9",
+    image: "/tpl/t/food-delivery-hero.jpg",
   },
   {
     id: "recipe-card",
@@ -883,6 +945,7 @@ export const templates: Template[] = [
     prompt:
       "Recipe hero photograph shot from a 45 degree angle, single dish as clear focal point, soft natural window light, muted linen and ceramic props, generous negative space for text",
     ratio: "3:4",
+    image: "/tpl/t/recipe-card.jpg",
   },
   {
     id: "food-guide-cover",
@@ -893,6 +956,7 @@ export const templates: Template[] = [
     prompt:
       "Local food guide cover photograph, bustling market or eatery atmosphere, warm ambient light, layered depth with foreground blur, documentary feel, space at the top for a title",
     ratio: "3:4",
+    image: "/tpl/t/food-guide-cover.jpg",
   },
   {
     id: "event-recap",
@@ -903,6 +967,7 @@ export const templates: Template[] = [
     prompt:
       "Event recap photograph, candid crowd moment in a well lit venue, warm stage glow, motion in the background with a sharp foreground subject, energetic documentary framing",
     ratio: "3:2",
+    image: "/tpl/t/event-recap.jpg",
   },
   {
     id: "nonprofit-hero",
@@ -913,6 +978,7 @@ export const templates: Template[] = [
     prompt:
       "Respectful nonprofit campaign photograph, community activity in natural daylight, dignified framing at eye level, honest documentary tone, warm and hopeful without staging",
     ratio: "16:9",
+    image: "/tpl/t/nonprofit-hero.jpg",
   },
   {
     id: "listing-social",
@@ -923,7 +989,7 @@ export const templates: Template[] = [
     prompt:
       "Property marketing photograph of a bright living space, corrected vertical lines, abundant natural light, tasteful minimal staging, wide angle without distortion",
     ratio: "3:2",
-    image: "/tpl/photo-3.jpg",
+    image: "/tpl/t/listing-social.jpg",
   },
   {
     id: "bw-editorial",
@@ -934,6 +1000,7 @@ export const templates: Template[] = [
     prompt:
       "Convert this photograph to a black and white editorial treatment, strong tonal contrast with retained shadow detail, subtle film grain, no color cast, keep composition and subject unchanged",
     ratio: "auto",
+    image: "/tpl/t/bw-editorial.jpg",
   },
   {
     id: "vintage-film",
@@ -944,6 +1011,7 @@ export const templates: Template[] = [
     prompt:
       "Apply a restrained vintage film look to this photo, slightly lifted blacks, warm highlights, gentle halation and fine grain, preserve composition subject and framing exactly",
     ratio: "auto",
+    image: "/tpl/t/vintage-film.jpg",
   },
   {
     id: "heritage-colorize",
@@ -954,6 +1022,7 @@ export const templates: Template[] = [
     prompt:
       "Add believable restrained color to this black and white photograph, period accurate muted tones, natural skin tones, no oversaturation, preserve every original detail and grain structure",
     ratio: "auto",
+    image: "/tpl/t/heritage-colorize.jpg",
   },
   {
     id: "faded-restoration",
@@ -964,6 +1033,7 @@ export const templates: Template[] = [
     prompt:
       "Restore this faded and damaged photograph, remove scratches creases and dust, recover natural contrast and color balance, reconstruct detail conservatively without inventing new features",
     ratio: "auto",
+    image: "/tpl/t/faded-restoration.jpg",
   },
   {
     id: "wedding-grade",
@@ -974,6 +1044,7 @@ export const templates: Template[] = [
     prompt:
       "Apply a soft editorial color grade to this wedding photo, airy highlights, gentle warm skin tones, desaturated greens, film like roll off, keep the original composition untouched",
     ratio: "auto",
+    image: "/tpl/t/wedding-grade.jpg",
   },
   {
     id: "kitchen-staging",
@@ -984,6 +1055,7 @@ export const templates: Template[] = [
     prompt:
       "Stage this kitchen photo with tasteful minimal props and tidy surfaces, improve lighting to bright natural daylight, preserve the existing layout cabinetry and architecture exactly",
     ratio: "auto",
+    image: "/tpl/t/kitchen-staging.jpg",
   },
   {
     id: "airbnb-staging",
@@ -994,6 +1066,7 @@ export const templates: Template[] = [
     prompt:
       "Stage this room for a short term rental listing, add warm textiles and simple decor, brighten to inviting natural light, keep walls windows and room structure completely unchanged",
     ratio: "auto",
+    image: "/tpl/t/airbnb-staging.jpg",
   },
   {
     id: "nail-color-tryon",
@@ -1004,6 +1077,7 @@ export const templates: Template[] = [
     prompt:
       "Preview a different nail polish color on this hand photo, natural highlights and edge definition on each nail, preserve skin texture hand pose and background lighting exactly",
     ratio: "auto",
+    image: "/tpl/t/nail-color-tryon.jpg",
   },
   {
     id: "marketplace-thumb",
@@ -1014,6 +1088,7 @@ export const templates: Template[] = [
     prompt:
       "Turn this product photo into a crisp square marketplace thumbnail, subject centered with even margins, clean bright background, sharp edges, preserve product shape color and labeling",
     ratio: "1:1",
+    image: "/tpl/t/marketplace-thumb.jpg",
   },
   {
     id: "handheld-scale",
@@ -1024,6 +1099,7 @@ export const templates: Template[] = [
     prompt:
       "Place this product in a hand to communicate its real scale, natural grip and realistic skin tones, soft studio light, preserve the product proportions material and label exactly",
     ratio: "1:1",
+    image: "/tpl/t/handheld-scale.jpg",
   },
   {
     id: "architecture-detail",
@@ -1034,6 +1110,7 @@ export const templates: Template[] = [
     prompt:
       "Architectural detail photograph, strong repeating geometry, hard directional sunlight creating crisp shadow lines, minimal palette of concrete and sky, graphic composition",
     ratio: "3:4",
+    image: "/tpl/t/architecture-detail.jpg",
   },
 
   // ——— 插画（续） ———
@@ -1046,6 +1123,7 @@ export const templates: Template[] = [
     prompt:
       "Illustration visualizing an abstract mathematical concept through pure geometry and color relationships, clean vector shapes, no formulas or dense labels, generous white space, editorial palette",
     ratio: "1:1",
+    image: "/tpl/t/math-concept.jpg",
   },
   {
     id: "cloud-architecture",
@@ -1056,6 +1134,7 @@ export const templates: Template[] = [
     prompt:
       "High level cloud architecture illustration, simplified boxes and connectors in isometric perspective, calm technical palette, clear visual hierarchy, no readable text or real code",
     ratio: "16:9",
+    image: "/tpl/t/cloud-architecture.jpg",
   },
   {
     id: "timeline-visual",
@@ -1066,6 +1145,7 @@ export const templates: Template[] = [
     prompt:
       "Horizontal timeline illustration with evenly spaced milestone markers, flat illustrative style, muted historical palette, decorative period motifs, label areas intentionally left blank",
     ratio: "16:9",
+    image: "/tpl/t/timeline-visual.jpg",
   },
   {
     id: "flashcard-art",
@@ -1076,6 +1156,7 @@ export const templates: Template[] = [
     prompt:
       "Friendly educational flashcard illustration, single clear subject on a soft solid background, rounded shapes and warm cheerful palette, empty band at the bottom for a word",
     ratio: "1:1",
+    image: "/tpl/t/flashcard-art.jpg",
   },
   {
     id: "climate-report",
@@ -1086,6 +1167,7 @@ export const templates: Template[] = [
     prompt:
       "Climate and sustainability report illustration, stylized landscape with subtle data inspired shapes, restrained natural palette of greens and blues, calm informative tone, no dense labels",
     ratio: "16:9",
+    image: "/tpl/t/climate-report.jpg",
   },
   {
     id: "fintech-trust",
@@ -1096,6 +1178,7 @@ export const templates: Template[] = [
     prompt:
       "Fintech illustration conveying security and trust, abstract shield and layered card motifs, geometric flat style, confident blue and deep navy palette with one warm accent, clean composition",
     ratio: "16:9",
+    image: "/tpl/t/fintech-trust.jpg",
   },
   {
     id: "healthcare-explainer",
@@ -1106,6 +1189,7 @@ export const templates: Template[] = [
     prompt:
       "Non diagnostic healthcare explainer illustration, soft rounded human and organic forms, gentle teal and warm neutral palette, reassuring approachable tone, no medical claims or labels",
     ratio: "16:9",
+    image: "/tpl/t/healthcare-explainer.jpg",
   },
   {
     id: "journal-visual",
@@ -1116,7 +1200,7 @@ export const templates: Template[] = [
     prompt:
       "Gentle mental wellness illustration, a quiet figure in a soft interior, warm muted palette, hand drawn texture, calm and unhurried mood, generous breathing space",
     ratio: "3:4",
-    image: "/tpl/illustration.jpg",
+    image: "/tpl/t/journal-visual.jpg",
   },
   {
     id: "supply-chain",
@@ -1127,6 +1211,7 @@ export const templates: Template[] = [
     prompt:
       "Operations illustration of a supply chain flow, simplified vehicles warehouses and route lines, isometric perspective, clean industrial palette, clear left to right reading order",
     ratio: "16:9",
+    image: "/tpl/t/supply-chain.jpg",
   },
   {
     id: "ai-workflow-hero",
@@ -1137,6 +1222,7 @@ export const templates: Template[] = [
     prompt:
       "Blog header illustration about AI workflows and automation, abstract nodes and flowing connections, subtle gradient depth, modern technical palette, balanced wide composition",
     ratio: "16:9",
+    image: "/tpl/t/ai-workflow-hero.jpg",
   },
   {
     id: "oss-project",
@@ -1147,6 +1233,7 @@ export const templates: Template[] = [
     prompt:
       "Open source project visual, abstract modular blocks assembling into a whole, flat vector style with crisp edges, developer friendly dark palette with a bright accent, centered composition",
     ratio: "16:9",
+    image: "/tpl/t/oss-project.jpg",
   },
   {
     id: "api-docs-hero",
@@ -1157,6 +1244,7 @@ export const templates: Template[] = [
     prompt:
       "Developer documentation hero illustration, abstract code block shapes and bracket motifs, monospace inspired rhythm without readable text, dark editor palette with syntax color accents",
     ratio: "16:9",
+    image: "/tpl/t/api-docs-hero.jpg",
   },
   {
     id: "legal-doc-visual",
@@ -1167,6 +1255,7 @@ export const templates: Template[] = [
     prompt:
       "Neutral legal technology illustration, stacked document shapes with seal and signature motifs, restrained navy and warm paper palette, orderly geometric composition, no readable text",
     ratio: "16:9",
+    image: "/tpl/t/legal-doc-visual.jpg",
   },
   {
     id: "impact-report",
@@ -1177,6 +1266,7 @@ export const templates: Template[] = [
     prompt:
       "Impact report cover illustration, abstract community and growth motifs, hopeful warm palette, flat shapes with subtle grain texture, clear empty area for a report title",
     ratio: "3:4",
+    image: "/tpl/t/impact-report.jpg",
   },
   {
     id: "course-cover",
@@ -1187,6 +1277,7 @@ export const templates: Template[] = [
     prompt:
       "Online course cover illustration, clear central subject metaphor, bold flat shapes, confident two color palette with a bright accent, strong silhouette that stays readable when small",
     ratio: "16:9",
+    image: "/tpl/t/course-cover.jpg",
   },
   {
     id: "spell-card-art",
@@ -1197,6 +1288,7 @@ export const templates: Template[] = [
     prompt:
       "Fantasy card game central artwork, dramatic magical effect as the focal point, painterly rendering with strong rim light, rich saturated palette, composition framed for a card border",
     ratio: "3:4",
+    image: "/tpl/t/spell-card-art.jpg",
   },
   {
     id: "region-map",
@@ -1207,6 +1299,7 @@ export const templates: Template[] = [
     prompt:
       "Decorative fantasy region map, hand drawn coastlines mountains and forests, aged parchment texture, compass rose and border ornament, all place labels intentionally left blank",
     ratio: "4:3",
+    image: "/tpl/t/region-map.jpg",
   },
   {
     id: "neighborhood-map",
@@ -1217,6 +1310,7 @@ export const templates: Template[] = [
     prompt:
       "Charming hand illustrated neighborhood map, simplified buildings parks and streets from a slightly tilted top view, warm friendly palette, decorative but clear, no text labels",
     ratio: "1:1",
+    image: "/tpl/t/neighborhood-map.jpg",
   },
   {
     id: "museum-diorama",
@@ -1227,6 +1321,7 @@ export const templates: Template[] = [
     prompt:
       "Miniature diorama scene with tilt shift depth of field, handcrafted model materials, warm museum spotlighting, meticulous small scale detail, dark neutral surround",
     ratio: "3:2",
+    image: "/tpl/t/museum-diorama.jpg",
   },
   {
     id: "comic-panel",
@@ -1237,6 +1332,7 @@ export const templates: Template[] = [
     prompt:
       "Turn this image into a bold comic book panel, heavy confident inking, limited flat color fills, controlled halftone dot texture, dynamic contrast, keep the original subject recognizable",
     ratio: "auto",
+    image: "/tpl/t/comic-panel.jpg",
   },
   {
     id: "editorial-ink",
@@ -1247,6 +1343,7 @@ export const templates: Template[] = [
     prompt:
       "Convert this photo into high contrast editorial ink linework, confident varied line weight, cross hatching for shadow, pure white background, no gray tones",
     ratio: "auto",
+    image: "/tpl/t/editorial-ink.jpg",
   },
   {
     id: "clay-render",
@@ -1257,6 +1354,7 @@ export const templates: Template[] = [
     prompt:
       "Turn the subject into a soft clay like 3D render, matte modeling clay material with visible thumb texture, rounded simplified forms, soft studio light, pastel background",
     ratio: "auto",
+    image: "/tpl/t/clay-render.jpg",
   },
   {
     id: "watercolor-portrait",
@@ -1267,6 +1365,7 @@ export const templates: Template[] = [
     prompt:
       "Transform this portrait into a soft watercolor illustration, wet edges and paper bleed, loose brushwork with white paper showing through, keep facial features clearly recognizable",
     ratio: "auto",
+    image: "/tpl/t/watercolor-portrait.jpg",
   },
   {
     id: "minimal-line-avatar",
@@ -1277,6 +1376,7 @@ export const templates: Template[] = [
     prompt:
       "Create an elegant minimal line art avatar from this portrait, single consistent line weight, only essential contours, flat solid background, no shading, preserve recognizable features",
     ratio: "1:1",
+    image: "/tpl/t/minimal-line-avatar.jpg",
   },
   {
     id: "pet-oil-portrait",
@@ -1287,6 +1387,7 @@ export const templates: Template[] = [
     prompt:
       "Turn this pet photo into a classical oil portrait, visible brush strokes and impasto texture, dark rich background with a warm key light, dignified pose, preserve markings and expression",
     ratio: "3:4",
+    image: "/tpl/t/pet-oil-portrait.jpg",
   },
 
   // ——— 商品（续） ———
@@ -1299,6 +1400,7 @@ export const templates: Template[] = [
     prompt:
       "Modern floating product advertisement, item suspended in mid air with a soft contact shadow below, gradient studio backdrop, crisp rim light, generous empty space for headline copy",
     ratio: "1:1",
+    image: "/tpl/t/floating-product-ad.jpg",
   },
   {
     id: "watch-macro",
@@ -1309,6 +1411,7 @@ export const templates: Template[] = [
     prompt:
       "Premium watch macro photograph, extreme detail on dial texture and case chamfers, controlled specular highlights, dark gradient background, precise focus stacking look",
     ratio: "1:1",
+    image: "/tpl/t/watch-macro.jpg",
   },
   {
     id: "sneaker-street",
@@ -1319,6 +1422,7 @@ export const templates: Template[] = [
     prompt:
       "Sneaker campaign photograph, product hero on urban concrete, dramatic mixed street lighting with colored reflections, wet ground bounce, strong product focus, night mood",
     ratio: "1:1",
+    image: "/tpl/t/sneaker-street.jpg",
   },
   {
     id: "supplement-clean",
@@ -1329,6 +1433,7 @@ export const templates: Template[] = [
     prompt:
       "Clean wellness product scene, supplement bottle on a bright neutral surface with fresh botanical props, soft even daylight, airy minimal styling, no medical claims or text",
     ratio: "1:1",
+    image: "/tpl/t/supplement-clean.jpg",
   },
   {
     id: "candle-cozy",
@@ -1339,6 +1444,7 @@ export const templates: Template[] = [
     prompt:
       "Warm lifestyle scene for a candle or home fragrance, soft flickering light, layered linen and wood textures, cozy evening atmosphere, shallow depth of field, muted earthy palette",
     ratio: "1:1",
+    image: "/tpl/t/candle-cozy.jpg",
   },
   {
     id: "pet-supplies",
@@ -1349,6 +1455,7 @@ export const templates: Template[] = [
     prompt:
       "Friendly pet accessory product photograph, playful arrangement on a bright pastel surface, soft even light, cheerful approachable palette, clean catalog styling",
     ratio: "1:1",
+    image: "/tpl/t/pet-supplies.jpg",
   },
   {
     id: "furniture-context",
@@ -1359,6 +1466,7 @@ export const templates: Template[] = [
     prompt:
       "Furniture piece shown in a believable room context, natural window light with soft shadows, complementary but understated decor, architectural framing, realistic material rendering",
     ratio: "3:2",
+    image: "/tpl/t/furniture-context.jpg",
   },
   {
     id: "skincare-shelf",
@@ -1369,7 +1477,7 @@ export const templates: Template[] = [
     prompt:
       "Clean bathroom shelf scene for skincare products, stone and ceramic surfaces, soft diffused daylight, restrained neutral palette, calm spa like styling, orderly arrangement",
     ratio: "1:1",
-    image: "/tpl/product-3.jpg",
+    image: "/tpl/t/skincare-shelf.jpg",
   },
   {
     id: "travel-gear-flatlay",
@@ -1380,6 +1488,7 @@ export const templates: Template[] = [
     prompt:
       "Travel gear flat lay from directly above, organized grid of packing essentials, even soft light, muted utilitarian palette, tidy geometric spacing on a textured surface",
     ratio: "1:1",
+    image: "/tpl/t/travel-gear-flatlay.jpg",
   },
   {
     id: "toy-package",
@@ -1390,6 +1499,7 @@ export const templates: Template[] = [
     prompt:
       "Collectible toy packaging concept render, blister box with a clear window, bold graphic panels with no readable text, studio product lighting, vibrant retail shelf appeal",
     ratio: "3:4",
+    image: "/tpl/t/toy-package.jpg",
   },
   {
     id: "accessory-campaign",
@@ -1400,6 +1510,7 @@ export const templates: Template[] = [
     prompt:
       "Accessory campaign visual for bags and small leather goods, sculptural arrangement on a colored pedestal, hard directional light with clean shadows, editorial fashion palette",
     ratio: "3:4",
+    image: "/tpl/t/accessory-campaign.jpg",
   },
   {
     id: "retail-popup",
@@ -1410,6 +1521,7 @@ export const templates: Template[] = [
     prompt:
       "Compact retail pop up display concept, modular shelving with product arrangement, bold brand color blocking, even retail lighting, clean signage areas left blank",
     ratio: "3:2",
+    image: "/tpl/t/retail-popup.jpg",
   },
   {
     id: "spa-package",
@@ -1420,6 +1532,7 @@ export const templates: Template[] = [
     prompt:
       "Calming spa promotional image, folded towels stones and botanicals, warm soft lighting with gentle steam, muted natural palette, serene uncluttered composition",
     ratio: "3:2",
+    image: "/tpl/t/spa-package.jpg",
   },
   {
     id: "seasonal-banner",
@@ -1430,6 +1543,7 @@ export const templates: Template[] = [
     prompt:
       "Tasteful seasonal ecommerce banner, product grouping with seasonal props, warm festive but restrained styling, wide letterbox composition, clear empty zone for promotional copy",
     ratio: "16:9",
+    image: "/tpl/t/seasonal-banner.jpg",
   },
   {
     id: "phone-editor-preview",
@@ -1440,6 +1554,7 @@ export const templates: Template[] = [
     prompt:
       "Product shown inside a modern smartphone screen mockup held at a slight angle, clean studio background, realistic screen reflection, sharp device edges, generous surrounding space",
     ratio: "3:4",
+    image: "/tpl/t/phone-editor-preview.jpg",
   },
   {
     id: "before-after-cleanup",
@@ -1450,6 +1565,7 @@ export const templates: Template[] = [
     prompt:
       "Create a clean side by side comparison from this rough product photo, left side untouched and right side cleaned with even lighting and a neutral background, preserve the product exactly",
     ratio: "16:9",
+    image: "/tpl/t/before-after-cleanup.jpg",
   },
   {
     id: "sneakers-onfeet",
@@ -1460,6 +1576,7 @@ export const templates: Template[] = [
     prompt:
       "Create an on feet lifestyle shot from this sneaker reference, natural walking stance on textured pavement, soft daylight, preserve the shoe silhouette colorway and branding exactly",
     ratio: "3:4",
+    image: "/tpl/t/sneakers-onfeet.jpg",
   },
   {
     id: "watch-wrist-tryon",
@@ -1470,6 +1587,7 @@ export const templates: Template[] = [
     prompt:
       "Preview this watch on a wrist photo, believable strap fit and perspective, matching light direction and skin tone, preserve the hand pose background and the watch design exactly",
     ratio: "1:1",
+    image: "/tpl/t/watch-wrist-tryon.jpg",
   },
   {
     id: "product-shadow-fix",
@@ -1480,6 +1598,7 @@ export const templates: Template[] = [
     prompt:
       "Add a natural contact shadow and subtle surface reflection under this product, consistent with a single soft key light, clean seamless background, preserve product shape and color",
     ratio: "auto",
+    image: "/tpl/t/product-shadow-fix.jpg",
   },
   {
     id: "color-variant",
@@ -1490,6 +1609,7 @@ export const templates: Template[] = [
     prompt:
       "Generate a different colorway of this product, apply the new color only to the main body while preserving material finish highlights logo placement and overall geometry",
     ratio: "auto",
+    image: "/tpl/t/color-variant.jpg",
   },
   {
     id: "gift-set-scene",
@@ -1500,6 +1620,7 @@ export const templates: Template[] = [
     prompt:
       "Gift set product scene, coordinated items arranged with ribbon and tissue, warm holiday lighting, rich but restrained palette, premium unhurried styling",
     ratio: "1:1",
+    image: "/tpl/t/gift-set-scene.jpg",
   },
   {
     id: "beverage-splash",
@@ -1510,6 +1631,7 @@ export const templates: Template[] = [
     prompt:
       "Beverage advertising photograph with a frozen liquid splash, condensation on the container, backlit to make the drink glow, dark gradient background, high shutter crispness",
     ratio: "3:4",
+    image: "/tpl/t/beverage-splash.jpg",
   },
   {
     id: "tech-exploded",
@@ -1520,6 +1642,7 @@ export const templates: Template[] = [
     prompt:
       "Exploded view render of a consumer electronics device, components separated along a vertical axis, precise engineering alignment, dark studio backdrop with crisp edge lighting",
     ratio: "1:1",
+    image: "/tpl/t/tech-exploded.jpg",
   },
 
   // ——— 角色（续） ———
@@ -1532,6 +1655,7 @@ export const templates: Template[] = [
     prompt:
       "Cyberpunk character portrait, neon rim lighting in cyan and magenta, rain slicked city bokeh behind, detailed techwear costume, cinematic close up framing, moody dark palette",
     ratio: "3:4",
+    image: "/tpl/t/cyberpunk-portrait.jpg",
   },
   {
     id: "fantasy-character-card",
@@ -1542,6 +1666,7 @@ export const templates: Template[] = [
     prompt:
       "Fantasy character card illustration, full body hero pose with detailed costume and props, atmospheric environment behind, painterly rendering, dramatic key light, vertical card framing",
     ratio: "3:4",
+    image: "/tpl/t/fantasy-character-card.jpg",
   },
   {
     id: "stylized-game-character",
@@ -1552,6 +1677,7 @@ export const templates: Template[] = [
     prompt:
       "Stylized game character concept, exaggerated proportions with clear silhouette, hand painted texture look, neutral turnaround pose, flat studio background, consistent design language",
     ratio: "3:4",
+    image: "/tpl/t/stylized-game-character.jpg",
   },
   {
     id: "rpg-sheet",
@@ -1562,6 +1688,7 @@ export const templates: Template[] = [
     prompt:
       "Character design sheet with front side and back views aligned on a common baseline, consistent proportions and costume details across all views, flat neutral background, clean line and color",
     ratio: "16:9",
+    image: "/tpl/t/rpg-sheet.jpg",
   },
   {
     id: "cute-robot-mascot",
@@ -1572,7 +1699,7 @@ export const templates: Template[] = [
     prompt:
       "Cute robot mascot character, rounded friendly geometry, glossy 3D render with soft studio lighting, expressive simple face, cheerful two color palette, centered on a plain background",
     ratio: "1:1",
-    image: "/tpl/character-2.jpg",
+    image: "/tpl/t/cute-robot-mascot.jpg",
   },
   {
     id: "author-headshot-illust",
@@ -1583,6 +1710,7 @@ export const templates: Template[] = [
     prompt:
       "Create a professional illustrated headshot from this portrait, clean editorial illustration style, limited warm palette, simple background, keep facial structure and features recognizable",
     ratio: "1:1",
+    image: "/tpl/t/author-headshot-illust.jpg",
   },
   {
     id: "creator-avatar",
@@ -1593,6 +1721,7 @@ export const templates: Template[] = [
     prompt:
       "Turn this portrait into a friendly creator avatar, bold outlines and simplified shading, vivid accent background, approachable expression, preserve recognizable facial features and hairstyle",
     ratio: "1:1",
+    image: "/tpl/t/creator-avatar.jpg",
   },
   {
     id: "pet-avatar",
@@ -1603,6 +1732,7 @@ export const templates: Template[] = [
     prompt:
       "Turn this pet photo into a polished avatar, clean circular composition, soft studio lighting, vibrant solid background, preserve the animal markings fur texture and expression exactly",
     ratio: "1:1",
+    image: "/tpl/t/pet-avatar.jpg",
   },
   {
     id: "outfit-swap",
@@ -1613,6 +1743,7 @@ export const templates: Template[] = [
     prompt:
       "Change the clothing in this portrait to a different outfit, believable fabric drape and fit matching the pose, consistent lighting, preserve the face body proportions and background unchanged",
     ratio: "auto",
+    image: "/tpl/t/outfit-swap.jpg",
   },
   {
     id: "evening-gown-tryon",
@@ -1623,6 +1754,7 @@ export const templates: Template[] = [
     prompt:
       "Preview an elegant evening gown on this photo, natural fabric flow and realistic fit to the existing pose, matching light direction, keep the face hair and background completely unchanged",
     ratio: "3:4",
+    image: "/tpl/t/evening-gown-tryon.jpg",
   },
   {
     id: "blazer-tryon",
@@ -1633,6 +1765,7 @@ export const templates: Template[] = [
     prompt:
       "Change the casual clothing in this portrait into a well tailored blazer, realistic shoulder fit lapel and fabric texture, consistent lighting, preserve face pose and background exactly",
     ratio: "3:4",
+    image: "/tpl/t/blazer-tryon.jpg",
   },
   {
     id: "jacket-tryon",
@@ -1643,6 +1776,7 @@ export const templates: Template[] = [
     prompt:
       "Try a streetwear jacket on this portrait, believable layering over existing clothing, natural folds and shadow, matching ambient light, keep the subject pose and setting unchanged",
     ratio: "3:4",
+    image: "/tpl/t/jacket-tryon.jpg",
   },
   {
     id: "sunglasses-tryon",
@@ -1653,6 +1787,7 @@ export const templates: Template[] = [
     prompt:
       "Add sunglasses to this portrait, correct fit to face geometry, realistic lens reflection and shadow on the nose bridge, preserve facial features pose and lighting direction exactly",
     ratio: "auto",
+    image: "/tpl/t/sunglasses-tryon.jpg",
   },
   {
     id: "cap-tryon",
@@ -1663,6 +1798,7 @@ export const templates: Template[] = [
     prompt:
       "Add a baseball cap to this portrait, believable fit over the hairline with a natural brim shadow, matching light direction and color temperature, preserve the face and background",
     ratio: "auto",
+    image: "/tpl/t/cap-tryon.jpg",
   },
   {
     id: "necklace-tryon",
@@ -1673,6 +1809,7 @@ export const templates: Template[] = [
     prompt:
       "Show a necklace on this portrait, natural drape following the neckline and correct scale, realistic metal highlights matching the scene light, preserve skin texture and identity",
     ratio: "auto",
+    image: "/tpl/t/necklace-tryon.jpg",
   },
   {
     id: "earrings-tryon",
@@ -1683,6 +1820,7 @@ export const templates: Template[] = [
     prompt:
       "Preview earrings on this portrait, accurate placement and scale relative to the ear, realistic material highlights and subtle shadow, keep the face hairstyle and lighting unchanged",
     ratio: "auto",
+    image: "/tpl/t/earrings-tryon.jpg",
   },
   {
     id: "lipstick-tryon",
@@ -1693,6 +1831,7 @@ export const templates: Template[] = [
     prompt:
       "Preview a different lipstick shade on this portrait, natural lip texture and highlight retained, believable edge definition, preserve skin tone facial identity and lighting exactly",
     ratio: "auto",
+    image: "/tpl/t/lipstick-tryon.jpg",
   },
   {
     id: "eyeshadow-tryon",
@@ -1703,6 +1842,7 @@ export const templates: Template[] = [
     prompt:
       "Preview subtle eyeshadow on this portrait, soft natural blending in the crease, believable color intensity, preserve eye shape lashes skin texture and overall facial identity",
     ratio: "auto",
+    image: "/tpl/t/eyeshadow-tryon.jpg",
   },
   {
     id: "hair-color-preview",
@@ -1713,6 +1853,7 @@ export const templates: Template[] = [
     prompt:
       "Preview a different hair color on this portrait, natural root to tip variation and realistic shine, preserve the exact hairstyle strand detail facial features and scene lighting",
     ratio: "auto",
+    image: "/tpl/t/hair-color-preview.jpg",
   },
   {
     id: "haircut-preview",
@@ -1723,6 +1864,7 @@ export const templates: Template[] = [
     prompt:
       "Preview a neat shorter haircut on this portrait, natural hairline and volume, believable strand detail, keep the face proportions expression background and lighting completely unchanged",
     ratio: "auto",
+    image: "/tpl/t/haircut-preview.jpg",
   },
 
   // ——— 字体排版（续） ———
@@ -1735,6 +1877,7 @@ export const templates: Template[] = [
     prompt:
       "Square ambient music album cover, abstract atmospheric gradient with grain texture, strong single mood, deep restrained palette, no lettering anywhere, room for type to be added later",
     ratio: "1:1",
+    image: "/tpl/t/album-cover-ambient.jpg",
   },
   {
     id: "scifi-book-cover",
@@ -1745,6 +1888,7 @@ export const templates: Template[] = [
     prompt:
       "Minimal science fiction book cover direction, single bold geometric motif against a vast empty field, restrained two color palette, subtle grain, clear vertical space reserved for the title",
     ratio: "2:3",
+    image: "/tpl/t/scifi-book-cover.jpg",
   },
   {
     id: "mystery-book-cover",
@@ -1755,6 +1899,7 @@ export const templates: Template[] = [
     prompt:
       "Atmospheric mystery novel cover direction, moody illustrated scene with fog and a single light source, muted desaturated palette, cinematic vignette, generous title area at the top",
     ratio: "2:3",
+    image: "/tpl/t/mystery-book-cover.jpg",
   },
   {
     id: "bold-ad-type",
@@ -1765,6 +1910,7 @@ export const templates: Template[] = [
     prompt:
       "Bold advertising layout background, oversized geometric shapes creating a strong grid, high contrast complementary colors, deliberate asymmetric balance, wide clear zones for large type",
     ratio: "16:9",
+    image: "/tpl/t/bold-ad-type.jpg",
   },
   {
     id: "hand-lettered-quote",
@@ -1775,6 +1921,7 @@ export const templates: Template[] = [
     prompt:
       "Hand lettered quote card background, organic brush texture and ink splatter framing an empty center, warm paper tone, natural imperfect edges, calm crafted feel",
     ratio: "1:1",
+    image: "/tpl/t/hand-lettered-quote.jpg",
   },
   {
     id: "meetup-poster",
@@ -1785,6 +1932,7 @@ export const templates: Template[] = [
     prompt:
       "Clean tech meetup poster direction, precise modular grid with abstract code inspired shapes, confident dark background with one bright accent, structured empty bands for event details",
     ratio: "2:3",
+    image: "/tpl/t/meetup-poster.jpg",
   },
   {
     id: "music-night-poster",
@@ -1795,6 +1943,7 @@ export const templates: Template[] = [
     prompt:
       "Live music night poster direction, energetic abstract light streaks and grain, saturated duotone palette, gritty texture overlay, strong empty area reserved for lineup type",
     ratio: "2:3",
+    image: "/tpl/t/music-night-poster.jpg",
   },
   {
     id: "film-screening-poster",
@@ -1805,6 +1954,7 @@ export const templates: Template[] = [
     prompt:
       "Atmospheric film screening poster concept, single evocative image with heavy negative space, muted cinematic palette, subtle halftone grain, classic art house composition",
     ratio: "2:3",
+    image: "/tpl/t/film-screening-poster.jpg",
   },
   {
     id: "farmers-market-poster",
@@ -1815,6 +1965,7 @@ export const templates: Template[] = [
     prompt:
       "Warm community market poster base, hand drawn produce motifs arranged as a border, sunny earthy palette, textured paper feel, open center left empty for event copy",
     ratio: "2:3",
+    image: "/tpl/t/farmers-market-poster.jpg",
   },
   {
     id: "risograph-poster",
@@ -1825,6 +1976,7 @@ export const templates: Template[] = [
     prompt:
       "Risograph style poster direction, two ink layers with visible misregistration, bold simplified shapes, coarse paper grain, limited fluorescent palette, strong graphic impact",
     ratio: "2:3",
+    image: "/tpl/t/risograph-poster.jpg",
   },
   {
     id: "workshop-poster-base",
@@ -1835,6 +1987,7 @@ export const templates: Template[] = [
     prompt:
       "Community workshop poster base, friendly abstract shapes in a soft warm palette, clear structural zones, gentle paper texture, all text areas intentionally left blank",
     ratio: "2:3",
+    image: "/tpl/t/workshop-poster-base.jpg",
   },
   {
     id: "menu-board",
@@ -1845,6 +1998,7 @@ export const templates: Template[] = [
     prompt:
       "Cafe menu board visual direction, dark chalkboard surface with decorative botanical corners, warm rim lighting, clearly defined empty columns where menu items will be set",
     ratio: "4:3",
+    image: "/tpl/t/menu-board.jpg",
   },
   {
     id: "flyer-base",
@@ -1855,6 +2009,7 @@ export const templates: Template[] = [
     prompt:
       "Local service flyer base layout, clean color block bands with a strong diagonal, professional trustworthy palette, generous blank areas for headline body and contact details",
     ratio: "2:3",
+    image: "/tpl/t/flyer-base.jpg",
   },
   {
     id: "handbook-cover",
@@ -1865,6 +2020,7 @@ export const templates: Template[] = [
     prompt:
       "Clean employee handbook cover background, restrained geometric pattern in corporate neutral tones, subtle depth, professional and calm, large empty area reserved for the title",
     ratio: "3:4",
+    image: "/tpl/t/handbook-cover.jpg",
   },
   {
     id: "linkedin-banner",
@@ -1875,6 +2031,7 @@ export const templates: Template[] = [
     prompt:
       "Professional profile banner background, wide abstract gradient with soft geometric layering, calm confident palette, no text embedded, left side kept visually quiet for an avatar overlay",
     ratio: "16:9",
+    image: "/tpl/t/linkedin-banner.jpg",
   },
   {
     id: "personal-brand-banner",
@@ -1885,6 +2042,7 @@ export const templates: Template[] = [
     prompt:
       "Personal brand banner background, minimal abstract composition with a single accent shape, refined muted palette, plenty of empty space, understated and modern",
     ratio: "16:9",
+    image: "/tpl/t/personal-brand-banner.jpg",
   },
   {
     id: "report-cover",
@@ -1895,6 +2053,7 @@ export const templates: Template[] = [
     prompt:
       "Professional report cover design, structured grid with a bold abstract data inspired graphic, corporate palette with one strong accent, clear hierarchy zones left blank for type",
     ratio: "3:4",
+    image: "/tpl/t/report-cover.jpg",
   },
   {
     id: "tiktok-tutorial-cover",
@@ -1905,6 +2064,7 @@ export const templates: Template[] = [
     prompt:
       "Vertical tutorial cover layout, split composition with two clear panels for a before and after visual, bold divider, high contrast palette, empty band at the top for a hook headline",
     ratio: "9:16",
+    image: "/tpl/t/tiktok-tutorial-cover.jpg",
   },
   {
     id: "wedding-suite",
@@ -1915,6 +2075,7 @@ export const templates: Template[] = [
     prompt:
       "Wedding stationery suite direction, coordinated invitation cards laid out flat, delicate botanical line work, soft blush and cream palette, elegant spacing, text areas left blank",
     ratio: "4:3",
+    image: "/tpl/t/wedding-suite.jpg",
   },
 
   // ——— 界面稿（续） ———
@@ -1927,7 +2088,7 @@ export const templates: Template[] = [
     prompt:
       "Mobile finance app home screen mockup, clear balance card at the top, tidy transaction list below, trustworthy blue and neutral palette, generous spacing, crisp modern UI rendering",
     ratio: "9:16",
-    image: "/tpl/ui-2.jpg",
+    image: "/tpl/t/finance-mobile-home.jpg",
   },
   {
     id: "invoice-ui",
@@ -1938,6 +2099,7 @@ export const templates: Template[] = [
     prompt:
       "Invoice management software interface mockup, sidebar navigation with a dense data table and status chips, calm professional palette, clear typographic hierarchy, desktop viewport framing",
     ratio: "16:9",
+    image: "/tpl/t/invoice-ui.jpg",
   },
   {
     id: "budget-planner",
@@ -1948,6 +2110,7 @@ export const templates: Template[] = [
     prompt:
       "Budget planning app screen, donut chart and category breakdown bars, friendly rounded cards, soft pastel accents on a light background, clean readable layout",
     ratio: "16:9",
+    image: "/tpl/t/budget-planner.jpg",
   },
   {
     id: "telehealth-mockup",
@@ -1958,6 +2121,7 @@ export const templates: Template[] = [
     prompt:
       "Telehealth product screen mockup, video consultation layout with appointment cards, calm teal and white palette, accessible spacing and contrast, modern medical product styling",
     ratio: "16:9",
+    image: "/tpl/t/telehealth-mockup.jpg",
   },
   {
     id: "app-feature-graphic",
@@ -1968,6 +2132,7 @@ export const templates: Template[] = [
     prompt:
       "App store feature graphic, two floating phone mockups at a slight angle on a bold gradient background, soft device shadows, clear empty copy zone on one side",
     ratio: "16:9",
+    image: "/tpl/t/app-feature-graphic.jpg",
   },
   {
     id: "game-inventory-icons",
@@ -1978,6 +2143,7 @@ export const templates: Template[] = [
     prompt:
       "Cohesive game inventory icon set arranged in a grid, consistent lighting angle and outline weight across all items, rich fantasy material palette, dark slot backgrounds",
     ratio: "1:1",
+    image: "/tpl/t/game-inventory-icons.jpg",
   },
   {
     id: "isometric-tool-map",
@@ -1988,6 +2154,7 @@ export const templates: Template[] = [
     prompt:
       "Isometric system map for a product explainer, connected modules and pathways on a soft grid plane, clean technical palette with one accent, orderly depth, no readable text",
     ratio: "16:9",
+    image: "/tpl/t/isometric-tool-map.jpg",
   },
   {
     id: "floorplan-visual",
@@ -1998,6 +2165,7 @@ export const templates: Template[] = [
     prompt:
       "Clean 3D floorplan visual viewed from above at a slight tilt, simplified furniture blocks, soft ambient occlusion, light neutral materials with one accent color, no dimension labels",
     ratio: "4:3",
+    image: "/tpl/t/floorplan-visual.jpg",
   },
   {
     id: "settings-screen",
@@ -2008,6 +2176,7 @@ export const templates: Template[] = [
     prompt:
       "Mobile settings screen mockup, grouped preference rows with toggles and chevrons, clear section headers, restrained neutral palette, generous vertical rhythm, crisp rendering",
     ratio: "9:16",
+    image: "/tpl/t/settings-screen.jpg",
   },
   {
     id: "analytics-chart-set",
@@ -2018,6 +2187,7 @@ export const templates: Template[] = [
     prompt:
       "Analytics chart component set, line area and bar charts arranged as cards, consistent axis styling and one accent color, light dashboard background, precise clean rendering",
     ratio: "16:9",
+    image: "/tpl/t/analytics-chart-set.jpg",
   },
   {
     id: "checkout-flow",
@@ -2028,6 +2198,7 @@ export const templates: Template[] = [
     prompt:
       "Ecommerce checkout flow mockup, step indicator with order summary and payment form, trustworthy neutral palette with a green confirmation accent, clear field hierarchy",
     ratio: "16:9",
+    image: "/tpl/t/checkout-flow.jpg",
   },
 
   // ——— 风景（续） ———
@@ -2040,6 +2211,7 @@ export const templates: Template[] = [
     prompt:
       "Misty forest at dawn, layered depth of tree silhouettes fading into fog, shafts of low sunlight, muted green and grey palette, quiet contemplative atmosphere",
     ratio: "3:2",
+    image: "/tpl/t/misty-forest.jpg",
   },
   {
     id: "coastal-cliffs",
@@ -2050,7 +2222,7 @@ export const templates: Template[] = [
     prompt:
       "Dramatic coastal cliff landscape, long exposure smoothing the sea into mist, moody overcast sky with a break of light, deep teal and slate palette, wide cinematic framing",
     ratio: "16:9",
-    image: "/tpl/landscape-2.jpg",
+    image: "/tpl/t/coastal-cliffs.jpg",
   },
   {
     id: "northern-lights",
@@ -2061,7 +2233,7 @@ export const templates: Template[] = [
     prompt:
       "Aurora borealis over a snow covered valley, vivid green and violet ribbons across a star filled sky, faint moonlight on the snow, crisp cold air clarity, wide landscape composition",
     ratio: "16:9",
-    image: "/tpl/landscape-3.jpg",
+    image: "/tpl/t/northern-lights.jpg",
   },
   {
     id: "terraced-fields",
@@ -2072,7 +2244,7 @@ export const templates: Template[] = [
     prompt:
       "Terraced rice fields at sunrise, sweeping curved contour lines catching warm light, thin morning mist in the valleys, layered depth, saturated but natural greens",
     ratio: "3:2",
-    image: "/tpl/landscape.jpg",
+    image: "/tpl/t/terraced-fields.jpg",
   },
   {
     id: "canyon-overlook",
@@ -2083,6 +2255,7 @@ export const templates: Template[] = [
     prompt:
       "Vast canyon overlook at golden hour, layered rock strata receding into atmospheric haze, deep shadows in the ravines, warm ochre and violet palette, epic scale",
     ratio: "16:9",
+    image: "/tpl/t/canyon-overlook.jpg",
   },
   {
     id: "game-environment",
@@ -2093,6 +2266,7 @@ export const templates: Template[] = [
     prompt:
       "Wide game environment concept art, a landmark structure anchoring the composition, atmospheric perspective with three depth layers, painterly rendering, dramatic directional light",
     ratio: "16:9",
+    image: "/tpl/t/game-environment.jpg",
   },
   {
     id: "nursery-concept",
@@ -2103,6 +2277,7 @@ export const templates: Template[] = [
     prompt:
       "Turn this empty room photo into a calm nursery concept, soft neutral palette with gentle wood and textile accents, warm diffused daylight, preserve the room architecture windows and proportions",
     ratio: "auto",
+    image: "/tpl/t/nursery-concept.jpg",
   },
 ];
 
