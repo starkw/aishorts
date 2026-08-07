@@ -184,7 +184,7 @@ export default function GeneratorPanel() {
         {tab === "create" && (
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-[11px] font-medium text-amber-700">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-            由 AI 图像模型驱动
+            中英文都能写，写得越具体越准
           </div>
         )}
       </div>

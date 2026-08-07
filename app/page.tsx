@@ -12,7 +12,7 @@ import SiteFooter from "@/components/sections/SiteFooter";
 import { templates } from "@/data/templates";
 
 export const metadata = {
-  title: "免费 AI 图像生成 — 不用注册，不用付费 | AI Shorts",
+  title: "免费 AI 图像生成器 — 无需注册，无需信用卡 | AI Shorts",
   description: `打开就能用的免费 AI 出图工具。支持文生图与图生图，${templates.length} 个现成模板，输出不加水印，图片只存在你的浏览器里。不需要 ChatGPT 账号，不需要信用卡。`,
 };
 

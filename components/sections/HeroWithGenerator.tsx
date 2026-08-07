@@ -1,14 +1,15 @@
-import { Check, Code2, Share2 } from "lucide-react";
+import { Check, Code2, Share2, Sparkles } from "lucide-react";
 import GeneratorPanel from "@/components/generator/GeneratorPanel";
 import { templates } from "@/data/templates";
 
+// 副标题已经讲完「不用登录/注册/信用卡」，这里只列它没覆盖的点，避免重复
 const PERKS = [
-  "不需要 ChatGPT 账号",
-  "不用注册、不用登录、不留邮箱",
-  "不用信用卡、没有订阅",
   "生成的图片不加水印",
   "支持文生图与图生图",
   "图片只留在你的浏览器里",
+  `${templates.length} 个模板，选中即填提示词`,
+  "每日额度自动重置，不用邀请、不用做任务",
+  "手机、平板、电脑都能直接用",
 ];
 
 export default function HeroWithGenerator() {
@@ -34,24 +35,22 @@ export default function HeroWithGenerator() {
         <div className="grid lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-10 lg:gap-12 items-start">
           {/* 左：文案 */}
           <div className="text-white">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-medium text-amber-200 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-              由 AI 图像模型驱动
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-medium text-white/90 mb-6">
+              <Sparkles size={12} className="text-amber-300" />
+              由 AI 图像模型提供支持
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-black leading-[1.1] mb-4">
-              免费 AI 图像生成
+            <h1 className="text-4xl sm:text-6xl font-black leading-[1.05] tracking-tight mb-4">
+              免费 AI 图像生成器
             </h1>
 
-            <p className="text-xl sm:text-2xl font-bold text-white/90 leading-snug mb-5">
-              不用登录，不用注册，
-              <br />
-              不用信用卡。
+            <p className="text-xl sm:text-2xl font-bold text-white/95 leading-snug mb-5">
+              无需 ChatGPT。无需注册。无需信用卡。
             </p>
 
-            <p className="text-sm text-white/75 leading-relaxed mb-7">
-              目前最省事的出图方式：打开网页，写一句描述，点生成。
-              完全免费，除了每日合理额度之外没有其他限制。
+            <p className="text-sm text-white/70 leading-relaxed mb-7">
+              用 AI 出图最快的方式——100% 免费，不用注册，不用付费，
+              每日上限合理，没有别的限制。打开就能生成。
             </p>
 
             <ul className="space-y-2.5 mb-8">
