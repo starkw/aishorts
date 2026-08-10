@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "打开就能用的免费 AI 出图工具，支持文生图与图生图，输出不加水印，图片只存在你的浏览器里。",
     images: [
       {
-        url: `${siteUrl}/og-image.png`,
+        url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "AI Shorts - 免费 AI 图像生成器",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Shorts - 免费 AI 图像生成器",
     description: "不用注册、不用付费的 AI 出图工具，支持文生图与图生图，输出不加水印。",
-    images: [`${siteUrl}/og-image.png`],
+    images: [`${siteUrl}/og-image.jpg`],
   },
   robots: {
     index: true,
